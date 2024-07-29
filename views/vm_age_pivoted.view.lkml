@@ -34,7 +34,7 @@ view: vm_age_pivoted {
 
   measure: count {
     type: count
-    drill_fields: [age_name, metric_name, shape_name]
+    drill_fields: [shape_name]
 
 
   }
