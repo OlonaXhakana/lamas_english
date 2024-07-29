@@ -1,0 +1,376 @@
+view: vm_household {
+  sql_table_name: `jutomate-lamas-english.MODELLING.vm_household` ;;
+
+  dimension: age0_19sef_pcnt_08 {
+    type: number
+    sql: ${TABLE}.age0_19sef_pcnt_08 ;;
+  }
+  dimension: age0_19sef_pcnt_22 {
+    type: number
+    sql: ${TABLE}.age0_19sef_pcnt_22 ;;
+  }
+  dimension: age0_19sef_pcnt_72 {
+    type: number
+    sql: ${TABLE}.age0_19sef_pcnt_72 ;;
+  }
+  dimension: age0_19sef_pcnt_83 {
+    type: number
+    sql: ${TABLE}.age0_19sef_pcnt_83 ;;
+  }
+  dimension: age0_19sef_pcnt_95 {
+    type: number
+    sql: ${TABLE}.age0_19sef_pcnt_95 ;;
+  }
+  dimension: age65sef_pcnt_08 {
+    type: number
+    sql: ${TABLE}.age65sef_pcnt_08 ;;
+  }
+  dimension: age65sef_pcnt_22 {
+    type: number
+    sql: ${TABLE}.age65sef_pcnt_22 ;;
+  }
+  dimension: age65sef_pcnt_72 {
+    type: number
+    sql: ${TABLE}.age65sef_pcnt_72 ;;
+  }
+  dimension: age65sef_pcnt_83 {
+    type: number
+    sql: ${TABLE}.age65sef_pcnt_83 ;;
+  }
+  dimension: age65sef_pcnt_95 {
+    type: number
+    sql: ${TABLE}.age65sef_pcnt_95 ;;
+  }
+  dimension: age85sef_pcnt_08 {
+    type: number
+    sql: ${TABLE}.age85sef_pcnt_08 ;;
+  }
+  dimension: age85sef_pcnt_22 {
+    type: number
+    sql: ${TABLE}.age85sef_pcnt_22 ;;
+  }
+  dimension: age85sef_pcnt_72 {
+    type: number
+    sql: ${TABLE}.age85sef_pcnt_72 ;;
+  }
+  dimension: age85sef_pcnt_83 {
+    type: number
+    sql: ${TABLE}.age85sef_pcnt_83 ;;
+  }
+  dimension: age85sef_pcnt_95 {
+    type: number
+    sql: ${TABLE}.age85sef_pcnt_95 ;;
+  }
+  dimension: cellphone_ratio {
+    type: number
+    sql: ${TABLE}.cellphone_ratio ;;
+  }
+  dimension: computer_avg {
+    type: number
+    sql: ${TABLE}.Computer_avg ;;
+  }
+  dimension: fam_approx {
+    type: number
+    sql: ${TABLE}.Fam_approx ;;
+  }
+  dimension: godel1_0_emp_pcnt {
+    type: number
+    sql: ${TABLE}.Godel1_0Emp_pcnt ;;
+  }
+  dimension: godel1_1_emp_pcnt {
+    type: number
+    sql: ${TABLE}.Godel1_1Emp_pcnt ;;
+  }
+  dimension: godel2_0_emp_pcnt {
+    type: number
+    sql: ${TABLE}.Godel2_0Emp_pcnt ;;
+  }
+  dimension: godel2_1_emp_pcnt {
+    type: number
+    sql: ${TABLE}.Godel2_1Emp_pcnt ;;
+  }
+  dimension: godel2_2_emp_pcnt {
+    type: number
+    sql: ${TABLE}.Godel2_2Emp_pcnt ;;
+  }
+  dimension: godel3_0_emp_pcnt {
+    type: number
+    sql: ${TABLE}.Godel3_0Emp_pcnt ;;
+  }
+  dimension: godel3_1_emp_pcnt {
+    type: number
+    sql: ${TABLE}.Godel3_1Emp_pcnt ;;
+  }
+  dimension: godel3_2_emp_pcnt {
+    type: number
+    sql: ${TABLE}.Godel3_2Emp_pcnt ;;
+  }
+  dimension: godel3_3_emp_pcnt {
+    type: number
+    sql: ${TABLE}.Godel3_3Emp_pcnt ;;
+  }
+  dimension: godel4_0_emp_pcnt {
+    type: number
+    sql: ${TABLE}.Godel4_0Emp_pcnt ;;
+  }
+  dimension: godel4_1_emp_pcnt {
+    type: number
+    sql: ${TABLE}.Godel4_1Emp_pcnt ;;
+  }
+  dimension: godel4_2_emp_pcnt {
+    type: number
+    sql: ${TABLE}.Godel4_2Emp_pcnt ;;
+  }
+  dimension: godel4_3_emp_pcnt {
+    type: number
+    sql: ${TABLE}.Godel4_3Emp_pcnt ;;
+  }
+  dimension: godel5_0_emp_pcnt {
+    type: number
+    sql: ${TABLE}.Godel5_0Emp_pcnt ;;
+  }
+  dimension: godel5_1_emp_pcnt {
+    type: number
+    sql: ${TABLE}.Godel5_1Emp_pcnt ;;
+  }
+  dimension: godel5_2_emp_pcnt {
+    type: number
+    sql: ${TABLE}.Godel5_2Emp_pcnt ;;
+  }
+  dimension: godel5_3_emp_pcnt {
+    type: number
+    sql: ${TABLE}.Godel5_3Emp_pcnt ;;
+  }
+  dimension: hh0_17_1_pcnt {
+    type: number
+    sql: ${TABLE}.hh0_17_1_pcnt ;;
+  }
+  dimension: hh0_17_2_pcnt {
+    type: number
+    sql: ${TABLE}.hh0_17_2_pcnt ;;
+  }
+  dimension: hh0_17_3_pcnt {
+    type: number
+    sql: ${TABLE}.hh0_17_3_pcnt ;;
+  }
+  dimension: hh0_17_4_pcnt {
+    type: number
+    sql: ${TABLE}.hh0_17_4_pcnt ;;
+  }
+  dimension: hh0_17_5_pcnt {
+    type: number
+    sql: ${TABLE}.hh0_17_5_pcnt ;;
+  }
+  dimension: hh0_17_pcnt {
+    type: number
+    sql: ${TABLE}.hh0_17_pcnt ;;
+  }
+  dimension: hh0_5_pcnt {
+    type: number
+    sql: ${TABLE}.hh0_5_pcnt ;;
+  }
+  dimension: hh18_24_pcnt {
+    type: number
+    sql: ${TABLE}.hh18_24_pcnt ;;
+  }
+  dimension: hh65_pcnt {
+    type: number
+    sql: ${TABLE}.hh65_pcnt ;;
+  }
+  dimension: hh_acher_pcnt {
+    type: number
+    sql: ${TABLE}.hh_Acher_pcnt ;;
+  }
+  dimension: hh_dati_pcnt {
+    type: number
+    sql: ${TABLE}.hh_Dati_pcnt ;;
+  }
+  dimension: hh_haredi_pcnt {
+    type: number
+    sql: ${TABLE}.hh_Haredi_pcnt ;;
+  }
+  dimension: hh_hiloni_pcnt {
+    type: number
+    sql: ${TABLE}.hh_Hiloni_pcnt ;;
+  }
+  dimension: hh_masorati_pcnt {
+    type: number
+    sql: ${TABLE}.hh_Masorati_pcnt ;;
+  }
+  dimension: hh_meorav_pcnt {
+    type: number
+    sql: ${TABLE}.hh_Meorav_pcnt ;;
+  }
+  dimension: hh_midat_datiyut_name {
+    type: string
+    sql: ${TABLE}.hh_MidatDatiyut_Name ;;
+  }
+  dimension: hh_midat_datiyut_pcnt {
+    type: number
+    sql: ${TABLE}.hh_MidatDatiyut_pcnt ;;
+  }
+  dimension: hh_total_approx {
+    type: number
+    sql: ${TABLE}.hh_total_approx ;;
+  }
+  dimension: hh_total_thou_08 {
+    type: number
+    sql: ${TABLE}.hh_total_thou_08 ;;
+  }
+  dimension: hh_total_thou_22 {
+    type: number
+    sql: ${TABLE}.hh_total_thou_22 ;;
+  }
+  dimension: hh_total_thou_72 {
+    type: number
+    sql: ${TABLE}.hh_total_thou_72 ;;
+  }
+  dimension: hh_total_thou_83 {
+    type: number
+    sql: ${TABLE}.hh_total_thou_83 ;;
+  }
+  dimension: hh_total_thou_95 {
+    type: number
+    sql: ${TABLE}.hh_total_thou_95 ;;
+  }
+  dimension: housing_dens1_pcnt {
+    type: number
+    sql: ${TABLE}.HousingDens1_pcnt ;;
+  }
+  dimension: housing_dens2_pcnt {
+    type: number
+    sql: ${TABLE}.HousingDens2_pcnt ;;
+  }
+  dimension: housing_dens_avg {
+    type: number
+    sql: ${TABLE}.HousingDens_avg ;;
+  }
+  dimension: non_fam_approx {
+    type: number
+    sql: ${TABLE}.NonFam_approx ;;
+  }
+  dimension: other_arng_pcnt {
+    type: number
+    sql: ${TABLE}.OtherArng_pcnt ;;
+  }
+  dimension: own_pcnt {
+    type: number
+    sql: ${TABLE}.own_pcnt ;;
+  }
+  dimension: parking_pcnt {
+    type: number
+    sql: ${TABLE}.Parking_pcnt ;;
+  }
+  dimension: rent_pcnt {
+    type: number
+    sql: ${TABLE}.rent_pcnt ;;
+  }
+  dimension: rm1_pcnt {
+    type: number
+    sql: ${TABLE}.rm1_pcnt ;;
+  }
+  dimension: rm2_pcnt {
+    type: number
+    sql: ${TABLE}.rm2_pcnt ;;
+  }
+  dimension: rm3_pcnt {
+    type: number
+    sql: ${TABLE}.rm3_pcnt ;;
+  }
+  dimension: rm4_pcnt {
+    type: number
+    sql: ${TABLE}.rm4_pcnt ;;
+  }
+  dimension: rm5_pcnt {
+    type: number
+    sql: ${TABLE}.rm5_pcnt ;;
+  }
+  dimension: rm6_pcnt {
+    type: number
+    sql: ${TABLE}.rm6_pcnt ;;
+  }
+  dimension: rm7_pcnt {
+    type: number
+    sql: ${TABLE}.rm7_pcnt ;;
+  }
+  dimension: rm8up_pcnt {
+    type: number
+    sql: ${TABLE}.rm8up_pcnt ;;
+  }
+  dimension: shape_name {
+    type: string
+    sql: ${TABLE}.shape_name ;;
+  }
+  dimension: size1_pcnt {
+    type: number
+    sql: ${TABLE}.size1_pcnt ;;
+  }
+  dimension: size2_pcnt {
+    type: number
+    sql: ${TABLE}.size2_pcnt ;;
+  }
+  dimension: size3_pcnt {
+    type: number
+    sql: ${TABLE}.size3_pcnt ;;
+  }
+  dimension: size4_pcnt {
+    type: number
+    sql: ${TABLE}.size4_pcnt ;;
+  }
+  dimension: size5_pcnt {
+    type: number
+    sql: ${TABLE}.size5_pcnt ;;
+  }
+  dimension: size6_pcnt {
+    type: number
+    sql: ${TABLE}.size6_pcnt ;;
+  }
+  dimension: size7up_pcnt {
+    type: number
+    sql: ${TABLE}.size7up_pcnt ;;
+  }
+  dimension: size_avg {
+    type: number
+    sql: ${TABLE}.size_avg ;;
+  }
+  dimension: size_avg_08 {
+    type: number
+    sql: ${TABLE}.size_avg_08 ;;
+  }
+  dimension: size_avg_22 {
+    type: number
+    sql: ${TABLE}.size_avg_22 ;;
+  }
+  dimension: size_avg_72 {
+    type: number
+    sql: ${TABLE}.size_avg_72 ;;
+  }
+  dimension: size_avg_83 {
+    type: number
+    sql: ${TABLE}.size_avg_83 ;;
+  }
+  dimension: size_avg_95 {
+    type: number
+    sql: ${TABLE}.size_avg_95 ;;
+  }
+  dimension: sngl_prnt_approx {
+    type: number
+    sql: ${TABLE}.SnglPrnt_approx ;;
+  }
+  dimension: type {
+    type: string
+    sql: ${TABLE}.type ;;
+  }
+  dimension: vehicle1up_pcnt {
+    type: number
+    sql: ${TABLE}.Vehicle1up_pcnt ;;
+  }
+  dimension: vehicle2up_pcnt {
+    type: number
+    sql: ${TABLE}.Vehicle2up_pcnt ;;
+  }
+  measure: count {
+    type: count
+    drill_fields: [hh_midat_datiyut_name, shape_name]
+  }
+}

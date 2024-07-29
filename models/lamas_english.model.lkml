@@ -1,8 +1,34 @@
 connection: "english_lamas"
 
+# include all the views
+include: "/views/**/*.view.lkml"
+
+
 datagroup: lamas_english_default_datagroup {
   # sql_trigger: SELECT MAX(id) FROM etl_log;;
   max_cache_age: "24 hour"
 }
-
 persist_with: lamas_english_default_datagroup
+
+explore: vm_age_median {}
+explore: vm_age_pivoted {}
+explore: vm_child_born {}
+explore: vm_compare {}
+explore: vm_child_born_unpivoted {}
+explore: vm_disabilites_unpivoted_v2 {}
+explore: vm_educ {}
+explore: vm_educ_pivoted_v2{}
+explore: vm_geography{}
+explore: vm_household {}
+explore: vm_household_unpivoted {}
+explore: vm_household_unpivoted_v2 {}
+explore: vm_marriage_age_median {}
+explore: vm_mifkad_over_time_pivoted {}
+explore: vm_migration {}
+explore: vm_origin_pivoted {}
+explore: vm_origin_pivoted_v3 {}
+explore: vm_pop {}
+explore: vm_religion_v2 {}
+explore: vm_status_unpivoted_v2 {}
+explore: vm_work_n_wage {}
+explore: vm_work_n_wage_unpivoted {}
