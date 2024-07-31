@@ -9,7 +9,7 @@ datagroup: lamas_english_default_datagroup {
   max_cache_age: "24 hour"
 }
 persist_with: lamas_english_default_datagroup
-
+explore: vm_disabilites_unpivoted__eng {}
 explore: vm_age_median {}
 explore: vm_age_pivoted {}
 explore: vm_child_born {}
