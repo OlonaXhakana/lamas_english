@@ -10,6 +10,7 @@ datagroup: lamas_english_default_datagroup {
 }
 persist_with: lamas_english_default_datagroup
 explore: vm_disabilites_unpivoted_eng {}
+explore: vm_age_pivoted_eng {}
 explore: vm_age_median {}
 explore: vm_age_pivoted {}
 explore: vm_child_born {}
