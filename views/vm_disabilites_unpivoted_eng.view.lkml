@@ -13,6 +13,12 @@ view: vm_disabilites_unpivoted_eng {
     type: string
     sql: ${TABLE}.metric_name ;;
   }
+
+  dimension: metric_name_all {
+    type: string
+    sql: ${TABLE}.metric_name_all ;;
+  }
+
   dimension: shape_name {
     type: string
     sql: ${TABLE}.shape_name ;;
