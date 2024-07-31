@@ -25,8 +25,15 @@ view: vm_age_pivoted_eng {
     type: number
     sql: ${TABLE}.value ;;
   }
+
+  measure: value_m {
+    label: "value sum"
+    type: sum
+    sql: ${TABLE}.value ;;
+  }
+
   measure: count {
     type: count
-    drill_fields: [age_name, metric_name, shape_name]
+    drill_fields: [shape_name]
   }
 }
