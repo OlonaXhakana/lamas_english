@@ -88,6 +88,7 @@ view: vm_pop {
     type: number
     sql: ${TABLE}.StatArea ;;
   }
+
   dimension: sub_district_heb {
     type: string
     sql: ${TABLE}.SubDistrictHeb ;;
@@ -96,6 +97,7 @@ view: vm_pop {
     type: number
     sql: ${TABLE}.SubQuarter ;;
   }
+
   dimension: type {
     type: string
     sql: ${TABLE}.type ;;
