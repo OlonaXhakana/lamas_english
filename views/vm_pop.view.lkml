@@ -25,10 +25,28 @@ view: vm_pop {
     type: number
     sql: ${TABLE}.pop_approx ;;
   }
+
+  # dimension: pop_density {
+  #   type: number
+  #   sql: ${TABLE}.pop_density ;;
+  # }
+
   dimension: pop_density {
-    type: number
-    sql: ${TABLE}.pop_density ;;
+    type: string
+    value_format: "#,##0.0"
+    sql: coalesce(cast(${TABLE}.pop_density as string), 'missing data') ;;
+    html:
+        <div style="line-height:1.2;">
+        {% if value == 'missing data' %}
+          <span style="color:#22282D;font-size:16px;font-weight:700;letter-spacing:0;">צפיפות אוכלוסייה לקמ"ר</span><br>
+          <span style="color:#22282D;font-size:16px;letter-spacing:0;">נתון חסר</span>
+        {% else %}
+          <span style="color:#22282D;font-size:16px;font-weight:700;letter-spacing:0;">צפיפות אוכלוסייה לקמ"ר</span><br>
+          <span style="color:#22282D;font-size:44px;font-weight:600;letter-spacing:-1;">{{ rendered_value }}</span>
+        {% endif %}
+        </div> ;;
   }
+
   dimension: quarter {
     type: number
     sql: ${TABLE}.Quarter ;;
@@ -53,6 +71,40 @@ view: vm_pop {
     type: string
     sql: ${TABLE}.type ;;
   }
+
+  measure: pop_approx_m {
+    type: sum
+    label: "population sum"
+    sql: ${TABLE}.pop_approx ;;
+  }
+
+  measure: pop_density_m {
+    type: sum
+    label: "Population density per km"
+    sql: ${TABLE}.pop_density ;;
+  }
+
+  measure: change_pcnt_m {
+    type: sum
+    label:"Percentage of population size change compared to the 2008 census"
+    value_format: "0.0\%"
+    sql: ${TABLE}.change_pcnt ;;
+  }
+
+  measure: Foreign_pcnt_m {
+    type: sum
+    label: "percentage of foreigners"
+    value_format: "0.0\%"
+    sql: ${TABLE}.Foreign_pcnt ;;
+  }
+
+  measure: inst_pcnt_m {
+    type: sum
+    label: "percentage of residents of institutions"
+    value_format: "0.0\%"
+    sql: ${TABLE}.inst_pcnt ;;
+  }
+
   measure: count {
     type: count
     drill_fields: [shape_name]
