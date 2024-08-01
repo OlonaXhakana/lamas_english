@@ -34,4 +34,5 @@ explore: vm_status_unpivoted_v2 {}
 explore: vm_work_n_wage {}
 explore: vm_work_n_wage_unpivoted {}
 explore: vm_educ_pivoted_eng {}
+explore: vm_educ_pivoted_v3_eng {}
 explore: vm_educ_pivoted_eng_2 {}
