@@ -8,20 +8,20 @@ view: vm_pop {
 
   dimension: change_pcnt {
     type: string
-    label: "Percentage of population size change compared to the 2008 census"
-    value_format: "0.0\%"
+    value_format: "#,##0.0"
     sql: coalesce(cast(${TABLE}.change_pcnt as string), 'missing data') ;;
     html:
         <div style="line-height:1.2;">
         {% if value == 'missing data' %}
-          <span style="color:#22282D;font-size:16px;font-weight:700;letter-spacing:0;"> The population change from the 2008 census </span><br
-          <span style="color:#22282D;font-size:16px;letter-spacing:0;"> missing data </span>
+          <span style="color:#22282D;font-size:16px;font-weight:700;letter-spacing:0;"> The population change from the 2008 census</span><br>
+          <span style="color:#22282D;font-size:16px;letter-spacing:0;">missing data</span>
         {% else %}
-          <span style="color:#22282D;font-size:16px;font-weight:700;letter-spacing:0;"> The population change from the 2008 census </span><br>
+          <span style="color:#22282D;font-size:16px;font-weight:700;letter-spacing:0;"> The population change from the 2008 census</span><br>
           <span style="color:#22282D;font-size:44px;font-weight:600;letter-spacing:-1;">{{ rendered_value }}</span>
         {% endif %}
         </div> ;;
   }
+
 
   dimension: district_heb {
     type: string
