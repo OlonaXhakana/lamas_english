@@ -14,10 +14,10 @@ view: vm_pop {
     html:
         <div style="line-height:1.2;">
         {% if value == 'missing data' %}
-          <span style="color:#22282D;font-size:16px;font-weight:700;letter-spacing:0;">The population change from the 2008 census</span><br
-          <span style="color:#22282D;font-size:16px;letter-spacing:0;">missing data</span>
+          <span style="color:#22282D;font-size:16px;font-weight:700;letter-spacing:0;"> The population change from the 2008 census </span><br
+          <span style="color:#22282D;font-size:16px;letter-spacing:0;"> missing data </span>
         {% else %}
-          <span style="color:#22282D;font-size:16px;font-weight:700;letter-spacing:0;">The population change from the 2008 census</span><br>
+          <span style="color:#22282D;font-size:16px;font-weight:700;letter-spacing:0;"> The population change from the 2008 census </span><br>
           <span style="color:#22282D;font-size:44px;font-weight:600;letter-spacing:-1;">{{ rendered_value }}</span>
         {% endif %}
         </div> ;;
@@ -50,7 +50,7 @@ view: vm_pop {
     value_format: "#,##0"
     html:
         <div style="line-height:1.2;">
-          <span style="color:#22282D;font-size:16px;font-weight:700;letter-spacing:0;">Total population</span><br>
+          <span style="color:#22282D;font-size:16px;font-weight:700;letter-spacing:0;"> Total population </span><br>
           <span style="color:#22282D;font-size:44px;font-weight:600;letter-spacing:-1;">{{ rendered_value }}</span><br>
         </div>;;
   }
