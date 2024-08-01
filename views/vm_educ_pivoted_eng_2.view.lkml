@@ -44,7 +44,7 @@ view: vm_educ_pivoted_eng_2 {
         {% if value == 'Missing data' %}
           <img src="https://dashboard.cbs.gov.il/cbs-data/Infographics/yeshiva_pcnt.svg" width="45px" height="45px"/><br>
           <span style="color:#22282D;font-size:16px;font-weight:700;letter-spacing:0;">Study in a yeshiva</span><br>
-          <span style="color:#22282D;font-size:16px;letter-spacing:0;">נתון חסר</span>
+          <span style="color:#22282D;font-size:16px;letter-spacing:0;">Missing data</span>
         {% else %}
           <img src="https://dashboard.cbs.gov.il/cbs-data/Infographics/yeshiva_pcnt.svg" width="45px" height="45px"/><br>
           <span style="color:#22282D;font-size:16px;font-weight:700;letter-spacing:0;">Study in a yeshiva</span><br>
