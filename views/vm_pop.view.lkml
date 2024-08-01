@@ -36,10 +36,10 @@ view: vm_pop {
     html:
         <div style="line-height:1.2;">
         {% if value == 'missing data' %}
-          <span style="color:#22282D;font-size:16px;font-weight:700;letter-spacing:0;">percentage of foreigners</span><br>
+          <span style="color:#22282D;font-size:16px;font-weight:700;letter-spacing:0;">Percentage of foreigners</span><br>
           <span style="color:#22282D;font-size:16px;letter-spacing:0;">missing data</span>
         {% else %}
-          <span style="color:#22282D;font-size:16px;font-weight:700;letter-spacing:0;">percentage of foreigners</span><br>
+          <span style="color:#22282D;font-size:16px;font-weight:700;letter-spacing:0;">Percentage of foreigners</span><br>
           <span style="color:#22282D;font-size:44px;font-weight:600;letter-spacing:-1;">{{ rendered_value }}</span>
         {% endif %}
         </div> ;;
@@ -47,7 +47,17 @@ view: vm_pop {
 
   dimension: inst_pcnt {
     type: number
-    sql: ${TABLE}.inst_pcnt ;;
+    sql: coalesce(cast(${TABLE}.Foreign_pcnt as string), 'missing data') ;;
+    html:
+        <div style="line-height:1.2;">
+        {% if value == 'missing data' %}
+          <span style="color:#22282D;font-size:16px;font-weight:700;letter-spacing:0;">Percentage</span><br>
+          <span style="color:#22282D;font-size:16px;letter-spacing:0;">missing data</span>
+        {% else %}
+          <span style="color:#22282D;font-size:16px;font-weight:700;letter-spacing:0;">Percentage</span><br>
+          <span style="color:#22282D;font-size:44px;font-weight:600;letter-spacing:-1;">{{ rendered_value }}</span>
+        {% endif %}
+        </div> ;;
   }
   dimension: nat_reg_heb {
     type: string
