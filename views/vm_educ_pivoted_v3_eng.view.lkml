@@ -9,9 +9,9 @@ view: vm_educ_pivoted_v3_eng {
     type: string
     sql: ${TABLE}.metric ;;
   }
-  dimension: metric_heb_order {
+  dimension: metric_order {
     type: string
-    sql: ${TABLE}.metric_heb_order ;;
+    sql: ${TABLE}.metric_order ;;
   }
   dimension: shape_name {
     type: string
