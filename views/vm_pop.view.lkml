@@ -80,10 +80,18 @@ view: vm_pop {
     type: number
     sql: ${TABLE}.Quarter ;;
   }
+  # dimension: shape_name {
+  #   type: string
+  #   sql: ${TABLE}.shape_name ;;
+  # }
+
   dimension: shape_name {
+    label: "region name"
+    # map_layer_name: union_13layers_v2
     type: string
     sql: ${TABLE}.shape_name ;;
   }
+
   dimension: stat_area {
     type: number
     sql: ${TABLE}.StatArea ;;
