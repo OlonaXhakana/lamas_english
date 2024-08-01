@@ -21,9 +21,20 @@ view: vm_pop {
     type: string
     sql: ${TABLE}.NatRegHeb ;;
   }
+  # dimension: pop_approx {
+  #   type: number
+  #   sql: ${TABLE}.pop_approx ;;
+  # }
+
   dimension: pop_approx {
     type: number
     sql: ${TABLE}.pop_approx ;;
+    value_format: "#,##0"
+    html:
+        <div style="line-height:1.2;">
+          <span style="color:#22282D;font-size:16px;font-weight:700;letter-spacing:0;">Total population</span><br>
+          <span style="color:#22282D;font-size:44px;font-weight:600;letter-spacing:-1;">{{ rendered_value }}</span><br>
+        </div>;;
   }
 
   # dimension: pop_density {
@@ -38,10 +49,10 @@ view: vm_pop {
     html:
         <div style="line-height:1.2;">
         {% if value == 'missing data' %}
-          <span style="color:#22282D;font-size:16px;font-weight:700;letter-spacing:0;">צפיפות אוכלוסייה לקמ"ר</span><br>
-          <span style="color:#22282D;font-size:16px;letter-spacing:0;">נתון חסר</span>
+          <span style="color:#22282D;font-size:16px;font-weight:700;letter-spacing:0;">population per km</span><br>
+          <span style="color:#22282D;font-size:16px;letter-spacing:0;">missing data</span>
         {% else %}
-          <span style="color:#22282D;font-size:16px;font-weight:700;letter-spacing:0;">צפיפות אוכלוסייה לקמ"ר</span><br>
+          <span style="color:#22282D;font-size:16px;font-weight:700;letter-spacing:0;">population per km</span><br>
           <span style="color:#22282D;font-size:44px;font-weight:600;letter-spacing:-1;">{{ rendered_value }}</span>
         {% endif %}
         </div> ;;
