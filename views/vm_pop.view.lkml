@@ -77,7 +77,17 @@ view: vm_pop {
   dimension: pop_density {
     type: string
     value_format: "#,##0.0"
-    sql: ${TABLE}.Foreign_pcnt ;;
+    sql: coalesce(cast(${TABLE}.pop_density as string), 'נתון חסר') ;;
+    html:
+        <div style="line-height:1.2;">
+        {% if value == 'נתון חסר' %}
+<span style="color:#22282D;font-size:16px;font-weight:700;letter-spacing:0;">Population density per square kilometer</span><br>
+<span style="color:#22282D;font-size:16px;letter-spacing:0;">missing data</span>
+{% else %}
+<span style="color:#22282D;font-size:16px;font-weight:700;letter-spacing:0;">Population density per square kilometer</span><br>
+<span style="color:#22282D;font-size:44px;font-weight:600;letter-spacing:-1;">{{ rendered_value }}</span>
+        {% endif %}
+        </div> ;;
 
   }
 
@@ -91,7 +101,7 @@ view: vm_pop {
   # }
 
   dimension: shape_name {
-    label: "region name"
+    # label: "region name"
     # map_layer_name: union_13layers_v2
     type: string
     sql: ${TABLE}.shape_name ;;
