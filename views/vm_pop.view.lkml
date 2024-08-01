@@ -27,10 +27,24 @@ view: vm_pop {
     type: string
     sql: ${TABLE}.DistrictHeb ;;
   }
+
   dimension: foreign_pcnt {
     type: number
-    sql: ${TABLE}.Foreign_pcnt ;;
+    label: "percentage of foreigners"
+    value_format: "0.0\%"
+    sql: coalesce(cast(${TABLE}.Foreign_pcnt as string), 'missing data') ;;
+    html:
+        <div style="line-height:1.2;">
+        {% if value == 'missing data' %}
+          <span style="color:#22282D;font-size:16px;font-weight:700;letter-spacing:0;">percentage of foreigners</span><br>
+          <span style="color:#22282D;font-size:16px;letter-spacing:0;">missing data</span>
+        {% else %}
+          <span style="color:#22282D;font-size:16px;font-weight:700;letter-spacing:0;">percentage of foreigners</span><br>
+          <span style="color:#22282D;font-size:44px;font-weight:600;letter-spacing:-1;">{{ rendered_value }}</span>
+        {% endif %}
+        </div> ;;
   }
+
   dimension: inst_pcnt {
     type: number
     sql: ${TABLE}.inst_pcnt ;;
@@ -63,17 +77,8 @@ view: vm_pop {
   dimension: pop_density {
     type: string
     value_format: "#,##0.0"
-    sql: coalesce(cast(${TABLE}.pop_density as string), 'missing data') ;;
-    html:
-        <div style="line-height:1.2;">
-        {% if value == 'missing data' %}
-          <span style="color:#22282D;font-size:16px;font-weight:700;letter-spacing:0;">population per km</span><br>
-          <span style="color:#22282D;font-size:16px;letter-spacing:0;">missing data</span>
-        {% else %}
-          <span style="color:#22282D;font-size:16px;font-weight:700;letter-spacing:0;">population per km</span><br>
-          <span style="color:#22282D;font-size:44px;font-weight:600;letter-spacing:-1;">{{ rendered_value }}</span>
-        {% endif %}
-        </div> ;;
+    sql: ${TABLE}.Foreign_pcnt ;;
+
   }
 
   dimension: quarter {
@@ -134,17 +139,7 @@ view: vm_pop {
     type: sum
     label: "percentage of foreigners"
     value_format: "0.0\%"
-    sql: coalesce(cast(${TABLE}.Foreign_pcnt as string), 'missing data') ;;
-    html:
-        <div style="line-height:1.2;">
-        {% if value == 'missing data' %}
-          <span style="color:#22282D;font-size:16px;font-weight:700;letter-spacing:0;">percentage of foreigners</span><br>
-          <span style="color:#22282D;font-size:16px;letter-spacing:0;">missing data</span>
-        {% else %}
-          <span style="color:#22282D;font-size:16px;font-weight:700;letter-spacing:0;">percentage of foreigners</span><br>
-          <span style="color:#22282D;font-size:44px;font-weight:600;letter-spacing:-1;">{{ rendered_value }}</span>
-        {% endif %}
-        </div> ;;
+
   }
 
   measure: inst_pcnt_m {
