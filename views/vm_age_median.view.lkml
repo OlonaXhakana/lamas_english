@@ -17,12 +17,12 @@ view: vm_age_median {
     sql: coalesce(cast(${TABLE}.DependencyRatio as string), 'missing data') ;;
     html:
         <div style="line-height:1.2;">
-        {% if value == 'נתון חסר' %}
-          <span style="color:#22282D;font-size:16px;font-weight:700;letter-spacing:0;">יחס תלות ל-1,000 נפשות</span><br>
-          <span style="color:#22282D;font-size:16px;font-weight:700;letter-spacing:0;">נתון חסר</span>
-        {% else %}
-          <span style="color:#22282D;font-size:16px;font-weight:700;letter-spacing:0;">יחס תלות ל-1,000 נפשות</span><br>
-          <span style="color:#22282D;font-size:44px;font-weight:600;letter-spacing:-1;">{{ rendered_value }}</span>
+        {% if value == 'missing data' %}
+         <span style="color:#22282D;font-size:16px;font-weight:700;letter-spacing:0;">Dependency ratio per 1,000 people</span><br>
+<span style="color:#22282D;font-size:16px;font-weight:700;letter-spacing:0;">Missing data</span>
+{% else %}
+<span style="color:#22282D;font-size:16px;font-weight:700;letter-spacing:0;">Dependency ratio per 1,000 people</span><br>
+<span style="color:#22282D;font-size:44px;font-weight:600;letter-spacing:-1;">{{ rendered_value }}</span>
         {% endif %}
         </div> ;;
   }

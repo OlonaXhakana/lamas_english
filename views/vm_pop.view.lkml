@@ -8,32 +8,56 @@ view: vm_pop {
 
   dimension: change_pcnt {
     type: string
-    label: "Percentage of population size change compared to the 2008 census"
-    value_format: "0.0\%"
+    value_format: "#,##0.0"
     sql: coalesce(cast(${TABLE}.change_pcnt as string), 'missing data') ;;
     html:
         <div style="line-height:1.2;">
         {% if value == 'missing data' %}
-          <span style="color:#22282D;font-size:16px;font-weight:700;letter-spacing:0;"> The population change from the 2008 census </span><br
-          <span style="color:#22282D;font-size:16px;letter-spacing:0;"> missing data </span>
+          <span style="color:#22282D;font-size:16px;font-weight:700;letter-spacing:0;"> The population change from the 2008 census</span><br>
+          <span style="color:#22282D;font-size:16px;letter-spacing:0;">missing data</span>
         {% else %}
-          <span style="color:#22282D;font-size:16px;font-weight:700;letter-spacing:0;"> The population change from the 2008 census </span><br>
+          <span style="color:#22282D;font-size:16px;font-weight:700;letter-spacing:0;"> The population change from the 2008 census</span><br>
           <span style="color:#22282D;font-size:44px;font-weight:600;letter-spacing:-1;">{{ rendered_value }}</span>
         {% endif %}
         </div> ;;
   }
 
+
   dimension: district_heb {
     type: string
     sql: ${TABLE}.DistrictHeb ;;
   }
+
   dimension: foreign_pcnt {
     type: number
-    sql: ${TABLE}.Foreign_pcnt ;;
+    label: "percentage of foreigners"
+    value_format: "0.0\%"
+    sql: coalesce(cast(${TABLE}.Foreign_pcnt as string), 'missing data') ;;
+    html:
+        <div style="line-height:1.2;">
+        {% if value == 'missing data' %}
+          <span style="color:#22282D;font-size:16px;font-weight:700;letter-spacing:0;">Percentage of foreigners</span><br>
+          <span style="color:#22282D;font-size:16px;letter-spacing:0;">missing data</span>
+        {% else %}
+          <span style="color:#22282D;font-size:16px;font-weight:700;letter-spacing:0;">Percentage of foreigners</span><br>
+          <span style="color:#22282D;font-size:44px;font-weight:600;letter-spacing:-1;">{{ rendered_value }}</span>
+        {% endif %}
+        </div> ;;
   }
+
   dimension: inst_pcnt {
     type: number
-    sql: ${TABLE}.inst_pcnt ;;
+    sql: coalesce(cast(${TABLE}.inst_pcnt as string), 'missing data') ;;
+    html:
+        <div style="line-height:1.2;">
+        {% if value == 'missing data' %}
+<span style="color:#22282D;font-size:16px;font-weight:700;letter-spacing:0;">Residents of the institutions</span><br>
+<span style="color:#22282D;font-size:16px;letter-spacing:0;">missing data</span>
+        {% else %}
+<span style="color:#22282D;font-size:16px;font-weight:700;letter-spacing:0;">Residents of the institutions</span><br>
+<span style="color:#22282D;font-size:44px;font-weight:600;letter-spacing:-1;">{{ rendered_value }}</span>
+        {% endif %}
+        </div> ;;
   }
   dimension: nat_reg_heb {
     type: string
@@ -63,27 +87,36 @@ view: vm_pop {
   dimension: pop_density {
     type: string
     value_format: "#,##0.0"
-    sql: coalesce(cast(${TABLE}.pop_density as string), 'missing data') ;;
+    sql: coalesce(cast(${TABLE}.pop_density as string), 'נתון חסר') ;;
     html:
         <div style="line-height:1.2;">
-        {% if value == 'missing data' %}
-          <span style="color:#22282D;font-size:16px;font-weight:700;letter-spacing:0;">population per km</span><br>
-          <span style="color:#22282D;font-size:16px;letter-spacing:0;">missing data</span>
-        {% else %}
-          <span style="color:#22282D;font-size:16px;font-weight:700;letter-spacing:0;">population per km</span><br>
-          <span style="color:#22282D;font-size:44px;font-weight:600;letter-spacing:-1;">{{ rendered_value }}</span>
+        {% if value == 'נתון חסר' %}
+<span style="color:#22282D;font-size:16px;font-weight:700;letter-spacing:0;">Population density per square kilometer</span><br>
+<span style="color:#22282D;font-size:16px;letter-spacing:0;">missing data</span>
+{% else %}
+<span style="color:#22282D;font-size:16px;font-weight:700;letter-spacing:0;">Population density per square kilometer</span><br>
+<span style="color:#22282D;font-size:44px;font-weight:600;letter-spacing:-1;">{{ rendered_value }}</span>
         {% endif %}
         </div> ;;
+
   }
 
   dimension: quarter {
     type: number
     sql: ${TABLE}.Quarter ;;
   }
+  # dimension: shape_name {
+  #   type: string
+  #   sql: ${TABLE}.shape_name ;;
+  # }
+
   dimension: shape_name {
+    # label: "region name"
+    # map_layer_name: union_13layers_v2
     type: string
     sql: ${TABLE}.shape_name ;;
   }
+
   dimension: stat_area {
     type: number
     sql: ${TABLE}.StatArea ;;
@@ -126,7 +159,7 @@ view: vm_pop {
     type: sum
     label: "percentage of foreigners"
     value_format: "0.0\%"
-    sql: ${TABLE}.Foreign_pcnt ;;
+
   }
 
   measure: inst_pcnt_m {
