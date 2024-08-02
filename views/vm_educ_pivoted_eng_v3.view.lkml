@@ -89,11 +89,11 @@ view: vm_educ_pivoted_eng_v3 {
         <div style="line-height:1.2;">
         {% if value == 'נתון חסר' %}
           <img src="https://dashboard.cbs.gov.il/cbs-data/Infographics/yeshiva_pcnt.svg" width="45px" height="45px"/><br>
-          <span style="color:#22282D;font-size:16px;font-weight:700;letter-spacing:0;">למדו בישיבה</span><br>
-          <span style="color:#22282D;font-size:16px;letter-spacing:0;">נתון חסר</span>
+          <span style="color:#22282D;font-size:16px;font-weight:700;letter-spacing:0;">studied in a yeshiva</span><br>
+          <span style="color:#22282D;font-size:16px;letter-spacing:0;">a mising figure</span>
         {% else %}
           <img src="https://dashboard.cbs.gov.il/cbs-data/Infographics/yeshiva_pcnt.svg" width="45px" height="45px"/><br>
-          <span style="color:#22282D;font-size:16px;font-weight:700;letter-spacing:0;">למדו בישיבה</span><br>
+          <span style="color:#22282D;font-size:16px;font-weight:700;letter-spacing:0;">studied in a yeshiva</span><br>
           <span style="color:#22282D;font-size:44px;font-weight:600;letter-spacing:-1;">{{ rendered_value }}</span><br>
         {% endif %}
         </div> ;;
