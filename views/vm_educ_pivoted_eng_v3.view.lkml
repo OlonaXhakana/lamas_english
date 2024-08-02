@@ -87,7 +87,7 @@ view: vm_educ_pivoted_eng_v3 {
     sql: IF(${TABLE}.value != 0, cast(${TABLE}.value as string), 'נתון חסר') ;;
     html:
         <div style="line-height:1.2;">
-        {% if value == 'נתון חסר' %}
+        {% if value == 'a missing figure' %}
           <img src="https://dashboard.cbs.gov.il/cbs-data/Infographics/yeshiva_pcnt.svg" width="45px" height="45px"/><br>
           <span style="color:#22282D;font-size:16px;font-weight:700;letter-spacing:0;">studied in a yeshiva</span><br>
           <span style="color:#22282D;font-size:16px;letter-spacing:0;">a mising figure</span>
