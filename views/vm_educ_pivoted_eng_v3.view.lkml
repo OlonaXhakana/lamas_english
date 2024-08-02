@@ -28,12 +28,12 @@ view: vm_educ_pivoted_eng_v3 {
   dimension: metric_eng {
     label: " "
     type: string
-    sql: ${TABLE}.metric_heb ;;
+    sql: ${TABLE}.metric_eng ;;
   }
 
   dimension: metric_order {
     type: string
-    sql: ${TABLE}.metric_heb_order ;;
+    sql: ${TABLE}.metric_order ;;
   }
 
   dimension: nat_reg_heb {
