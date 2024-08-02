@@ -33,6 +33,13 @@ view: vm_status_unpivoted_v2_eng {
     type: number
     sql: ${TABLE}.value ;;
   }
+
+  measure: value_sum {
+    type: sum
+    value_format: "0.0\%"
+    sql: ${TABLE}.value ;;
+  }
+
   measure: count {
     type: count
     drill_fields: [shape_name, name]
