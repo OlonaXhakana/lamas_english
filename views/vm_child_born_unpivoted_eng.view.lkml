@@ -1,13 +1,13 @@
-view: vm_child_born_unpivoted {
-  sql_table_name: `jutomate-lamas-english.MODELLING.vm_child_born_unpivoted` ;;
+view: vm_child_born_unpivoted_eng {
+  sql_table_name: `jutomate-lamas-english.MODELLING.vm_child_born_unpivoted_eng` ;;
 
   dimension: metric_name {
     type: string
     sql: ${TABLE}.metric_name ;;
   }
-  dimension: metric_name_heb {
+  dimension: metric_name_eng {
     type: string
-    sql: ${TABLE}.metric_name_heb ;;
+    sql: ${TABLE}.metric_name_eng ;;
   }
   dimension: shape_name {
     type: string

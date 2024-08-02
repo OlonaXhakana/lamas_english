@@ -1,17 +1,17 @@
-view: vm_status_unpivoted_v2 {
-  sql_table_name: `jutomate-lamas-english.MODELLING.vm_status_unpivoted_v2` ;;
+view: vm_status_unpivoted_v2_eng {
+  sql_table_name: `jutomate-lamas-english.MODELLING.vm_status_unpivoted_v2_eng` ;;
 
-  dimension: ages_heb {
+  dimension: ages_eng {
     type: string
-    sql: ${TABLE}.ages_heb ;;
+    sql: ${TABLE}.ages_eng ;;
   }
   dimension: ages_order_by_numbers {
     type: number
     sql: ${TABLE}.ages_order_by_numbers ;;
   }
-  dimension: gender_heb {
+  dimension: gender_eng {
     type: string
-    sql: ${TABLE}.gender_heb ;;
+    sql: ${TABLE}.gender_eng ;;
   }
   dimension: name {
     type: string
@@ -21,9 +21,9 @@ view: vm_status_unpivoted_v2 {
     type: string
     sql: ${TABLE}.shape_name ;;
   }
-  dimension: status_heb {
+  dimension: status_eng {
     type: string
-    sql: ${TABLE}.status_heb ;;
+    sql: ${TABLE}.status_eng ;;
   }
   dimension: type {
     type: string

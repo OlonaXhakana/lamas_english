@@ -15,7 +15,7 @@ explore: vm_age_median {}
 explore: vm_age_pivoted {}
 explore: vm_child_born {}
 explore: vm_compare {}
-explore: vm_child_born_unpivoted {}
+explore: vm_child_born_unpivoted_eng {}
 explore: vm_disabilites_unpivoted_v2 {}
 explore: vm_educ {}
 explore: vm_educ_pivoted_v2{}
@@ -30,7 +30,7 @@ explore: vm_origin_pivoted {}
 explore: vm_origin_pivoted_v3 {}
 explore: vm_pop {}
 explore: vm_religion_v2 {}
-explore: vm_status_unpivoted_v2 {}
+explore: vm_status_unpivoted_v2_eng {}
 explore: vm_work_n_wage {}
 explore: vm_work_n_wage_unpivoted {}
 explore: vm_educ_pivoted_eng {}
