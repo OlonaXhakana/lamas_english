@@ -47,7 +47,7 @@ view: vm_pop {
 
   dimension: inst_pcnt {
     type: number
-    sql: coalesce(cast(${TABLE}.Foreign_pcnt as string), 'missing data') ;;
+    sql: coalesce(cast(${TABLE}.inst_pcnt as string), 'missing data') ;;
     html:
         <div style="line-height:1.2;">
         {% if value == 'missing data' %}
