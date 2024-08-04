@@ -36,3 +36,4 @@ explore: vm_work_n_wage_unpivoted {}
 explore: vm_educ_pivoted_eng {}
 explore: vm_educ_pivoted_eng_v3 {}
 explore: vm_educ_pivoted_eng_2 {}
+explore: vm_religion_v2_eng {}
