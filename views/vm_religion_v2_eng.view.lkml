@@ -35,9 +35,9 @@ view: vm_religion_v2_eng {
     sql: ${TABLE}.Quarter ;;
   }
 
-  dimension: religion_eng {
+  dimension: religion_heb {
     type: string
-    sql: ${TABLE}.ReligionEng ;;
+    sql: ${TABLE}.ReligionHeb ;;
   }
 
   dimension: hh_midatdatiyut_name {
@@ -88,7 +88,7 @@ view: vm_religion_v2_eng {
     html:
         <div style="line-height:1.2;">
           <span style="color:#22282D;font-size:16px;font-weight:700;letter-spacing:0;"> Main religion</span><br>
-          <span style="color:#22282D;font-size:44px;font-weight:600;letter-spacing:0;">{{ religion_eng }}</span><br>
+          <span style="color:#22282D;font-size:44px;font-weight:600;letter-spacing:0;">{{ religion_heb }}</span><br>
           <span style="color:#22282D;font-size:44px;font-weight:600;letter-spacing:-1;">{{ value_m_2 }}%</span>
         </div> ;;
   }
@@ -100,7 +100,7 @@ view: vm_religion_v2_eng {
   #       <div style="line-height:1.2;">
   #           <img src="https://dashboard.cbs.gov.il/cbs-data/Infographics/religion_icon.png" width="45px" height="45px"/><br>
   #           <span style="color:#22282D;font-size:16px;font-weight:700;letter-spacing:0;">Main religion</span><br>
-  #           <span style="color:#22282D;font-size:44px;font-weight:600;letter-spacing:0;">{{ religion_eng }}</span><br>
+  #           <span style="color:#22282D;font-size:44px;font-weight:600;letter-spacing:0;">{{ religion_heb}}</span><br>
   #           <span style="color:#22282D;font-size:44px;font-weight:600;letter-spacing:-1;">{{ value_m_2 }}%</span>
   #       </div>;;
   # }
@@ -113,16 +113,16 @@ view: vm_religion_v2_eng {
         <div style="line-height:1.2;">
             <img src="https://dashboard.cbs.gov.il/cbs-data/Infographics/religion_icon.svg" width="45px" height="45px"/><br>
             <span style="color:#22282D;font-size:16px;font-weight:700;letter-spacing:0;">Main religion</span><br>
-            <span style="color:#22282D;font-size:44px;font-weight:600;letter-spacing:-1;">{{ value_m_2 }}% - {{ religion_eng }}</span>
+            <span style="color:#22282D;font-size:44px;font-weight:600;letter-spacing:-1;">{{ value_m_2 }}% - {{ religion_heb }}</span>
         </div>;;
   }
 
-  # html: <div style=line-height:1.2;font-size:16px;>דת עיקרית<br><span style="color:#2D4A99;font-size:44px;">{{ religion_eng }}</span><br><span style="color:#2D4A99;font-size:44px;">{{ value_m_2 }}%</span> ;;
+  # html: <div style=line-height:1.2;font-size:16px;>דת עיקרית<br><span style="color:#2D4A99;font-size:44px;">{{ religion_heb }}</span><br><span style="color:#2D4A99;font-size:44px;">{{ value_m_2 }}%</span> ;;
 
   # dimension: religion_text {
   #   type: string
   #   sql: 1 ;;
-  #   html: <span style="line-height:30px;font-size:24px;">Main religion</span><br><span style="color:#12B5CB;font-size:18px;">{{religion_eng}}</span><br><span style="color:#12B5CB;font-size:18px">{{value_m_2}}%</span> ;;
+  #   html: <span style="line-height:30px;font-size:24px;">Main religion</span><br><span style="color:#12B5CB;font-size:18px;">{{religion_heb}}</span><br><span style="color:#12B5CB;font-size:18px">{{value_m_2}}%</span> ;;
   # }
 
   dimension: midatdatiyut_text {
