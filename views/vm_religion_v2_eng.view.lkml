@@ -82,7 +82,7 @@ view: vm_religion_v2_eng {
   }
 
   dimension: religion_text {
-    label:  "Percent main religion"
+    label:  "Percent of main religion"
     type: string
     sql: ${value} ;;
     html:
