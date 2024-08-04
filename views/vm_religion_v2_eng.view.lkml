@@ -131,7 +131,7 @@ view: vm_religion_v2_eng {
     sql: ${value} ;;
     html:
         <div style=line-height:1.2;>
-          <span style="color:#22282D;font-size:16px;font-weight:700;letter-spacing:0;">The main lifestyle in the househol</span><br>
+          <span style="color:#22282D;font-size:16px;font-weight:700;letter-spacing:0;">The main lifestyle in the household</span><br>
           <span style="color:#22282D;font-size:44px;font-weight:600;letter-spacing:0;">{{ hh_midatdatiyut_name }}</span><br>
           <span style="color:#22282D;font-size:44px;font-weight:600;letter-spacing:-1;">{{ value_m_2 }}%</span>
         </div>;;
