@@ -117,7 +117,7 @@ view: vm_religion_v2_eng {
         </div>;;
   }
 
-  # html: <div style=line-height:1.2;font-size:16px;>דת עיקרית<br><span style="color:#2D4A99;font-size:44px;">{{ religion_heb }}</span><br><span style="color:#2D4A99;font-size:44px;">{{ value_m_2 }}%</span> ;;
+  # html: <div style=line-height:1.2;font-size:16px;>דת עיקרית<br><span style="color:#2D4A99;font-size:44px;">{{ religion_eng }}</span><br><span style="color:#2D4A99;font-size:44px;">{{ value_m_2 }}%</span> ;;
 
   # dimension: religion_text {
   #   type: string
