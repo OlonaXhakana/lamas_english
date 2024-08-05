@@ -233,6 +233,24 @@ view: vm_household {
     type: number
     sql: ${TABLE}.hh_total_thou_95 ;;
   }
+
+  dimension: housing_dens_avg {
+    type: string
+    sql: coalesce(cast(${TABLE}.HousingDens_avg as string), 'missing data') ;;
+    value_format: "0.0"
+    html:
+        <div style="line-height:1.2;">
+{% if value == 'missing data' %}
+<span style="color:#22282D;font-size:16px;font-weight:700;letter-spacing:0;">Average housing density</span><br>
+<span style="color:#22282D;font-size:16px;letter-spacing:0;">missing data</span>
+{% else %}
+<span style="color:#22282D;font-size:16px;font-weight:700;letter-spacing:0;">Average housing density</span><br>
+<span style="color:#22282D;font-size:44px;font-weight:600;letter-spacing:-1;">{{ rendered_value }}</span>
+        {% endif %}
+        </div> ;;
+  }
+
+
   dimension: housing_dens1_pcnt {
     type: number
     sql: ${TABLE}.HousingDens1_pcnt ;;
@@ -241,10 +259,10 @@ view: vm_household {
     type: number
     sql: ${TABLE}.HousingDens2_pcnt ;;
   }
-  dimension: housing_dens_avg {
-    type: number
-    sql: ${TABLE}.HousingDens_avg ;;
-  }
+  # dimension: housing_dens_avg {
+  #   type: number
+  #   sql: ${TABLE}.HousingDens_avg ;;
+  # }
   dimension: non_fam_approx {
     type: number
     sql: ${TABLE}.NonFam_approx ;;
