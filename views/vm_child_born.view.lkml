@@ -8,14 +8,19 @@ view: vm_child_born {
   # }
 
   dimension: chld_born_avg {
-    type: number
-    sql: ${TABLE}.chld_born_avg ;;
-    value_format: "#,##0"
+    type: string
+    value_format: "#,##0.0"
+    sql: coalesce(cast(${TABLE}.Chld_born_avg as string), 'missing data') ;;
     html:
         <div style="line-height:1.2;">
-          <span style="color:#22282D;font-size:16px;font-weight:700;letter-spacing:0;">  Average number of children per woman until due deadline </span><br>
-          <span style="color:#22282D;font-size:44px;font-weight:600;letter-spacing:-1;">{{ rendered_value }}</span><br>
-        </div>;;
+        {% if value == 'missing data' %}
+<span style="color:#22282D;font-size:16px;font-weight:700;letter-spacing:0;">Average number of children per woman until due deadliner</span><br>
+<span style="color:#22282D;font-size:16px;letter-spacing:0;">missing data</span>
+{% else %}
+<span style="color:#22282D;font-size:16px;font-weight:700;letter-spacing:0;">Average number of children per woman until due deadline</span><br>
+<span style="color:#22282D;font-size:44px;font-weight:600;letter-spacing:-1;">{{ rendered_value }}</span>
+        {% endif %}
+        </div> ;;
   }
 
   dimension: chld_born_avg_08 {
