@@ -1,13 +1,13 @@
-view: vm_origin_pivoted_v3 {
-  sql_table_name: `jutomate-lamas-english.MODELLING.vm_origin_pivoted_v3` ;;
+view: vm_origin_pivoted_v3_eng {
+  sql_table_name: `jutomate-lamas-english.MODELLING.vm_origin_pivoted_v3_eng` ;;
 
-  dimension: metric_name_heb {
+  dimension: metric_name_eng {
     type: string
-    sql: ${TABLE}.metric_name_heb ;;
+    sql: ${TABLE}.metric_name_eng ;;
   }
-  dimension: order_metric_name_heb {
+  dimension: order_metric_name_eng {
     type: string
-    sql: ${TABLE}.order_metric_name_heb ;;
+    sql: ${TABLE}.order_metric_name_eng ;;
   }
   dimension: shape_name {
     type: string
