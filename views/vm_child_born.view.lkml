@@ -1,10 +1,23 @@
 view: vm_child_born {
   sql_table_name: `jutomate-lamas-english.MODELLING.vm_child_born` ;;
 
+  # dimension: chld_born_avg {
+
+  #   type: number
+  #   sql: ${TABLE}.ChldBorn_avg ;;
+  # }
+
   dimension: chld_born_avg {
     type: number
-    sql: ${TABLE}.ChldBorn_avg ;;
+    sql: ${TABLE}.chld_born_avg ;;
+    value_format: "#,##0"
+    html:
+        <div style="line-height:1.2;">
+          <span style="color:#22282D;font-size:16px;font-weight:700;letter-spacing:0;">  Average number of children per woman until due deadline </span><br>
+          <span style="color:#22282D;font-size:44px;font-weight:600;letter-spacing:-1;">{{ rendered_value }}</span><br>
+        </div>;;
   }
+
   dimension: chld_born_avg_08 {
     type: number
     sql: ${TABLE}.ChldBorn_avg_08 ;;
