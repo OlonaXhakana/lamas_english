@@ -28,7 +28,6 @@ view: vm_household_unpivoted_eng {
     sql: ${TABLE}.value ;;
   }
 
-
   measure: count {
     type: count
     drill_fields: [metric_name, shape_name]
