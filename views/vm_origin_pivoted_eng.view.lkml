@@ -25,6 +25,13 @@ view: vm_origin_pivoted_eng {
     type: number
     sql: ${TABLE}.value ;;
   }
+
+  measure: value_sum {
+    value_format: "0.0\%"
+    type: sum
+    sql: ${TABLE}.value ;;
+  }
+
   measure: count {
     type: count
     drill_fields: [metric_name, shape_name]
