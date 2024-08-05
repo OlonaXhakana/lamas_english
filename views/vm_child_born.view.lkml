@@ -10,11 +10,11 @@ view: vm_child_born {
   dimension: chld_born_avg {
     type: string
     value_format: "#,##0.0"
-    sql: coalesce(cast(${TABLE}.Chld_born_avg as string), 'missing data') ;;
+    sql: coalesce(cast( ${TABLE}.ChldBorn_avg as string), 'missing data') ;;
     html:
         <div style="line-height:1.2;">
         {% if value == 'missing data' %}
-<span style="color:#22282D;font-size:16px;font-weight:700;letter-spacing:0;">Average number of children per woman until due deadliner</span><br>
+<span style="color:#22282D;font-size:16px;font-weight:700;letter-spacing:0;">Average number of children per woman until due deadline</span><br>
 <span style="color:#22282D;font-size:16px;letter-spacing:0;">missing data</span>
 {% else %}
 <span style="color:#22282D;font-size:16px;font-weight:700;letter-spacing:0;">Average number of children per woman until due deadline</span><br>
