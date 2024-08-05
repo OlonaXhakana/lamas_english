@@ -61,14 +61,40 @@ view: vm_household {
     type: number
     sql: ${TABLE}.age85sef_pcnt_95 ;;
   }
+
   dimension: cellphone_ratio {
-    type: number
-    sql: ${TABLE}.cellphone_ratio ;;
+
+    type: string
+    # value_format: ""
+    sql: coalesce(cast(${TABLE}.cellphone_ratio as string), 'missing data') ;;
+    html:
+        <div style="line-height:1.2;">
+        {% if value == 'missing data' %}
+          <span style="color:#22282D;font-size:16px;font-weight:700;letter-spacing:0;">Mobile phone ratio for ages 6 and up</span><br>
+          <span style="color:#22282D;font-size:16px;letter-spacing:0;">missing data</span>
+        {% else %}
+          <span style="color:#22282D;font-size:16px;font-weight:700;letter-spacing:0;">Mobile phone ratio for ages 6 and up</span><br>
+          <span style="color:#22282D;font-size:44px;font-weight:600;letter-spacing:-1;">{{ rendered_value }}</span>
+        {% endif %}
+        </div> ;;
   }
+
   dimension: computer_avg {
-    type: number
-    sql: ${TABLE}.Computer_avg ;;
+    type: string
+    # value_format: ""
+    sql: coalesce(cast(${TABLE}.Computer_avg as string), 'missing data') ;;
+    html:
+        <div style="line-height:1.2;">
+        {% if value == 'missing data' %}
+          <span style="color:#22282D;font-size:16px;font-weight:700;letter-spacing:0;">Average number of computers per household</span><br>
+          <span style="color:#22282D;font-size:16px;letter-spacing:0;">missing data</span>
+        {% else %}
+          <span style="color:#22282D;font-size:16px;font-weight:700;letter-spacing:0;">Average number of computers per household</span><br>
+          <span style="color:#22282D;font-size:44px;font-weight:600;letter-spacing:-1;">{{ rendered_value }}</span>
+        {% endif %}
+        </div> ;;
   }
+
   dimension: fam_approx {
     type: number
     sql: ${TABLE}.Fam_approx ;;
