@@ -260,6 +260,7 @@ view: vm_household {
     sql: ${TABLE}.hh_total_thou_95 ;;
   }
 
+
   dimension: housing_dens_avg {
     type: string
     sql: coalesce(cast(${TABLE}.HousingDens_avg as string), 'missing data') ;;
@@ -418,14 +419,45 @@ view: vm_household {
     type: string
     sql: ${TABLE}.type ;;
   }
+
   dimension: vehicle1up_pcnt {
     type: number
     sql: ${TABLE}.Vehicle1up_pcnt ;;
   }
+
+  dimension: cars_pcnt {
+    label: "Percentage of households that have at least one vehicle at their disposal"
+    type: string
+    sql: ${vehicle1up_pcnt};;
+    html:
+      <div style=line-height:1.2;>
+        <span style="color:#22282D;font-size:16px;font-weight:700;letter-spacing:0;">Households that have at least one vehicle at their disposal</span><br>
+        <span style="color:#22282D;font-size:44px;font-weight:600;letter-spacing:-1;">{{ vehicle1up_pcnt_m }}%</span><br>
+        <span style="color:#22282D;font-size:15.6px;font-weight:700;letter-spacing:0;">Households that have at least two vehicles at their disposal</span><br>
+        <span style="color:#22282D;font-size:44px;font-weight:600;letter-spacing:-1;">{{ vehicle2up_pcnt_m }}%</span>
+      </div> ;;
+  }
+
+
   dimension: vehicle2up_pcnt {
     type: number
     sql: ${TABLE}.Vehicle2up_pcnt ;;
   }
+
+  measure: vehicle1up_pcnt_m {
+    type: sum
+    value_format: "0.0\%"
+    label: "Percentage of households that use at least one car"
+    sql: ${TABLE}.Vehicle1up_pcnt ;;
+  }
+
+  measure: vehicle2up_pcnt_m {
+    type: sum
+    value_format: "0.0\%"
+    label: "Percentage of households that use two or more cars"
+    sql: ${TABLE}.Vehicle2up_pcnt ;;
+  }
+
   measure: count {
     type: count
     drill_fields: [hh_midat_datiyut_name, shape_name]
