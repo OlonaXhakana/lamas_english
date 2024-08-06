@@ -5,9 +5,9 @@ view: vm_educ_pivoted_eng_v3 {
   ## dimensions
   #
 
-  dimension: district{
+  dimension: district_eng {
     type: string
-    sql: ${TABLE}.DistrictHeb ;;
+    sql: ${TABLE}.DistrictEng ;;
   }
 
   dimension: gender {
@@ -15,9 +15,9 @@ view: vm_educ_pivoted_eng_v3 {
     sql: ${TABLE}.gender ;;
   }
 
-  dimension: loc_name_heb {
+  dimension: loc_name_eng {
     type: string
-    sql: ${TABLE}.LocNameHeb ;;
+    sql: ${TABLE}.LocNameEng ;;
   }
 
   dimension: metric {
@@ -36,9 +36,9 @@ view: vm_educ_pivoted_eng_v3 {
     sql: ${TABLE}.metric_order ;;
   }
 
-  dimension: nat_reg_heb {
+  dimension: nat_reg_eng {
     type: string
-    sql: ${TABLE}.NatRegHeb ;;
+    sql: ${TABLE}.NatRegEng ;;
   }
 
   dimension: quarter {
@@ -66,9 +66,9 @@ view: vm_educ_pivoted_eng_v3 {
     sql: ${TABLE}.StatArea ;;
   }
 
-  dimension: sub_district_heb {
+  dimension: sub_district_eng {
     type: string
-    sql: ${TABLE}.SubDistrictHeb ;;
+    sql: ${TABLE}.SubDistrictEng ;;
   }
 
   dimension: sub_quarter {
@@ -84,21 +84,20 @@ view: vm_educ_pivoted_eng_v3 {
   dimension: value_yeshiva_pcnt_text_icon {
     type: string
     value_format: "0.0\%"
-    sql: IF(${TABLE}.value != 0, cast(${TABLE}.value as string), 'נתון חסר') ;;
+    sql: IF(${TABLE}.value != 0, cast(${TABLE}.value as string), 'missing data') ;;
     html:
         <div style="line-height:1.2;">
-        {% if value == 'a missing figure' %}
+        {% if value == 'missing data' %}
           <img src="https://dashboard.cbs.gov.il/cbs-data/Infographics/yeshiva_pcnt.svg" width="45px" height="45px"/><br>
-          <span style="color:#22282D;font-size:16px;font-weight:700;letter-spacing:0;">studied in a yeshiva</span><br>
-          <span style="color:#22282D;font-size:16px;letter-spacing:0;">a mising figure</span>
+          <span style="color:#22282D;font-size:16px;font-weight:700;letter-spacing:0;">Study sitting down</span><br>
+          <span style="color:#22282D;font-size:16px;letter-spacing:0;">missing data</span>
         {% else %}
           <img src="https://dashboard.cbs.gov.il/cbs-data/Infographics/yeshiva_pcnt.svg" width="45px" height="45px"/><br>
-          <span style="color:#22282D;font-size:16px;font-weight:700;letter-spacing:0;">studied in a yeshiva</span><br>
+          <span style="color:#22282D;font-size:16px;font-weight:700;letter-spacing:0;">Study sitting down</span><br>
           <span style="color:#22282D;font-size:44px;font-weight:600;letter-spacing:-1;">{{ rendered_value }}</span><br>
         {% endif %}
         </div> ;;
   }
-
   #
   ## measures
   #
