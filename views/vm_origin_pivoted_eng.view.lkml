@@ -26,6 +26,11 @@ view: vm_origin_pivoted_eng {
     sql: ${TABLE}.value ;;
   }
 
+  dimension: country_name {
+    type: string
+    sql: CONCAT(${vm_origin_pivoted_eng.metric_name_eng}, " ", ${vm_origin_pivoted_eng.value},"%") ;;
+  }
+
   measure: value_sum {
     value_format: "0.0\%"
     type: sum
