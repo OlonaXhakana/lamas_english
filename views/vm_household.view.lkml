@@ -61,14 +61,40 @@ view: vm_household {
     type: number
     sql: ${TABLE}.age85sef_pcnt_95 ;;
   }
+
   dimension: cellphone_ratio {
-    type: number
-    sql: ${TABLE}.cellphone_ratio ;;
+
+    type: string
+    # value_format: ""
+    sql: coalesce(cast(${TABLE}.cellphone_ratio as string), 'missing data') ;;
+    html:
+        <div style="line-height:1.2;">
+        {% if value == 'missing data' %}
+          <span style="color:#22282D;font-size:16px;font-weight:700;letter-spacing:0;">Mobile phone ratio for ages 6 and up</span><br>
+          <span style="color:#22282D;font-size:16px;letter-spacing:0;">missing data</span>
+        {% else %}
+          <span style="color:#22282D;font-size:16px;font-weight:700;letter-spacing:0;">Mobile phone ratio for ages 6 and up</span><br>
+          <span style="color:#22282D;font-size:44px;font-weight:600;letter-spacing:-1;">{{ rendered_value }}</span>
+        {% endif %}
+        </div> ;;
   }
+
   dimension: computer_avg {
-    type: number
-    sql: ${TABLE}.Computer_avg ;;
+    type: string
+    # value_format: ""
+    sql: coalesce(cast(${TABLE}.Computer_avg as string), 'missing data') ;;
+    html:
+        <div style="line-height:1.2;">
+        {% if value == 'missing data' %}
+          <span style="color:#22282D;font-size:16px;font-weight:700;letter-spacing:0;">Average number of computers per household</span><br>
+          <span style="color:#22282D;font-size:16px;letter-spacing:0;">missing data</span>
+        {% else %}
+          <span style="color:#22282D;font-size:16px;font-weight:700;letter-spacing:0;">Average number of computers per household</span><br>
+          <span style="color:#22282D;font-size:44px;font-weight:600;letter-spacing:-1;">{{ rendered_value }}</span>
+        {% endif %}
+        </div> ;;
   }
+
   dimension: fam_approx {
     type: number
     sql: ${TABLE}.Fam_approx ;;
@@ -233,6 +259,25 @@ view: vm_household {
     type: number
     sql: ${TABLE}.hh_total_thou_95 ;;
   }
+
+
+  dimension: housing_dens_avg {
+    type: string
+    sql: coalesce(cast(${TABLE}.HousingDens_avg as string), 'missing data') ;;
+    value_format: "0.0"
+    html:
+        <div style="line-height:1.2;">
+{% if value == 'missing data' %}
+<span style="color:#22282D;font-size:16px;font-weight:700;letter-spacing:0;">Average housing density</span><br>
+<span style="color:#22282D;font-size:16px;letter-spacing:0;">missing data</span>
+{% else %}
+<span style="color:#22282D;font-size:16px;font-weight:700;letter-spacing:0;">Average housing density</span><br>
+<span style="color:#22282D;font-size:44px;font-weight:600;letter-spacing:-1;">{{ rendered_value }}</span>
+        {% endif %}
+        </div> ;;
+  }
+
+
   dimension: housing_dens1_pcnt {
     type: number
     sql: ${TABLE}.HousingDens1_pcnt ;;
@@ -241,10 +286,10 @@ view: vm_household {
     type: number
     sql: ${TABLE}.HousingDens2_pcnt ;;
   }
-  dimension: housing_dens_avg {
-    type: number
-    sql: ${TABLE}.HousingDens_avg ;;
-  }
+  # dimension: housing_dens_avg {
+  #   type: number
+  #   sql: ${TABLE}.HousingDens_avg ;;
+  # }
   dimension: non_fam_approx {
     type: number
     sql: ${TABLE}.NonFam_approx ;;
@@ -257,10 +302,23 @@ view: vm_household {
     type: number
     sql: ${TABLE}.own_pcnt ;;
   }
-  dimension: parking_pcnt {
-    type: number
-    sql: ${TABLE}.Parking_pcnt ;;
-  }
+
+    dimension: parking_pcnt {
+      type: string
+      value_format: "0.0\%"
+      sql: coalesce(cast(${TABLE}.parking_pcnt as string),'missing data') ;;
+      html:
+        <div style="line-height:1.2;">
+        {% if value == 'missing data' %}
+          <span style="color:#22282D;font-size:16px;font-weight:700;letter-spacing:0;">Households that have parking available</span><br>
+          <span style="color:#22282D;font-size:16px;letter-spacing:0;">Missing data</span>
+        {% else %}
+          <span style="color:#22282D;font-size:16px;font-weight:700;letter-spacing:0;">Households that have parking available</span><br>
+          <span style="color:#22282D;font-size:44px;font-weight:600;letter-spacing:-1;">{{ rendered_value }}</span>
+        {% endif %}
+        </div> ;;
+    }
+
   dimension: rent_pcnt {
     type: number
     sql: ${TABLE}.rent_pcnt ;;
@@ -361,14 +419,45 @@ view: vm_household {
     type: string
     sql: ${TABLE}.type ;;
   }
+
   dimension: vehicle1up_pcnt {
     type: number
     sql: ${TABLE}.Vehicle1up_pcnt ;;
   }
+
+  dimension: cars_pcnt {
+    label: "Percentage of households that have at least one vehicle at their disposal"
+    type: string
+    sql: ${vehicle1up_pcnt};;
+    html:
+      <div style=line-height:1.2;>
+        <span style="color:#22282D;font-size:16px;font-weight:700;letter-spacing:0;">Households that have at least one vehicle at their disposal</span><br>
+        <span style="color:#22282D;font-size:44px;font-weight:600;letter-spacing:-1;">{{ vehicle1up_pcnt_m }}%</span><br>
+        <span style="color:#22282D;font-size:15.6px;font-weight:700;letter-spacing:0;">Households that have at least two vehicles at their disposal</span><br>
+        <span style="color:#22282D;font-size:44px;font-weight:600;letter-spacing:-1;">{{ vehicle2up_pcnt_m }}%</span>
+      </div> ;;
+  }
+
+
   dimension: vehicle2up_pcnt {
     type: number
     sql: ${TABLE}.Vehicle2up_pcnt ;;
   }
+
+  measure: vehicle1up_pcnt_m {
+    type: sum
+    value_format: "0.0\%"
+    label: "Percentage of households that use at least one car"
+    sql: ${TABLE}.Vehicle1up_pcnt ;;
+  }
+
+  measure: vehicle2up_pcnt_m {
+    type: sum
+    value_format: "0.0\%"
+    label: "Percentage of households that use two or more cars"
+    sql: ${TABLE}.Vehicle2up_pcnt ;;
+  }
+
   measure: count {
     type: count
     drill_fields: [hh_midat_datiyut_name, shape_name]
