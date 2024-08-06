@@ -99,6 +99,30 @@ view: vm_household {
     type: number
     sql: ${TABLE}.Fam_approx ;;
   }
+
+  dimension: fam_n_sngprnt {
+    type: string
+    value_format: "#,##0"
+    sql: coalesce(cast(${TABLE}.Fam_approx as string), 'missing data') ;;
+    html:
+        {% if value == 'missing data' %}
+        <div style=line-height:1;>
+          <span style="color:#22282D;font-size:16px;font-weight:700;letter-spacing:0;">Family households</span><br>
+          <span style="color:#22282D;font-size:16px;letter-spacing:0;">missing data</span><br>
+          <span style="color:#22282D;font-size:16px;font-weight:100;letter-spacing:0;">What are single-parent households:</span>
+          <span style="color:#22282D;font-size:16px;letter-spacing:0;">missing data</span>
+        {% else %}
+        <div style=line-height:1.2;>
+          <span style="color:#22282D;font-size:16px;font-weight:700;letter-spacing:0;">Family households</span><br>
+          <span style="color:#22282D;font-size:44px;font-weight:600;letter-spacing:-1;">{{ fam_approx }}</span>
+        </div>
+        <div style=line-height:22px;>
+          <span style="color:#22282D;font-size:16px;font-weight:100;letter-spacing:0;">What are single-parent households:</span>
+          <span style="color:#22282D;font-size:18px;font-weight:100;letter-spacing:0;">{{ sngl_prnt_approx }}</span>
+        {% endif %}
+        </div> ;;
+  }
+
   dimension: godel1_0_emp_pcnt {
     type: number
     sql: ${TABLE}.Godel1_0Emp_pcnt ;;
