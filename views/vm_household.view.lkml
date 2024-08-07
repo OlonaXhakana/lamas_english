@@ -304,12 +304,12 @@ view: vm_household {
   dimension: hh_total_approx {
     type: string
     value_format: "#,##0"
-    sql: coalesce(cast(${TABLE}.hh_total_approx as string), 'Missing Data') ;;
+    sql: coalesce(cast(${TABLE}.hh_total_approx as string), 'Data Missing') ;;
     html:
         <div style="line-height:1.2;">
-        {% if value == 'Missing Data' %}
+        {% if value == 'Data Missing' %}
           <span style="color:#22282D;font-size:16px;font-weight:700;letter-spacing:0;">Total Households</span><br>
-          <span style="color:#22282D;font-size:16px;letter-spacing:0;">Missing Data</span>
+          <span style="color:#22282D;font-size:16px;letter-spacing:0;">Data Missing</span>
         {% else %}
           <span style="color:#22282D;font-size:16px;font-weight:700;letter-spacing:0;">Total Households</span><br>
           <span style="color:#22282D;font-size:44px;font-weight:600;letter-spacing:-1;">{{ rendered_value }}</span><br>
@@ -321,13 +321,13 @@ view: vm_household {
     #label: "סך הכל משקי בית"
     type: number
     value_format: "#,##0"
-    sql: IFNULL(cast(${TABLE}.hh_total_approx as string), 'Missing Data') ;;
+    sql: IFNULL(cast(${TABLE}.hh_total_approx as string), 'Data Missing') ;;
     html:
-          {% if value == 'Missing Data' %}
+          {% if value == 'Data Missing' %}
                <div style="line-height:1.2;">
                <img src="https://dashboard.cbs.gov.il/cbs-data/Infographics/household_total.svg" width="45px" height="45px"/><br>
                <span style="color:#22282D;font-size:16px;font-weight:700;letter-spacing:0;">Total Households</span><br>
-               <span style="color:#22282D;font-size:16px;letter-spacing:0;">Missing Data</span>
+               <span style="color:#22282D;font-size:16px;letter-spacing:0;">Data Missing</span>
                </div>
           {% else %}
             <div style="line-height:1.2;">
@@ -393,17 +393,17 @@ view: vm_household {
   dimension: housing_dens_avg_text_icon {
     #label: "צפיפות דיור ממוצעת"
     type: string
-    sql: IFNULL(cast(${TABLE}.HousingDens_avg as string), 'נתון חסר') ;;
+    sql: IFNULL(cast(${TABLE}.HousingDens_avg as string), 'Data Missing') ;;
     value_format: "0.0"
     html:
        <div style="line-height:1.2;">
-       {% if value == 'נתון חסר' %}
+       {% if value == 'Data Missing' %}
         <img src="https://dashboard.cbs.gov.il/cbs-data/Infographics/HousingDens_avg.svg" width="45px" height="45px"/><br>
-        <span style="color:#22282D;font-size:16px;font-weight:700;letter-spacing:0;">צפיפות דיור ממוצעת</span><br>
-        <span style="color:#22282D;font-size:16px;letter-spacing:0;">נתון חסר</span>
+        <span style="color:#22282D;font-size:16px;font-weight:700;letter-spacing:0;">Average housing density</span><br>
+        <span style="color:#22282D;font-size:16px;letter-spacing:0;">Data Missing</span>
        {% else %}
         <img src="https://dashboard.cbs.gov.il/cbs-data/Infographics/HousingDens_avg.svg" width="45px" height="45px"/><br>
-        <span style="color:#22282D;font-size:16px;font-weight:700;letter-spacing:0;">צפיפות דיור ממוצעת</span><br>
+        <span style="color:#22282D;font-size:16px;font-weight:700;letter-spacing:0;">Average housing density</span><br>
         <span style="color:#22282D;font-size:44px;font-weight:600;letter-spacing:-1;">{{ rendered_value }}</span>
        {% endif %}
        </div> ;;
@@ -475,13 +475,13 @@ view: vm_household {
    # label: "אחוז משקי הבית הגרים בשכירות"
     type: string
     value_format: "0.0\%"
-    sql: IFNULL(cast(${TABLE}.rent_pcnt as string), 'Missing Data') ;;
+    sql: IFNULL(cast(${TABLE}.rent_pcnt as string), 'Data Missing') ;;
     html:
       <div style="line-height:1.2;">
-      {% if value == 'Missing Data' %}
+      {% if value == 'Data Missing' %}
         <img src="https://dashboard.cbs.gov.il/cbs-data/Infographics/hh_rent_pcnt.svg" width="45px" height="45px"/><br>
         <span style="color:#22282D;font-size:16px;font-weight:700;letter-spacing:0;">Households living in rental housing</span><br>
-        <span style="color:#22282D;font-size:16px;letter-spacing:0;">Missing Data</span>
+        <span style="color:#22282D;font-size:16px;letter-spacing:0;">Data Missing</span>
       {% else %}
         <img src="https://dashboard.cbs.gov.il/cbs-data/Infographics/hh_rent_pcnt.svg" width="45px" height="45px"/><br>
         <span style="color:#22282D;font-size:16px;font-weight:700;letter-spacing:0;">Households living in rental housing</span><br>
@@ -585,18 +585,18 @@ view: vm_household {
     #label: "ממוצע נפשות במשק הבית"
     type: string
     value_format: "0.0"
-    sql: IFNULL(cast(${TABLE}.size_avg as string), 'נתון חסר') ;;
+    sql: IFNULL(cast(${TABLE}.size_avg as string), 'Data Missing') ;;
     html:
-          {% if value == 'נתון חסר' %}
+          {% if value == 'Data missing' %}
              <div style="line-height:1.2;">
              <img src="https://dashboard.cbs.gov.il/cbs-data/Infographics/hh_size_avg.svg" width="45px" height="45px"/><br>
-             <span style="color:#22282D;font-size:16px;font-weight:700;letter-spacing:0;">ממוצע נפשות במשק הבית</span><br>
-             <span style="color:#22282D;font-size:16px;letter-spacing:0;">נתון חסר</span>
+             <span style="color:#22282D;font-size:16px;font-weight:700;letter-spacing:0;">Average household size</span><br>
+             <span style="color:#22282D;font-size:16px;letter-spacing:0;">Data Missing</span>
              </div>
           {% else %}
             <div style="line-height:1.2;">
             <img src="https://dashboard.cbs.gov.il/cbs-data/Infographics/hh_size_avg.svg" width="45px" height="45px"/><br>
-            <span style="color:#22282D;font-size:16px;font-weight:700;letter-spacing:0;">ממוצע נפשות במשק הבית</span><br>
+            <span style="color:#22282D;font-size:16px;font-weight:700;letter-spacing:0;">Average household size</span><br>
             <span style="color:#22282D;font-size:44px;font-weight:600;letter-spacing:-1;">{{ rendered_value }}</span><br>
             </div>
           {% endif %}

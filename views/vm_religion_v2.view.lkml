@@ -102,7 +102,7 @@ view: vm_religion_v2 {
   }
 
   dimension: religion_text {
-    label: "Percentage of main religion"
+    label: "Percentage of main religion_"
     type: string
     sql: ${value} ;;
     html:
@@ -133,7 +133,7 @@ view: vm_religion_v2 {
         <div style="line-height:1.2;">
             <img src="https://dashboard.cbs.gov.il/cbs-data/Infographics/religion_icon.svg" width="45px" height="45px"/><br>
             <span style="color:#22282D;font-size:16px;font-weight:700;letter-spacing:0;">Main religion</span><br>
-            <span style="color:#22282D;font-size:44px;font-weight:600;letter-spacing:-1;">{{ value_m_2 }}% - {{ religion_eng }}</span>
+            <span style="color:#22282D;font-size:44px;font-weight:600;letter-spacing:-1;">{{ religion_eng }} - {{ value_m_2 }}%</span>
         </div>;;
   }
 
