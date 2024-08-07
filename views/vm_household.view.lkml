@@ -99,6 +99,78 @@ view: vm_household {
     type: number
     sql: ${TABLE}.Fam_approx ;;
   }
+
+  dimension: fam_n_sngprnt1 {
+    type: string
+    value_format: "#,##0"
+    sql: coalesce(cast(${TABLE}.Fam_approx as string), 'missing data') ;;
+    html:
+        {% if value == 'missing data' %}
+        <div style=line-height:1;>
+          <span style="color:#22282D;font-size:16px;font-weight:700;letter-spacing:0;">Family households</span><br>
+          <span style="color:#22282D;font-size:16px;letter-spacing:0;">missing data</span><br>
+          <span style="color:#22282D;font-size:16px;font-weight:100;letter-spacing:0;">What are single-parent households:</span>
+          <span style="color:#22282D;font-size:16px;letter-spacing:0;">missing data</span>
+        {% else %}
+        <div style=line-height:1.2;>
+          <span style="color:#22282D;font-size:16px;font-weight:700;letter-spacing:0;">Family households</span><br>
+          <span style="color:#22282D;font-size:44px;font-weight:600;letter-spacing:-1;">{{ fam_approx }}</span>
+        </div>
+        <div style=line-height:22px;>
+          <span style="color:#22282D;font-size:16px;font-weight:100;letter-spacing:0;">What are single-parent households:</span>
+          <span style="color:#22282D;font-size:18px;font-weight:100;letter-spacing:0;">{{ sngl_prnt_approx }}</span>
+        {% endif %}
+        </div> ;;
+  }
+
+  dimension: hh_total_approx1 {
+    type: string
+    value_format: "#,##0"
+    sql: coalesce(cast(${TABLE}.hh_total_approx as string), 'missing data') ;;
+    html:
+        <div style="line-height:1.2;">
+        {% if value == 'missing data' %}
+          <span style="color:#22282D;font-size:16px;font-weight:700;letter-spacing:0;">Total households</span><br>
+          <span style="color:#22282D;font-size:16px;letter-spacing:0;">missing data</span>
+        {% else %}
+          <span style="color:#22282D;font-size:16px;font-weight:700;letter-spacing:0;">Total households</span><br>
+          <span style="color:#22282D;font-size:44px;font-weight:600;letter-spacing:-1;">{{ rendered_value }}</span><br>
+        {% endif %}
+        </div> ;;
+  }
+
+  dimension: non_fam_approx1 {
+    value_format: "#,##0"
+    type: string
+    sql: coalesce(cast(${TABLE}.NonFam_approx as string), 'missing data') ;;
+    html:
+        <div style="line-height:1.2;">
+        {% if value == 'missing data' %}
+          <span style="color:#22282D;font-size:16px;font-weight:700;letter-spacing:0;">Non-family households</span><br>
+          <span style="color:#22282D;font-size:16px;letter-spacing:0;">missing data</span>
+        {% else %}
+          <span style="color:#22282D;font-size:16px;font-weight:700;letter-spacing:0;">Non-family households</span><br>
+          <span style="color:#22282D;font-size:44px;font-weight:600;letter-spacing:-1;">{{ rendered_value }}</span><br>
+        {% endif %}
+        </div> ;;
+  }
+
+  dimension: size_avg1 {
+    type: string
+    value_format: "0.0"
+    sql: coalesce(cast(${TABLE}.size_avg as string), 'missing data') ;;
+    html:
+        <div style="line-height:1.2;">
+        {% if value == 'missing data' %}
+          <span style="color:#22282D;font-size:16px;font-weight:700;letter-spacing:0;">Average persons in the household</span><br>
+          <span style="color:#22282D;font-size:16px;letter-spacing:0;">missing data</span>
+        {% else %}
+          <span style="color:#22282D;font-size:16px;font-weight:700;letter-spacing:0;">Average persons in the household</span><br>
+          <span style="color:#22282D;font-size:44px;font-weight:600;letter-spacing:-1;">{{ rendered_value }}</span><br>
+        {% endif %}
+        </div> ;;
+  }
+
   dimension: godel1_0_emp_pcnt {
     type: number
     sql: ${TABLE}.Godel1_0Emp_pcnt ;;
@@ -387,10 +459,23 @@ view: vm_household {
     type: number
     sql: ${TABLE}.size7up_pcnt ;;
   }
+
   dimension: size_avg {
-    type: number
-    sql: ${TABLE}.size_avg ;;
+    type: string
+    value_format: "0.0"
+    sql: coalesce(cast(${TABLE}.size_avg as string), 'missing data') ;;
+    html:
+        <div style="line-height:1.2;">
+        {% if value == 'missing data' %}
+          <span style="color:#22282D;font-size:16px;font-weight:700;letter-spacing:0;">Average persons in the household</span><br>
+          <span style="color:#22282D;font-size:16px;letter-spacing:0;">missing data</span>
+        {% else %}
+          <span style="color:#22282D;font-size:16px;font-weight:700;letter-spacing:0;">Average persons in the household</span><br>
+          <span style="color:#22282D;font-size:44px;font-weight:600;letter-spacing:-1;">{{ rendered_value }}</span><br>
+        {% endif %}
+        </div> ;;
   }
+
   dimension: size_avg_08 {
     type: number
     sql: ${TABLE}.size_avg_08 ;;

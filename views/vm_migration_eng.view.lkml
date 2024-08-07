@@ -1,13 +1,13 @@
-view: vm_migration {
-  sql_table_name: `jutomate-lamas-english.MODELLING.vm_migration` ;;
+view: vm_migration_eng {
+  sql_table_name: `jutomate-lamas-english.MODELLING.vm_migration_eng` ;;
 
   dimension: metric {
     type: string
     sql: ${TABLE}.metric ;;
   }
-  dimension: metric_heb {
+  dimension: metric_eng {
     type: string
-    sql: ${TABLE}.metric_heb ;;
+    sql: ${TABLE}.metric_eng ;;
   }
   dimension: shape_name {
     type: string

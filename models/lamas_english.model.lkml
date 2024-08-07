@@ -25,14 +25,14 @@ explore: vm_household_unpivoted_eng {}
 explore: vm_household_unpivoted_v2_eng {}
 explore: vm_marriage_age_median {}
 explore: vm_mifkad_over_time_pivoted {}
-explore: vm_migration {}
+explore: vm_migration_eng {}
 explore: vm_origin_pivoted_eng {}
 explore: vm_origin_pivoted_v3_eng {}
 explore: vm_pop {}
 explore: vm_religion_v2 {}
 explore: vm_status_unpivoted_v2_eng {}
 explore: vm_work_n_wage {}
-explore: vm_work_n_wage_unpivoted {}
+explore: vm_work_n_wage_unpivoted_eng {}
 explore: vm_educ_pivoted_eng {}
 explore: vm_educ_pivoted_eng_v3 {}
 explore: vm_educ_pivoted_eng_2 {}
