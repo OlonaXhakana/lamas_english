@@ -304,14 +304,14 @@ view: vm_household {
   dimension: hh_total_approx {
     type: string
     value_format: "#,##0"
-    sql: coalesce(cast(${TABLE}.hh_total_approx as string), 'נתון חסר') ;;
+    sql: coalesce(cast(${TABLE}.hh_total_approx as string), 'Missing Data') ;;
     html:
         <div style="line-height:1.2;">
-        {% if value == 'נתון חסר' %}
-          <span style="color:#22282D;font-size:16px;font-weight:700;letter-spacing:0;">סך הכל משקי בית</span><br>
-          <span style="color:#22282D;font-size:16px;letter-spacing:0;">נתון חסר</span>
+        {% if value == 'Missing Data' %}
+          <span style="color:#22282D;font-size:16px;font-weight:700;letter-spacing:0;">Total Households</span><br>
+          <span style="color:#22282D;font-size:16px;letter-spacing:0;">Missing Data</span>
         {% else %}
-          <span style="color:#22282D;font-size:16px;font-weight:700;letter-spacing:0;">סך הכל משקי בית</span><br>
+          <span style="color:#22282D;font-size:16px;font-weight:700;letter-spacing:0;">Total Households</span><br>
           <span style="color:#22282D;font-size:44px;font-weight:600;letter-spacing:-1;">{{ rendered_value }}</span><br>
         {% endif %}
         </div> ;;
