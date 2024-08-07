@@ -132,6 +132,16 @@ view: vm_pop {
     sql: ${TABLE}.type ;;
   }
 
+  dimension: shape_name_eng {
+    type: string
+    sql: ${TABLE}.shape_name_eng ;;
+  }
+
+  dimension: type_eng {
+    type: string
+    sql: ${TABLE}.type_eng ;;
+  }
+
   dimension: pop_density {
     type: string
     value_format: "#,##0.0"
