@@ -684,6 +684,16 @@ view: vm_household {
     sql: ${TABLE}.type ;;
   }
 
+  dimension: shape_name_eng {
+    type: string
+    sql: ${TABLE}.shape_name_eng ;;
+  }
+
+  dimension: type_eng {
+    type: string
+    sql: ${TABLE}.type_eng ;;
+  }
+
   dimension: cars_pcnt {
     label: "אחוז משקי בית שעומד לרשותם כלי רכב אחד לפחות"
     type: string
