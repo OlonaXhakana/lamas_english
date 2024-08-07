@@ -321,18 +321,18 @@ view: vm_household {
     #label: "סך הכל משקי בית"
     type: number
     value_format: "#,##0"
-    sql: IFNULL(cast(${TABLE}.hh_total_approx as string), 'נתון חסר') ;;
+    sql: IFNULL(cast(${TABLE}.hh_total_approx as string), 'Missing Data') ;;
     html:
-          {% if value == 'נתון חסר' %}
+          {% if value == 'Missing Data' %}
                <div style="line-height:1.2;">
                <img src="https://dashboard.cbs.gov.il/cbs-data/Infographics/household_total.svg" width="45px" height="45px"/><br>
-               <span style="color:#22282D;font-size:16px;font-weight:700;letter-spacing:0;">סך הכל משקי בית</span><br>
-               <span style="color:#22282D;font-size:16px;letter-spacing:0;">נתון חסר</span>
+               <span style="color:#22282D;font-size:16px;font-weight:700;letter-spacing:0;">Total Households</span><br>
+               <span style="color:#22282D;font-size:16px;letter-spacing:0;">Missing Data</span>
                </div>
           {% else %}
             <div style="line-height:1.2;">
             <img src="https://dashboard.cbs.gov.il/cbs-data/Infographics/household_total.svg" width="45px" height="45px"/><br>
-            <span style="color:#22282D;font-size:16px;font-weight:700;letter-spacing:0;">סך הכל משקי בית</span><br>
+            <span style="color:#22282D;font-size:16px;font-weight:700;letter-spacing:0;">Total Households</span><br>
             <span style="color:#22282D;font-size:44px;font-weight:600;letter-spacing:-1;">{{ rendered_value }}</span><br>
             </div>
           {% endif %}
