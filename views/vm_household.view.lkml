@@ -475,16 +475,16 @@ view: vm_household {
    # label: "אחוז משקי הבית הגרים בשכירות"
     type: string
     value_format: "0.0\%"
-    sql: IFNULL(cast(${TABLE}.rent_pcnt as string), 'נתון חסר') ;;
+    sql: IFNULL(cast(${TABLE}.rent_pcnt as string), 'Missing Data') ;;
     html:
       <div style="line-height:1.2;">
-      {% if value == 'נתון חסר' %}
+      {% if value == 'Missing Data' %}
         <img src="https://dashboard.cbs.gov.il/cbs-data/Infographics/hh_rent_pcnt.svg" width="45px" height="45px"/><br>
-        <span style="color:#22282D;font-size:16px;font-weight:700;letter-spacing:0;">משקי הבית הגרים בשכירות</span><br>
-        <span style="color:#22282D;font-size:16px;letter-spacing:0;">נתון חסר</span>
+        <span style="color:#22282D;font-size:16px;font-weight:700;letter-spacing:0;">Households living in rental housing</span><br>
+        <span style="color:#22282D;font-size:16px;letter-spacing:0;">Missing Data</span>
       {% else %}
         <img src="https://dashboard.cbs.gov.il/cbs-data/Infographics/hh_rent_pcnt.svg" width="45px" height="45px"/><br>
-        <span style="color:#22282D;font-size:16px;font-weight:700;letter-spacing:0;">משקי הבית הגרים בשכירות</span><br>
+        <span style="color:#22282D;font-size:16px;font-weight:700;letter-spacing:0;">Households living in rental housing</span><br>
         <span style="color:#22282D;font-size:44px;font-weight:600;letter-spacing:-1;">{{ rendered_value }}</span>
       {% endif %}
       </div>;;
