@@ -32,7 +32,7 @@ explore: vm_pop {}
 explore: vm_religion_v2 {}
 explore: vm_status_unpivoted_v2_eng {}
 explore: vm_work_n_wage {}
-explore: vm_work_n_wage_unpivoted {}
+explore: vm_work_n_wage_unpivoted_eng {}
 explore: vm_educ_pivoted_eng {}
 explore: vm_educ_pivoted_eng_v3 {}
 explore: vm_educ_pivoted_eng_2 {}
