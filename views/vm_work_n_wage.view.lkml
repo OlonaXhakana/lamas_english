@@ -1,9 +1,9 @@
 view: vm_work_n_wage {
   sql_table_name: `jutomate-lamas-english.MODELLING.vm_work_n_wage` ;;
 
-#
-## dimensions:
-#
+  #
+  ## dimensions:
+  #
 
   dimension: shape_name {
     type: string
@@ -14,6 +14,17 @@ view: vm_work_n_wage {
     type: string
     sql: ${TABLE}.type ;;
   }
+
+  dimension: shape_name_eng {
+    type: string
+    sql: ${TABLE}.shape_name_eng ;;
+  }
+
+  dimension: type_eng {
+    type: string
+    sql: ${TABLE}.type_eng ;;
+  }
+
   # dimension: wrk_15_17_pcnt {
   #   type: number
   #   sql: ${TABLE}.Wrk_15_17_pcnt ;;
@@ -87,9 +98,9 @@ dimension: wrk_15_17_pcnt {
     </div>;;
   }
 
-#
-## measures:
-#
+  #
+  ## measures:
+  #
 
   measure: count {
     type: count

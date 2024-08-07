@@ -1,10 +1,9 @@
 view: vm_educ {
   sql_table_name: `jutomate-lamas-english.MODELLING.vm_educ` ;;
 
-#
-
-## dimensions:
-#
+  #
+  ## dimensions:
+  #
 
   dimension: acadm1_cert_pcnt {
     type: number
@@ -250,9 +249,19 @@ view: vm_educ {
     sql: ${TABLE}.yeshiva_pcnt ;;
   }
 
-#
-## measures:
-#
+  dimension: shape_name_eng {
+    type: string
+    sql: ${TABLE}.shape_name_eng ;;
+  }
+
+  dimension: type_eng {
+    type: string
+    sql: ${TABLE}.type_eng ;;
+  }
+
+  #
+  ## measures:
+  #
 
   measure: count {
     type: count

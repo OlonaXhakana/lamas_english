@@ -10,6 +10,11 @@ view: vm_religion_v2 {
     sql: ${TABLE}.name ;;
   }
 
+  dimension: name_eng {
+    type: string
+    sql: ${TABLE}.name_eng ;;
+  }
+
   dimension: district_eng {
     type: string
     sql: ${TABLE}.DistrictHeb ;;
@@ -45,6 +50,11 @@ view: vm_religion_v2 {
     sql: ${TABLE}.hh_MidatDatiyut_Name ;;
   }
 
+  dimension: hh_MidatDatiyut_NameEng {
+    type: string
+    sql: ${TABLE}.hh_MidatDatiyut_NameEng ;;
+  }
+
   dimension: shape_name {
     type: string
     sql: ${TABLE}.shape_name ;;
@@ -53,6 +63,16 @@ view: vm_religion_v2 {
   dimension: type {
     type: string
     sql: ${TABLE}.type ;;
+  }
+
+  dimension: shape_name_eng {
+    type: string
+    sql: ${TABLE}.shape_name_eng ;;
+  }
+
+  dimension: type_eng {
+    type: string
+    sql: ${TABLE}.type_eng ;;
   }
 
   dimension: stat_area {
