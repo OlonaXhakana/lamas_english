@@ -3,7 +3,6 @@ connection: "english_lamas"
 # include all the views
 include: "/views/**/*.view.lkml"
 
-
 datagroup: lamas_english_default_datagroup {
   # sql_trigger: SELECT MAX(id) FROM etl_log;;
   max_cache_age: "24 hour"
@@ -33,6 +32,8 @@ explore: vm_status_unpivoted_v2 {}
 explore: vm_household {}
 
 explore: vm_household_unpivoted {}
+
+explore: vm_migration {}
 
 
 
