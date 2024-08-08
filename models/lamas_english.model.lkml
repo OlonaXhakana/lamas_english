@@ -35,6 +35,8 @@ explore: vm_household_unpivoted {}
 
 explore: vm_migration {}
 
+explore: vm_household_unpivoted_v2 {}
+
 
 
 
