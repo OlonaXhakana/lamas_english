@@ -76,6 +76,17 @@ view: vm_religion_v2 {
         </div>;;
   }
 
+  dimension: midatdatiyut_text {
+    type: string
+    sql: ${value} ;;
+    html:
+        <div style=line-height:1.2;>
+          <span style="color:#22282D;font-size:16px;font-weight:700;letter-spacing:0;">The primary lifestyle</span><br>
+          <span style="color:#22282D;font-size:44px;font-weight:600;letter-spacing:0;">{{ hh_midat_datiyut_name_eng }}</span><br>
+          <span style="color:#22282D;font-size:44px;font-weight:600;letter-spacing:-1;">{{ value_m }}%</span>
+        </div>;;
+  }
+
   #
   ## measures:
   #
