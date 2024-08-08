@@ -32,14 +32,14 @@ view: vm_work_n_wage {
 
   dimension: wrk_15_17_pcnt {
     type: number
-    sql: coalesce(cast(${TABLE}.Wrk_15_17_pcnt as string), 'missing data') ;;
+    sql: coalesce(cast(${TABLE}.Wrk_15_17_pcnt as string), 'Data Missing') ;;
     value_format: "0.0\%"
     html:
           <div style="line-height:1.2;">
-          {% if value == 'missing data' %}
+          {% if value == 'Data Missing' %}
               <img src="https://dashboard.cbs.gov.il/cbs-data/Infographics/Wrk_15_17_pcnt.svg" width="45px" height="45px"/><br>
               <span style="color:#22282D;font-size:16px;font-weight:700;letter-spacing:0;">Working Youth</span><br>
-              <span style="color:#22282D;font-size:16px;letter-spacing:0;">missing data</span>
+              <span style="color:#22282D;font-size:16px;letter-spacing:0;">Data Missing</span>
           {% else %}
               <img src="https://dashboard.cbs.gov.il/cbs-data/Infographics/Wrk_15_17_pcnt.svg" width="45px" height="45px"/><br>
               <span style="color:#22282D;font-size:16px;font-weight:700;letter-spacing:0;">Working Youth</span><br>
@@ -56,17 +56,17 @@ view: vm_work_n_wage {
 
   dimension: wrk_out_loc_pcnt {
     type: number
-    sql: coalesce(cast(${TABLE}.WrkOutLoc_pcnt as string), 'missing data') ;;
+    sql: coalesce(cast(${TABLE}.WrkOutLoc_pcnt as string), 'Data Missing') ;;
     value_format: "0.0\%"
     html:
         <div style="line-height:1.2;">
-        {% if value == 'missing data' %}
+        {% if value == 'Data Missing' %}
           <img src="https://dashboard.cbs.gov.il/cbs-data/Infographics/WrkOutLoc_pcnt.svg" width="45px" height="45px"/><br>
-          <span style="color:#22282D;font-size:16px;font-weight:700;letter-spacing:0;">Workers outside the settlement of residence</span><br>
-          <span style="color:#22282D;font-size:16px;letter-spacing:0;">Missing data</span>
+          <span style="color:#22282D;font-size:16px;font-weight:700;letter-spacing:0;">Workers outside of residence</span><br>
+          <span style="color:#22282D;font-size:16px;letter-spacing:0;">Data Missing</span>
         {% else %}
           <img src="https://dashboard.cbs.gov.il/cbs-data/Infographics/WrkOutLoc_pcnt.svg" width="45px" height="45px"/><br>
-          <span style="color:#22282D;font-size:16px;font-weight:700;letter-spacing:0;">Workers outside the settlement of residence</span><br>
+          <span style="color:#22282D;font-size:16px;font-weight:700;letter-spacing:0;">Workers outside of residence</span><br>
           <span style="color:#22282D;font-size:44px;font-weight:600;letter-spacing:-1;">{{ rendered_value }}</span>
         {% endif %}
         </div>;;
@@ -81,13 +81,13 @@ view: vm_work_n_wage {
     label: "Percentage of Workers 15 and Older"
     type: string
     value_format: "0.0\%"
-    sql: IFNULL(cast(${TABLE}.WrkY_pcnt as string), 'Missing Data') ;;
+    sql: IFNULL(cast(${TABLE}.WrkY_pcnt as string), 'Data Missing') ;;
     html:
     <div style="line-height:1.2;">
-    {% if value == 'Missing Data' %}
+    {% if value == 'Data Missing' %}
       <img src="https://dashboard.cbs.gov.il/cbs-data/Infographics/WrkY_pcnt.svg" width="45px" height="45px"/><br>
       <span style="color:#22282D;font-size:16px;font-weight:700;letter-spacing:0;">Workers 15 and Older</span><br>
-      <span style="color:#22282D;font-size:16px;letter-spacing:0;">Missing Data</span>
+      <span style="color:#22282D;font-size:16px;letter-spacing:0;">Data Missing</span>
     {% else %}
       <img src="https://dashboard.cbs.gov.il/cbs-data/Infographics/WrkY_pcnt.svg" width="45px" height="45px"/><br>
       <span style="color:#22282D;font-size:16px;font-weight:700;letter-spacing:0;">Workers 15 and Older</span><br>
