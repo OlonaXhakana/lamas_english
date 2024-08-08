@@ -65,6 +65,17 @@ view: vm_religion_v2 {
     sql: ${TABLE}.value ;;
   }
 
+  dimension: religion_text_icon{
+    type: string
+    sql: ${value} ;;
+    html:
+        <div style="line-height:1.2;">
+            <img src="https://dashboard.cbs.gov.il/cbs-data/Infographics/religion_icon.svg" width="45px" height="45px"/><br>
+            <span style="color:#22282D;font-size:16px;font-weight:700;letter-spacing:0;">Main Religion</span><br>
+            <span style="color:#22282D;font-size:44px;font-weight:600;letter-spacing:-1;">{{ value_m }}% - {{ religion_eng }}</span>
+        </div>;;
+  }
+
   #
   ## measures:
   #
@@ -72,5 +83,11 @@ view: vm_religion_v2 {
   measure: count {
     type: count
     drill_fields: [metric_name, shape_name, name, hh_midat_datiyut_name]
+  }
+
+  measure: value_m {
+    value_format: "0.0\%"
+    type: average
+    sql: ${TABLE}.value ;;
   }
 }
