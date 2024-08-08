@@ -41,6 +41,7 @@ explore: vm_household_unpivoted_v2_eng {}
 explore: vm_marriage_age_median {}
 explore: vm_mifkad_over_time_pivoted {}
 explore: vm_migration_eng {}
+explore: vm_origin_pivoted {}
 explore: vm_origin_pivoted_eng {}
 explore: vm_origin_pivoted_v3_eng {}
 explore: vm_pop {}
