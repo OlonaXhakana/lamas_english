@@ -296,6 +296,11 @@ view: vm_household {
     sql: ${TABLE}.hh_MidatDatiyut_Name ;;
   }
 
+  dimension: hh_midat_datiyut_name_eng {
+    type: string
+    sql: ${TABLE}.hh_MidatDatiyut_NameEng ;;
+  }
+
   dimension: hh_midat_datiyut_pcnt {
     type: number
     sql: ${TABLE}.hh_MidatDatiyut_pcnt ;;
