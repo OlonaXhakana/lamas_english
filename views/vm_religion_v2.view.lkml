@@ -10,6 +10,11 @@ view: vm_religion_v2 {
     sql: ${TABLE}.name ;;
   }
 
+  dimension: name_eng {
+    type: string
+    sql: ${TABLE}.name_eng ;;
+  }
+
   dimension: district_eng {
     type: string
     sql: ${TABLE}.DistrictHeb ;;
@@ -45,6 +50,11 @@ view: vm_religion_v2 {
     sql: ${TABLE}.hh_MidatDatiyut_Name ;;
   }
 
+  dimension: hh_MidatDatiyut_NameEng {
+    type: string
+    sql: ${TABLE}.hh_MidatDatiyut_NameEng ;;
+  }
+
   dimension: shape_name {
     type: string
     sql: ${TABLE}.shape_name ;;
@@ -53,6 +63,16 @@ view: vm_religion_v2 {
   dimension: type {
     type: string
     sql: ${TABLE}.type ;;
+  }
+
+  dimension: shape_name_eng {
+    type: string
+    sql: ${TABLE}.shape_name_eng ;;
+  }
+
+  dimension: type_eng {
+    type: string
+    sql: ${TABLE}.type_eng ;;
   }
 
   dimension: stat_area {
@@ -82,7 +102,7 @@ view: vm_religion_v2 {
   }
 
   dimension: religion_text {
-    label: "Percentage of main religion"
+    label: "Percentage of main religion_"
     type: string
     sql: ${value} ;;
     html:
@@ -113,7 +133,7 @@ view: vm_religion_v2 {
         <div style="line-height:1.2;">
             <img src="https://dashboard.cbs.gov.il/cbs-data/Infographics/religion_icon.svg" width="45px" height="45px"/><br>
             <span style="color:#22282D;font-size:16px;font-weight:700;letter-spacing:0;">Main religion</span><br>
-            <span style="color:#22282D;font-size:44px;font-weight:600;letter-spacing:-1;">{{ value_m_2 }}% - {{ religion_eng }}</span>
+            <span style="color:#22282D;font-size:44px;font-weight:600;letter-spacing:-1;">{{ religion_eng }} - {{ value_m_2 }}%</span>
         </div>;;
   }
 

@@ -1,6 +1,10 @@
 view: vm_age_median {
   sql_table_name: `jutomate-lamas-english.MODELLING.vm_age_median` ;;
 
+  #
+  ## dimensions:
+  #
+
   dimension: age_median {
     type: number
     sql: ${TABLE}.age_median ;;
@@ -31,18 +35,35 @@ view: vm_age_median {
     type: number
     sql: ${TABLE}.m_age_median ;;
   }
+
   dimension: shape_name {
     type: string
     sql: ${TABLE}.shape_name ;;
   }
+
   dimension: type {
     type: string
     sql: ${TABLE}.type ;;
   }
+
+  dimension: shape_name_eng {
+    type: string
+    sql: ${TABLE}.shape_name_eng ;;
+  }
+
+  dimension: type_eng {
+    type: string
+    sql: ${TABLE}.type_eng ;;
+  }
+
   dimension: w_age_median {
     type: number
     sql: ${TABLE}.w_age_median ;;
   }
+
+  #
+  ## measures:
+  #
 
   measure: median_age {
     type: sum

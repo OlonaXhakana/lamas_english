@@ -1,10 +1,9 @@
 view: vm_marriage_age_median {
   sql_table_name: `jutomate-lamas-english.MODELLING.vm_marriage_age_median` ;;
 
-#
-
-## dimensions
-#
+  #
+  ## dimensions
+  #
 
   dimension: district_heb {
     type: string
@@ -74,6 +73,16 @@ view: vm_marriage_age_median {
     sql: ${TABLE}.type ;;
   }
 
+  dimension: shape_name_eng {
+    type: string
+    sql: ${TABLE}.shape_name_eng ;;
+  }
+
+  dimension: type_eng {
+    type: string
+    sql: ${TABLE}.type_eng ;;
+  }
+
   dimension: stat_area {
     type: string
     sql: ${TABLE}.StatArea ;;
@@ -94,13 +103,12 @@ view: vm_marriage_age_median {
     sql: ${TABLE}.w_MarriageAge_mdn ;;
   }
 
-#
-## measures
-#
+  #
+  ## measures
+  #
 
   measure: count {
     type: count
     drill_fields: [shape_name]
   }
 }
-

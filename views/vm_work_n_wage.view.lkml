@@ -1,9 +1,9 @@
 view: vm_work_n_wage {
   sql_table_name: `jutomate-lamas-english.MODELLING.vm_work_n_wage` ;;
 
-#
-## dimensions:
-#
+  #
+  ## dimensions:
+  #
 
   dimension: shape_name {
     type: string
@@ -14,29 +14,39 @@ view: vm_work_n_wage {
     type: string
     sql: ${TABLE}.type ;;
   }
+
+  dimension: shape_name_eng {
+    type: string
+    sql: ${TABLE}.shape_name_eng ;;
+  }
+
+  dimension: type_eng {
+    type: string
+    sql: ${TABLE}.type_eng ;;
+  }
+
   # dimension: wrk_15_17_pcnt {
   #   type: number
   #   sql: ${TABLE}.Wrk_15_17_pcnt ;;
   # }
 
-dimension: wrk_15_17_pcnt {
-
-  type: number
-  sql: coalesce(cast(${TABLE}.Wrk_15_17_pcnt as string), 'missing data') ;;
-  value_format: "0.0\%"
-  html:
-        <div style="line-height:1.2;">
-        {% if value == 'missing data' %}
-            <img src="https://dashboard.cbs.gov.il/cbs-data/Infographics/Wrk_15_17_pcnt.svg" width="45px" height="45px"/><br>
-            <span style="color:#22282D;font-size:16px;font-weight:700;letter-spacing:0;">Working Youth</span><br>
-            <span style="color:#22282D;font-size:16px;letter-spacing:0;">missing data</span>
-        {% else %}
-            <img src="https://dashboard.cbs.gov.il/cbs-data/Infographics/Wrk_15_17_pcnt.svg" width="45px" height="45px"/><br>
-            <span style="color:#22282D;font-size:16px;font-weight:700;letter-spacing:0;">Working Youth</span><br>
-            <span style="color:#22282D;font-size:44px;font-weight:600;letter-spacing:-1;">{{ rendered_value }}</span>
-        {% endif %}
-        </div>;;
-}
+  dimension: wrk_15_17_pcnt {
+    type: number
+    sql: coalesce(cast(${TABLE}.Wrk_15_17_pcnt as string), 'missing data') ;;
+    value_format: "0.0\%"
+    html:
+          <div style="line-height:1.2;">
+          {% if value == 'missing data' %}
+              <img src="https://dashboard.cbs.gov.il/cbs-data/Infographics/Wrk_15_17_pcnt.svg" width="45px" height="45px"/><br>
+              <span style="color:#22282D;font-size:16px;font-weight:700;letter-spacing:0;">Working Youth</span><br>
+              <span style="color:#22282D;font-size:16px;letter-spacing:0;">missing data</span>
+          {% else %}
+              <img src="https://dashboard.cbs.gov.il/cbs-data/Infographics/Wrk_15_17_pcnt.svg" width="45px" height="45px"/><br>
+              <span style="color:#22282D;font-size:16px;font-weight:700;letter-spacing:0;">Working Youth</span><br>
+              <span style="color:#22282D;font-size:44px;font-weight:600;letter-spacing:-1;">{{ rendered_value }}</span>
+          {% endif %}
+          </div>;;
+  }
 
   # dimension: wrk_out_loc_pcnt {
   #   type: number
@@ -67,7 +77,6 @@ dimension: wrk_15_17_pcnt {
     sql: ${TABLE}.WrkY_pcnt ;;
 }
 
-
   dimension: value_WrkY_pcnt_text_icon {
     label: "Percentage of Workers 15 and Older"
     type: string
@@ -87,9 +96,9 @@ dimension: wrk_15_17_pcnt {
     </div>;;
   }
 
-#
-## measures:
-#
+  #
+  ## measures:
+  #
 
   measure: count {
     type: count

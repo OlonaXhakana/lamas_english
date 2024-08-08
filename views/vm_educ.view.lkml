@@ -1,10 +1,9 @@
 view: vm_educ {
   sql_table_name: `jutomate-lamas-english.MODELLING.vm_educ` ;;
 
-#
-
-## dimensions:
-#
+  #
+  ## dimensions:
+  #
 
   dimension: acadm1_cert_pcnt {
     type: number
@@ -22,7 +21,7 @@ view: vm_educ {
   }
 
   dimension: acadm_pcnt_text_icon {
-    label: "Percentage of Individuals Aged 15 and Above with Academic Education"
+    # label: "Percentage of Individuals Aged 15 and Above with Academic Education"
     type: string
     value_format: "0.0\%"
     sql: COALESCE(cast(${TABLE}.AcadmCert_pcnt as string), cast(${TABLE}.Acadm12Cert_pcnt as string), 'Data Missing') ;;
@@ -30,11 +29,11 @@ view: vm_educ {
     <div style="line-height:1.2;">
       {% if value == 'Data Missing' %}
         <img src="https://dashboard.cbs.gov.il/cbs-data/Infographics/AcadmCert_pcnt.svg" width="45px" height="45px"/><br>
-        <span style="color:#22282D;font-size:16px;font-weight:700;letter-spacing:0;">Percentage of Individuals Aged 15 and Above with Academic Education</span><br>
+        <span style="color:#22282D;font-size:16px;font-weight:700;letter-spacing:0;">Aged 15 and above with academic education</span><br>
         <span style="color:#22282D;font-size:16px;letter-spacing:0;">Data Missing</span>
       {% else %}
         <img src="https://dashboard.cbs.gov.il/cbs-data/Infographics/AcadmCert_pcnt.svg" width="45px" height="45px"/><br>
-        <span style="color:#22282D;font-size:16px;font-weight:700;letter-spacing:0;">Percentage of Individuals Aged 15 and Above with Academic Education</span><br>
+        <span style="color:#22282D;font-size:16px;font-weight:700;letter-spacing:0;">Aged 15 and above with academic education</span><br>
         <span style="color:#22282D;font-size:44px;font-weight:600;letter-spacing:-1;">{{ rendered_value }}</span>
       {% endif %}
     </div> ;;
@@ -250,9 +249,19 @@ view: vm_educ {
     sql: ${TABLE}.yeshiva_pcnt ;;
   }
 
-#
-## measures:
-#
+  dimension: shape_name_eng {
+    type: string
+    sql: ${TABLE}.shape_name_eng ;;
+  }
+
+  dimension: type_eng {
+    type: string
+    sql: ${TABLE}.type_eng ;;
+  }
+
+  #
+  ## measures:
+  #
 
   measure: count {
     type: count

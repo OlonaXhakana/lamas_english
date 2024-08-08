@@ -10,6 +10,12 @@ view: vm_disabilites_unpivoted_v2 {
     sql: ${TABLE}.age ;;
   }
 
+  dimension: age_eng {
+    type: string
+    sql: ${TABLE}.age_eng ;;
+  }
+
+
   dimension: district_heb {
     type: string
     sql: ${TABLE}.DistrictHeb ;;
@@ -18,6 +24,11 @@ view: vm_disabilites_unpivoted_v2 {
   dimension: gender_heb {
     type: string
     sql: ${TABLE}.gender_heb ;;
+  }
+
+  dimension: gender_eng {
+    type: string
+    sql: ${TABLE}.gender_eng ;;
   }
 
   dimension: loc_name_heb {
@@ -36,9 +47,13 @@ view: vm_disabilites_unpivoted_v2 {
   }
 
   dimension: metric_name_heb_all {
-   label: "The type of disability"
     type: string
     sql: ${TABLE}.metric_name_heb_all ;;
+  }
+
+  dimension: metric_name_all_eng {
+    type: string
+    sql: ${TABLE}.metric_name_all_eng ;;
   }
 
   dimension: nat_reg_heb {
@@ -64,6 +79,16 @@ view: vm_disabilites_unpivoted_v2 {
   dimension: type {
     type: string
     sql: ${TABLE}.type ;;
+  }
+
+  dimension: shape_name_eng {
+    type: string
+    sql: ${TABLE}.shape_name_eng ;;
+  }
+
+  dimension: type_eng {
+    type: string
+    sql: ${TABLE}.type_eng ;;
   }
 
   dimension: stat_area {

@@ -9,12 +9,12 @@ view: vm_pop {
     type: string
     label: "Percentage Change in Population Size Compared to the 2008 Census"
     value_format: "0.0\%"
-    sql: coalesce(cast(${TABLE}.change_pcnt as string), 'Missing Data') ;;
+    sql: coalesce(cast(${TABLE}.change_pcnt as string), 'Data Missing') ;;
     html:
         <div style="line-height:1.2;">
-        {% if value == 'Missing Data' %}
+        {% if value == 'Data Missing' %}
           <span style="color:#22282D;font-size:16px;font-weight:700;letter-spacing:0;">Population Change from the 2008 Census</span><br>
-          <span style="color:#22282D;font-size:16px;letter-spacing:0;">Missing Data</span>
+          <span style="color:#22282D;font-size:16px;letter-spacing:0;">Data Missing</span>
         {% else %}
           <span style="color:#22282D;font-size:16px;font-weight:700;letter-spacing:0;">Population Change from the 2008 Census</span><br>
           <span style="color:#22282D;font-size:44px;font-weight:600;letter-spacing:-1;">{{ rendered_value }}</span>
@@ -36,12 +36,12 @@ view: vm_pop {
   dimension: foreign_pcnt {
     type: number
     value_format: "0.0\%"
-    sql: coalesce(cast(${TABLE}.Foreign_pcnt as string), 'Missing Data') ;;
+    sql: coalesce(cast(${TABLE}.Foreign_pcnt as string), 'Data Missing') ;;
     html:
         <div style="line-height:1.2;">
-        {% if value == 'Missing Data' %}
+        {% if value == 'Data Missing' %}
           <span style="color:#22282D;font-size:16px;font-weight:700;letter-spacing:0;">Foreigners</span><br>
-          <span style="color:#22282D;font-size:16px;letter-spacing:0;">Missing Data</span>
+          <span style="color:#22282D;font-size:16px;letter-spacing:0;">Data Missing</span>
         {% else %}
           <span style="color:#22282D;font-size:16px;font-weight:700;letter-spacing:0;">Foreigners</span><br>
           <span style="color:#22282D;font-size:44px;font-weight:600;letter-spacing:-1;">{{ rendered_value }}</span>
@@ -53,12 +53,12 @@ view: vm_pop {
     type: string
     label: "Percentage of Institutional Residents"
     value_format: "0.0\%"
-    sql: coalesce(cast(${TABLE}.inst_pcnt as string), 'Missing Data') ;;
+    sql: coalesce(cast(${TABLE}.inst_pcnt as string), 'Data Missing') ;;
     html:
         <div style="line-height:1.2;">
-        {% if value == 'Missing Data' %}
+        {% if value == 'Data Missing' %}
           <span style="color:#22282D;font-size:16px;font-weight:700;letter-spacing:0;">Institutional Residents</span><br>
-          <span style="color:#22282D;font-size:16px;letter-spacing:0;">Missing Data</span>
+          <span style="color:#22282D;font-size:16px;letter-spacing:0;">Data Missing</span>
         {% else %}
           <span style="color:#22282D;font-size:16px;font-weight:700;letter-spacing:0;">Institutional Residents</span><br>
           <span style="color:#22282D;font-size:44px;font-weight:600;letter-spacing:-1;">{{ rendered_value }}</span>
@@ -132,15 +132,25 @@ view: vm_pop {
     sql: ${TABLE}.type ;;
   }
 
+  dimension: shape_name_eng {
+    type: string
+    sql: ${TABLE}.shape_name_eng ;;
+  }
+
+  dimension: type_eng {
+    type: string
+    sql: ${TABLE}.type_eng ;;
+  }
+
   dimension: pop_density {
     type: string
     value_format: "#,##0.0"
-    sql: coalesce(cast(${TABLE}.pop_density as string), 'Missing Data') ;;
+    sql: coalesce(cast(${TABLE}.pop_density as string), 'Data Missing') ;;
     html:
         <div style="line-height:1.2;">
-        {% if value == 'Missing Data' %}
+        {% if value == 'Data Missing' %}
           <span style="color:#22282D;font-size:16px;font-weight:700;letter-spacing:0;">Population Density per km²</span><br>
-          <span style="color:#22282D;font-size:16px;letter-spacing:0;">Missing Data</span>
+          <span style="color:#22282D;font-size:16px;letter-spacing:0;">Data Missing</span>
         {% else %}
           <span style="color:#22282D;font-size:16px;font-weight:700;letter-spacing:0;">Population Density per km²</span><br>
           <span style="color:#22282D;font-size:44px;font-weight:600;letter-spacing:-1;">{{ rendered_value }}</span>
