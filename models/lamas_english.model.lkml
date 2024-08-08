@@ -32,6 +32,8 @@ explore: vm_status_unpivoted_v2 {}
 
 explore: vm_household {}
 
+explore: vm_household_unpivoted {}
+
 
 
 
