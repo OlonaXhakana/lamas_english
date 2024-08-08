@@ -9,6 +9,18 @@ datagroup: lamas_english_default_datagroup {
   max_cache_age: "24 hour"
 }
 persist_with: lamas_english_default_datagroup
+
+explore: vm_origin_pivoted_v3 {}
+
+explore: vm_origin_pivoted {}
+
+explore: vm_disabilites_unpivoted_v2 {}
+
+
+
+
+
+
 explore: vm_disabilites_unpivoted_eng {}
 explore: vm_age_pivoted_eng {}
 explore: vm_age_median {}
@@ -16,7 +28,6 @@ explore: vm_age_pivoted {}
 explore: vm_child_born {}
 explore: vm_compare {}
 explore: vm_child_born_unpivoted_eng {}
-explore: vm_disabilites_unpivoted_v2 {}
 explore: vm_educ {}
 explore: vm_educ_pivoted_v2{}
 explore: vm_geography{}

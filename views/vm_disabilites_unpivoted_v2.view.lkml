@@ -15,7 +15,6 @@ view: vm_disabilites_unpivoted_v2 {
     sql: ${TABLE}.age_eng ;;
   }
 
-
   dimension: district_heb {
     type: string
     sql: ${TABLE}.DistrictHeb ;;
