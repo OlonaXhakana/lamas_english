@@ -59,6 +59,18 @@ view: vm_origin_pivoted {
   ## measures:
   #
 
+
+  measure: value_m {
+    value_format: "0.0\%"
+    type: sum
+    sql: ${TABLE}.value ;;
+  }
+
+  measure: value_m_2 {
+    type: string
+    sql: rank(-${value}, -${value}) ;;
+  }
+
   measure: count {
     type: count
     drill_fields: [metric_name, shape_name]
