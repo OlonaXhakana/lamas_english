@@ -5,6 +5,12 @@ view: vm_origin_pivoted {
   ## dimensions:
   #
 
+  dimension: country_name {
+    # label: " "
+    type: string
+    sql: CONCAT(${vm_origin_pivoted.metric_name_eng}, " ", ${vm_origin_pivoted.value},"%") ;;
+  }
+
   dimension: metric_name {
     type: string
     sql: ${TABLE}.metric_name ;;
