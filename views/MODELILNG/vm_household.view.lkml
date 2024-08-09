@@ -573,18 +573,19 @@ view: vm_household {
   dimension: size_avg {
     type: string
     value_format: "0.0"
-    sql: coalesce(cast(${TABLE}.size_avg as string), 'נתון חסר') ;;
+    sql: coalesce(cast(${TABLE}.size_avg as string), 'Data missing') ;;
     html:
         <div style="line-height:1.2;">
-        {% if value == 'נתון חסר' %}
-          <span style="color:#22282D;font-size:16px;font-weight:700;letter-spacing:0;">ממוצע נפשות במשק הבית</span><br>
-          <span style="color:#22282D;font-size:16px;letter-spacing:0;">נתון חסר</span>
+        {% if value == 'Data missing' %}
+          <span style="color:#22282D;font-size:16px;font-weight:700;letter-spacing:0;">Average household size</span><br>
+          <span style="color:#22282D;font-size:16px;letter-spacing:0;">Data missing</span>
         {% else %}
-          <span style="color:#22282D;font-size:16px;font-weight:700;letter-spacing:0;">ממוצע נפשות במשק הבית</span><br>
-          <span style="color:#22282D;font-size:44px;font-weight:600;letter-spacing:-1;">{{ rendered_value }}</span><br>
+          <span style="color:#22282D;font-size:16px;font-weight:700;letter-spacing:0%;">Average household size</span><br>
+          <span style="color:#22282D;font-size:44px;font-weight:600;letter-spacing:-1%;">{{ rendered_value }}</span><br>
         {% endif %}
         </div> ;;
   }
+
 
   dimension: size_avg_text_icon {
     #label: "ממוצע נפשות במשק הבית"
