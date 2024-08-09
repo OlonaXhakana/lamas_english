@@ -700,17 +700,18 @@ view: vm_household {
   }
 
   dimension: cars_pcnt {
-    label: "אחוז משקי בית שעומד לרשותם כלי רכב אחד לפחות"
+    label: "Percentage of households that have at least one vehicle at their disposal"
     type: string
     sql: ${vehicle1up_pcnt} ;;
     html:
-      <div style=line-height:1.2;>
-        <span style="color:#22282D;font-size:16px;font-weight:700;letter-spacing:0;">משקי בית שעומד לרשותם כלי רכב אחד לפחות</span><br>
-        <span style="color:#22282D;font-size:44px;font-weight:600;letter-spacing:-1;">{{ vehicle1up_pcnt_m }}%</span><br>
-        <span style="color:#22282D;font-size:15.6px;font-weight:700;letter-spacing:0;">משקי בית שעומדים לרשותם שני כלי רכב לפחות</span><br>
-        <span style="color:#22282D;font-size:44px;font-weight:600;letter-spacing:-1;">{{ vehicle2up_pcnt_m }}%</span>
+      <div style="line-height:1.2;">
+        <span style="color:#22282D;font-size:16px;font-weight:700;letter-spacing:0;">Households with at least one vehicle at their disposal</span><br>
+        <span style="color:#22282D;font-size:44px;font-weight:600;letter-spacing:-1%;">{{ vehicle1up_pcnt_m }}%</span><br>
+        <span style="color:#22282D;font-size:15.6px;font-weight:700;letter-spacing:0;">Households with at least two vehicles at their disposal</span><br>
+        <span style="color:#22282D;font-size:44px;font-weight:600;letter-spacing:-1%;">{{ vehicle2up_pcnt_m }}%</span>
       </div> ;;
   }
+
 
   # dimension: fam_n_sngprnt {
   #   type: string
@@ -722,25 +723,26 @@ view: vm_household {
   dimension: fam_n_sngprnt {
     type: string
     value_format: "#,##0"
-    sql: coalesce(cast(${TABLE}.Fam_approx as string), 'נתון חסר') ;;
+    sql: coalesce(cast(${TABLE}.Fam_approx as string), 'Data missing') ;;
     html:
-        {% if value == 'נתון חסר' %}
-        <div style=line-height:1;>
-          <span style="color:#22282D;font-size:16px;font-weight:700;letter-spacing:0;">משקי בית משפחתיים</span><br>
-          <span style="color:#22282D;font-size:16px;letter-spacing:0;">נתון חסר</span><br>
-          <span style="color:#22282D;font-size:16px;font-weight:100;letter-spacing:0;">מהם משקי בית עם הורה יחיד:</span>
-          <span style="color:#22282D;font-size:16px;letter-spacing:0;">נתון חסר</span>
+        {% if value == 'Data missing' %}
+        <div style="line-height:1;">
+          <span style="color:#22282D;font-size:16px;font-weight:700;letter-spacing:0;">Family households</span><br>
+          <span style="color:#22282D;font-size:16px;letter-spacing:0;">Data missing</span><br>
+          <span style="color:#22282D;font-size:16px;font-weight:100;letter-spacing:0;">Of which, single-parent households:</span>
+          <span style="color:#22282D;font-size:16px;letter-spacing:0;">Data missing</span>
         {% else %}
-        <div style=line-height:1.2;>
-          <span style="color:#22282D;font-size:16px;font-weight:700;letter-spacing:0;">משקי בית משפחתיים</span><br>
-          <span style="color:#22282D;font-size:44px;font-weight:600;letter-spacing:-1;">{{ fam_approx }}</span>
+        <div style="line-height:1.2;">
+          <span style="color:#22282D;font-size:16px;font-weight:700;letter-spacing:0;">Family households</span><br>
+          <span style="color:#22282D;font-size:44px;font-weight:600;letter-spacing:-1%;">{{ fam_approx }}</span>
         </div>
-        <div style=line-height:22px;>
-          <span style="color:#22282D;font-size:16px;font-weight:100;letter-spacing:0;">מהם משקי בית עם הורה יחיד:</span>
+        <div style="line-height:22px;">
+          <span style="color:#22282D;font-size:16px;font-weight:100;letter-spacing:0;">Of which, single-parent households:</span>
           <span style="color:#22282D;font-size:18px;font-weight:100;letter-spacing:0;">{{ sngl_prnt_approx }}</span>
         {% endif %}
         </div> ;;
   }
+
 
   dimension: household_header {
     type: string
