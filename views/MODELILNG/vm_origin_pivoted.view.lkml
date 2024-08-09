@@ -57,6 +57,7 @@ view: vm_origin_pivoted {
   }
 
   dimension: value {
+    value_format: "0.0\%"
     type: number
     sql: ${TABLE}.value ;;
   }
