@@ -54,6 +54,11 @@ view: vm_age_pivoted {
   ## measures:
   #
 
+  measure: value_m {
+    type: sum
+    sql: ${TABLE}.value ;;
+  }
+
   measure: count {
     type: count
     drill_fields: [age_name, metric_name, shape_name]
