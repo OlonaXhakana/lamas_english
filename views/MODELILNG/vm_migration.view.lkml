@@ -11,6 +11,7 @@ view: vm_migration {
   }
 
   dimension: metric_eng {
+    label: "value"
     type: string
     sql: ${TABLE}.metric_eng ;;
   }
