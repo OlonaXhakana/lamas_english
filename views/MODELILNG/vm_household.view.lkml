@@ -423,22 +423,22 @@ view: vm_household {
     type: string
     sql: ${TABLE}.NatRegHeb ;;
   }
-
   dimension: non_fam_approx {
     value_format: "#,##0"
     type: string
-    sql: coalesce(cast(${TABLE}.NonFam_approx as string), 'נתון חסר') ;;
+    sql: coalesce(cast(${TABLE}.NonFam_approx as string), 'Data missing') ;;
     html:
         <div style="line-height:1.2;">
-        {% if value == 'נתון חסר' %}
-          <span style="color:#22282D;font-size:16px;font-weight:700;letter-spacing:0;">משקי בית לא משפחתיים</span><br>
-          <span style="color:#22282D;font-size:16px;letter-spacing:0;">נתון חסר</span>
+        {% if value == 'Data missing' %}
+          <span style="color:#22282D;font-size:16px;font-weight:700;letter-spacing:0;">Non-family households</span><br>
+          <span style="color:#22282D;font-size:16px;letter-spacing:0;">Data missing</span>
         {% else %}
-          <span style="color:#22282D;font-size:16px;font-weight:700;letter-spacing:0;">משקי בית לא משפחתיים</span><br>
-          <span style="color:#22282D;font-size:44px;font-weight:600;letter-spacing:-1;">{{ rendered_value }}</span><br>
+          <span style="color:#22282D;font-size:16px;font-weight:700;letter-spacing:0;">Non-family households</span><br>
+          <span style="color:#22282D;font-size:44px;font-weight:600;letter-spacing:-1%;">{{ rendered_value }}</span><br>
         {% endif %}
         </div> ;;
   }
+
 
   dimension: other_arng_pcnt {
     type: number
