@@ -71,11 +71,6 @@ view: vm_pop {
     sql: ${TABLE}.LocNameHeb ;;
   }
 
-  dimension: nat_reg_heb {
-    type: string
-    sql: ${TABLE}.NatRegHeb;
-  }
-
   dimension: pop_approx {
     type: number
     sql: ${TABLE}.pop_approx ;;
@@ -86,6 +81,7 @@ view: vm_pop {
           <span style="color:#22282D;font-size:44px;font-weight:600;letter-spacing:-1;">{{ rendered_value }}</span><br>
         </div>;;
   }
+
 
   dimension: pop_approx_text_icon {
     label: "Total Population"
@@ -157,6 +153,13 @@ view: vm_pop {
         {% endif %}
         </div> ;;
   }
+
+
+
+  dimension: nat_reg_heb { type: string
+    sql: ${TABLE}.NatRegHeb;
+  }
+
 
   ########################################################
   ########################################################
