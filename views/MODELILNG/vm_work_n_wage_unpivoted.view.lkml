@@ -74,6 +74,18 @@ view: vm_work_n_wage_unpivoted {
   ## measures:
   #
 
+  measure: value_m {
+    type: sum
+    sql: ${TABLE}.value ;;
+  }
+
+  measure: value_m_p {
+    value_format: "0.0\%"
+    type: sum
+    sql: ${TABLE}.value ;;
+  }
+
+
   measure: count {
     type: count
     drill_fields: [metric_name, shape_name]
