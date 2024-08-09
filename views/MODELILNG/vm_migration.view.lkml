@@ -53,4 +53,11 @@ view: vm_migration {
     type: count
     drill_fields: [shape_name]
   }
+
+  measure: value_m {
+    label: " "
+    type: sum
+    value_format: "0.0\%"
+    sql: ${TABLE}.value ;;
+ }
 }
