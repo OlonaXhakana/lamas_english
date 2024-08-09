@@ -31,6 +31,7 @@ view: vm_work_n_wage_unpivoted {
   }
 
   dimension: metric_name_eng {
+    label: " "
     type: string
     sql: ${TABLE}.metric_name_eng ;;
   }
