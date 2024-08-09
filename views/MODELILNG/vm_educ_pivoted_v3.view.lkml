@@ -21,11 +21,13 @@ view: vm_educ_pivoted_v3 {
   }
 
   dimension: metric_eng {
+    label: " "
     type: string
     sql: ${TABLE}.metric_eng ;;
   }
 
   dimension: metric_heb {
+    label: " "
     type: string
     sql: ${TABLE}.metric_heb ;;
   }
