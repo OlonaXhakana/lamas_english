@@ -49,6 +49,11 @@ view: vm_child_born_unpivoted {
   ## measures:
   #
 
+  measure: value_m {
+    type: sum
+    sql: ${TABLE}.value ;;
+  }
+
   measure: count {
     type: count
     drill_fields: [metric_name, shape_name]

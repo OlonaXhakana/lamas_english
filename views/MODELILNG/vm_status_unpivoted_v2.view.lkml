@@ -74,6 +74,18 @@ view: vm_status_unpivoted_v2 {
   ## measures:
   #
 
+  measure: other_value_m {
+    type: sum
+    value_format: "0.0\%"
+    sql: ${TABLE}.other_value ;;
+  }
+
+  measure: value_m {
+    type: sum
+    value_format: "0.0\%"
+    sql: ${TABLE}.value ;;
+  }
+
   measure: count {
     type: count
     drill_fields: [shape_name, name]
