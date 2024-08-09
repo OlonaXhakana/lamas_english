@@ -71,6 +71,14 @@ view: vm_work_n_wage_unpivoted {
     sql: ${TABLE}.value ;;
   }
 
+  measure: value_m_p {
+    # label: "Value"
+    value_format: "0.0\%"
+    type: sum
+    sql: ${TABLE}.value ;;
+  }
+
+
   #
   ## measures:
   #
