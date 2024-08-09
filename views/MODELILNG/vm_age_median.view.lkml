@@ -65,6 +65,30 @@ view: vm_age_median {
   ## measures:
   #
 
+  measure: age_median_m {
+    type: sum
+    # label: "median age"
+    sql: ${TABLE}.age_median ;;
+  }
+
+  measure: man_age_median_m {
+    type: sum
+    # label: "Median age - men"
+    sql: ${TABLE}.m_age_median ;;
+  }
+
+  measure: woman_age_median_m {
+    type: sum
+    # label: "Median age - women"
+    sql: ${TABLE}.w_age_median ;;
+  }
+
+  measure: DependencyRatio_m {
+    type: sum
+    # label: "dependency ratio per thousand"
+    sql: ${TABLE}.DependencyRatio ;;
+  }
+
   measure: count {
     type: count
     drill_fields: [shape_name]
