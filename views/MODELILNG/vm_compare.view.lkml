@@ -16,13 +16,13 @@ view: vm_compare {
   }
 
   dimension: shape_name {
-    label: " "
+   # label: " "
     type: string
     sql: ${TABLE}.shape_name ;;
   }
 
   dimension: shape_name_eng {
-    label: " "
+    #label: " "
     type: string
     sql: ${TABLE}.shape_name_eng ;;
   }
@@ -50,7 +50,7 @@ view: vm_compare {
   }
 
   measure: value_m {
-      label: " "
+     # label: " "
       type: number
       sql: ${TABLE}.value ;;
   }
