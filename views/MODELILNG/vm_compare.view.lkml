@@ -38,7 +38,7 @@ view: vm_compare {
   }
 
   dimension: value {
-    label: " "
+    # label: " "
     type: number
     sql: ${TABLE}.value ;;
   }
