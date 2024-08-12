@@ -21,6 +21,7 @@ view: vm_compare {
   }
 
   dimension: shape_name_eng {
+    label: " "
     type: string
     sql: ${TABLE}.shape_name_eng ;;
   }
@@ -36,13 +37,11 @@ view: vm_compare {
   }
 
   dimension: value {
+    label: " "
     type: number
     sql: ${TABLE}.value ;;
   }
 
-  #
-  ## measures:
-  #
 
   measure: count {
     type: count
