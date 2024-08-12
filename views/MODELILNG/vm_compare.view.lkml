@@ -16,6 +16,7 @@ view: vm_compare {
   }
 
   dimension: shape_name {
+    label: " "
     type: string
     sql: ${TABLE}.shape_name ;;
   }
