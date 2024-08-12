@@ -48,4 +48,10 @@ view: vm_compare {
     type: count
     drill_fields: [shape_name]
   }
+
+  measure: value_m {
+      label: " "
+      type: number
+      sql: ${TABLE}.value ;;
+  }
 }
