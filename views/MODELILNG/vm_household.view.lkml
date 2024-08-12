@@ -83,34 +83,36 @@ view: vm_household {
   dimension: cellphone_ratio {
     type: string
     # value_format: ""
-    sql: coalesce(cast(${TABLE}.cellphone_ratio as string), 'נתון חסר') ;;
+    sql: coalesce(cast(${TABLE}.cellphone_ratio as string), 'Data Missing') ;;
     html:
-        <div style="line-height:1.2;">
-        {% if value == 'נתון חסר' %}
-          <span style="color:#22282D;font-size:16px;font-weight:700;letter-spacing:0;">יחס טלפונים ניידים לבני 6 ומעלה</span><br>
-          <span style="color:#22282D;font-size:16px;letter-spacing:0;">נתון חסר</span>
-        {% else %}
-          <span style="color:#22282D;font-size:16px;font-weight:700;letter-spacing:0;">יחס טלפונים ניידים לבני 6 ומעלה</span><br>
-          <span style="color:#22282D;font-size:44px;font-weight:600;letter-spacing:-1;">{{ rendered_value }}</span>
-        {% endif %}
-        </div> ;;
+      <div style="line-height:1.2;">
+      {% if value == 'Data Missing' %}
+        <span style="color:#22282D;font-size:16px;font-weight:700;letter-spacing:0;">Mobile Phones Ratio for Ages 6 and Up</span><br>
+        <span style="color:#22282D;font-size:16px;letter-spacing:0;">Data Missing</span>
+      {% else %}
+        <span style="color:#22282D;font-size:16px;font-weight:700;letter-spacing:0;">Mobile Phones Ratio for Ages 6 and Up</span><br>
+        <span style="color:#22282D;font-size:44px;font-weight:600;letter-spacing:-1;">{{ rendered_value }}</span>
+      {% endif %}
+      </div> ;;
   }
+
 
   dimension: computer_avg {
     type: string
     # value_format: ""
-    sql: coalesce(cast(${TABLE}.Computer_avg as string), 'נתון חסר') ;;
+    sql: coalesce(cast(${TABLE}.Computer_avg as string), 'Data Missing') ;;
     html:
-        <div style="line-height:1.2;">
-        {% if value == 'נתון חסר' %}
-          <span style="color:#22282D;font-size:16px;font-weight:700;letter-spacing:0;">מספר מחשבים ממוצע למשק בית</span><br>
-          <span style="color:#22282D;font-size:16px;letter-spacing:0;">נתון חסר</span>
-        {% else %}
-          <span style="color:#22282D;font-size:16px;font-weight:700;letter-spacing:0;">מספר מחשבים ממוצע למשק בית</span><br>
-          <span style="color:#22282D;font-size:44px;font-weight:600;letter-spacing:-1;">{{ rendered_value }}</span>
-        {% endif %}
-        </div> ;;
+      <div style="line-height:1.2;">
+      {% if value == 'Data Missing' %}
+        <span style="color:#22282D;font-size:16px;font-weight:700;letter-spacing:0;">Average Number of Computers per Household</span><br>
+        <span style="color:#22282D;font-size:16px;letter-spacing:0;">Data Missing</span>
+      {% else %}
+        <span style="color:#22282D;font-size:16px;font-weight:700;letter-spacing:0;">Average Number of Computers per Household</span><br>
+        <span style="color:#22282D;font-size:44px;font-weight:600;letter-spacing:-1;">{{ rendered_value }}</span>
+      {% endif %}
+      </div> ;;
   }
+
 
   dimension: district_heb {
     type: string
@@ -119,16 +121,16 @@ view: vm_household {
 
   dimension: fam_approx {
     value_format: "#,##0"
-    label: "מספר משקי בית משפחתיים"
+    label: "Number of Family Households"
     type: string
-    sql: coalesce(cast(${TABLE}.Fam_approx as string), 'נתון חסר') ;;
+    sql: coalesce(cast(${TABLE}.Fam_approx as string), 'Data Missing') ;;
     html:
-        {% if value == 'נתון חסר' %}
-        <span style="color:#22282D;font-size:16px;letter-spacing:0;">נתון חסר</span>
-        {% else %}
-        <span style="color:#22282D;font-size:44px;font-weight:600;letter-spacing:-1;">{{ rendered_value }}</span>
-        {% endif %}
-        ;;
+      {% if value == 'Data Missing' %}
+      <span style="color:#22282D;font-size:16px;letter-spacing:0;">Data Missing</span>
+      {% else %}
+      <span style="color:#22282D;font-size:44px;font-weight:600;letter-spacing:-1;">{{ rendered_value }}</span>
+      {% endif %}
+      ;;
   }
 
   dimension: godel1_0_emp_pcnt {
@@ -381,19 +383,20 @@ view: vm_household {
 
   dimension: housing_dens_avg {
     type: string
-    sql: coalesce(cast(${TABLE}.HousingDens_avg as string), 'נתון חסר') ;;
+    sql: coalesce(cast(${TABLE}.HousingDens_avg as string), 'Data Missing') ;;
     value_format: "0.0"
     html:
-        <div style="line-height:1.2;">
-        {% if value == 'נתון חסר' %}
-          <span style="color:#22282D;font-size:16px;font-weight:700;letter-spacing:0;">צפיפות דיור ממוצעת</span><br>
-          <span style="color:#22282D;font-size:16px;letter-spacing:0;">נתון חסר</span>
-        {% else %}
-          <span style="color:#22282D;font-size:16px;font-weight:700;letter-spacing:0;">צפיפות דיור ממוצעת</span><br>
-          <span style="color:#22282D;font-size:44px;font-weight:600;letter-spacing:-1;">{{ rendered_value }}</span>
-        {% endif %}
-        </div> ;;
+      <div style="line-height:1.2;">
+      {% if value == 'Data Missing' %}
+        <span style="color:#22282D;font-size:16px;font-weight:700;letter-spacing:0;">Average Housing Density</span><br>
+        <span style="color:#22282D;font-size:16px;letter-spacing:0;">Data Missing</span>
+      {% else %}
+        <span style="color:#22282D;font-size:16px;font-weight:700;letter-spacing:0;">Average Housing Density</span><br>
+        <span style="color:#22282D;font-size:44px;font-weight:600;letter-spacing:-1;">{{ rendered_value }}</span>
+      {% endif %}
+      </div> ;;
   }
+
 
   dimension: housing_dens_avg_text_icon {
     #label: "צפיפות דיור ממוצעת"
@@ -453,17 +456,17 @@ view: vm_household {
   dimension: parking_pcnt {
     type: string
     value_format: "0.0\%"
-    sql: coalesce(cast(${TABLE}.parking_pcnt as string),'נתון חסר') ;;
+    sql: coalesce(cast(${TABLE}.parking_pcnt as string), 'Data Missing') ;;
     html:
-        <div style="line-height:1.2;">
-        {% if value == 'נתון חסר' %}
-          <span style="color:#22282D;font-size:16px;font-weight:700;letter-spacing:0;">משקי בית שעומדת לרשותם חניה</span><br>
-          <span style="color:#22282D;font-size:16px;letter-spacing:0;">נתון חסר</span>
-        {% else %}
-          <span style="color:#22282D;font-size:16px;font-weight:700;letter-spacing:0;">משקי בית שעומדת לרשותם חניה</span><br>
-          <span style="color:#22282D;font-size:44px;font-weight:600;letter-spacing:-1;">{{ rendered_value }}</span>
-        {% endif %}
-        </div> ;;
+      <div style="line-height:1.2;">
+      {% if value == 'Data Missing' %}
+        <span style="color:#22282D;font-size:16px;font-weight:700;letter-spacing:0;">Households with Available Parking</span><br>
+        <span style="color:#22282D;font-size:16px;letter-spacing:0;">Data Missing</span>
+      {% else %}
+        <span style="color:#22282D;font-size:16px;font-weight:700;letter-spacing:0;">Households with Available Parking</span><br>
+        <span style="color:#22282D;font-size:44px;font-weight:600;letter-spacing:-1;">{{ rendered_value }}</span>
+      {% endif %}
+      </div> ;;
   }
 
   dimension: quarter {
@@ -588,11 +591,12 @@ view: vm_household {
 
 
   dimension: size_avg_text_icon {
-    #label: "ממוצע נפשות במשק הבית"
+    #label: "Average Number of Persons per Household"
     type: string
     value_format: "0.0"
     sql: IFNULL(cast(${TABLE}.size_avg as string), 'Data Missing') ;;
     html:
+
           {% if value == 'Data missing' %}
              <div style="line-height:1.2;">
              <img src="https://dashboard.cbs.gov.il/cbs-data/Infographics/hh_size_avg.svg" width="45px" height="45px"/><br>
@@ -635,19 +639,20 @@ view: vm_household {
   }
 
   dimension: sngl_prnt_approx {
-    #label: "מתוכם, מספר משקי בית עם הורה יחיד"
+    #label: "Of Which, Number of Single-Parent Households"
     value_format: "#,##0"
     type: string
-    sql: coalesce(cast(${TABLE}.SnglPrnt_approx as string), 'נתון חסר') ;;
+    sql: coalesce(cast(${TABLE}.SnglPrnt_approx as string), 'Data Missing') ;;
     html:
-        <div style="line-height:1.2;">
-          {% if value == 'נתון חסר' %}
-          <span style='color:#22282D; font-size:16px;'>נתון חסר</span>
-          {% else %}
-          <span style='color:#22282D; font-size:16px;'>{{ rendered_value }}</span>
-          {% endif %}
-        </div>;;
+      <div style="line-height:1.2;">
+        {% if value == 'Data Missing' %}
+        <span style='color:#22282D; font-size:16px;'>Data Missing</span>
+        {% else %}
+        <span style='color:#22282D; font-size:16px;'>{{ rendered_value }}</span>
+        {% endif %}
+      </div>;;
   }
+
 
   dimension: stat_area {
     type: string
@@ -665,25 +670,26 @@ view: vm_household {
   }
 
   dimension: vehicle1up_pcnt {
-   # label: "משקי בית שעומד לרשותם כלי רכב אחד לפחות"
+    #label: "Households with at Least One Vehicle"
     type: number
     value_format: "0.0\%"
     sql: ${TABLE}.Vehicle1up_pcnt ;;
   }
 
   dimension: vehicle2up_pcnt {
-    #label: "משקי בית שעומדים לרשותם שני כלי רכב לפחות"
+    #label: "Households with at Least Two Vehicles"
     type: number
     value_format: "0.0\%"
     sql: ${TABLE}.Vehicle2up_pcnt ;;
   }
 
   dimension: shape_name {
-    #label: "שם אזור"
+    #label: "Area Name"
     #map_layer_name: union_12layers
     type: string
     sql: ${TABLE}.shape_name ;;
   }
+
 
   dimension: type {
     type: string
@@ -748,16 +754,16 @@ view: vm_household {
   dimension: household_header {
     type: string
     sql: 1 ;;
-    html: <span style="color:#22282D;font-size:18px;letter-spacing:0;">משקי בית, לפי גיל הנפשות במשק הבית</span> ;;
+    html: <span style="color:#22282D;font-size:18px;letter-spacing:0;">Households, by Age of Persons in Household</span> ;;
   }
 
   dimension: household_header_2 {
     type: string
     sql: 1 ;;
-    html: <div style=line-height:0.8;>
-          <span style="color:#22282D;font-size:18px;letter-spacing:0;">,בני 15 ומעלה שעבדו ב-12 החודשים האחרונים</span><br>
-          <span style="color:#22282D;font-size:18px;letter-spacing:0;">לפי מעמד בעבודה ומין</span>
-          </div>;;
+    html: <div style="line-height:0.8;">
+        <span style="color:#22282D;font-size:18px;letter-spacing:0;">Persons Aged 15 and Over Who Worked in the Last 12 Months</span><br>
+        <span style="color:#22282D;font-size:18px;letter-spacing:0;">By Employment Status and Gender</span>
+        </div>;;
   }
 
   # #12B5CB
@@ -768,35 +774,35 @@ view: vm_household {
   #
 
   measure: hh0_17_1_pcnt_m {
- #   label: "אחוז משקי בית עם ילד אחד"
+    # label: "Percentage of Households with One Child"
     value_format: "0.0\%"
     type: sum
     sql: ${TABLE}.hh0_17_1_pcnt ;;
   }
 
   measure: hh0_17_2_pcnt_m {
-  #  label: "אחוז משקי בית עם 2 ילדים"
+    # label: "Percentage of Households with Two Children"
     value_format: "0.0\%"
     type: sum
     sql: ${TABLE}.hh0_17_2_pcnt ;;
   }
 
   measure: hh0_17_3_pcnt_m {
- #   label: "אחוז משקי בית עם 3 ילדים"
+    # label: "Percentage of Households with Three Children"
     value_format: "0.0\%"
     type: sum
     sql: ${TABLE}.hh0_17_3_pcnt ;;
   }
 
   measure: hh0_17_4_pcnt_m {
-  #  label: "אחוז משקי בית עם 4 ילדים"
+    # label: "Percentage of Households with Four Children"
     value_format: "0.0\%"
     type: sum
     sql: ${TABLE}.hh0_17_4_pcnt ;;
   }
 
   measure: hh0_17_5_pcnt_m {
- #   label: "אחוז משקי בית עם 5 ילדים או יותר"
+    # label: "Percentage of Households with Five or More Children"
     value_format: "0.0\%"
     type: sum
     sql: ${TABLE}.hh0_17_5_pcnt ;;
@@ -804,342 +810,343 @@ view: vm_household {
 
   measure: hh0_5_pcnt_m {
     type: sum
-   # label: "אחוז גילאי 0-5"
+    # label: "Percentage Aged 0-5"
     value_format: "0.0\%"
     sql: ${TABLE}.hh0_5_pcnt ;;
   }
 
   measure: hh0_17_pcnt_m {
- #   label: "אחוז גילאי 0-17"
+    # label: "Percentage Aged 0-17"
     value_format: "0.0\%"
     type: sum
     sql: ${TABLE}.hh0_17_pcnt ;;
   }
 
   measure: hh18_24_pcnt_m {
-  #  label: "אחוז גילאי 18-24"
+    # label: "Percentage Aged 18-24"
     value_format: "0.0\%"
     type: sum
     sql: ${TABLE}.hh18_24_pcnt ;;
   }
 
   measure: hh65_pcnt_m {
-  #  label: "אחוז גילאי +65"
+    # label: "Percentage Aged 65+"
     value_format: "0.0\%"
     type: sum
     sql: ${TABLE}.hh65_pcnt ;;
   }
 
   measure: size1_pcnt_m {
-  #  label: "אחוז משקי בית עם נפש אחת"
+    # label: "Percentage of Households with One Person"
     value_format: "0.0\%"
     type: sum
     sql: ${TABLE}.size1_pcnt ;;
   }
 
   measure: size2_pcnt_m {
-  #  label: "אחוז משקי בית עם 2 נפשות"
+    # label: "Percentage of Households with Two Persons"
     value_format: "0.0\%"
     type: sum
     sql: ${TABLE}.size2_pcnt ;;
   }
 
   measure: size3_pcnt_m {
-  #  label: "אחוז משקי בית עם 3 נפשות"
+    # label: "Percentage of Households with Three Persons"
     value_format: "0.0\%"
     type: sum
     sql: ${TABLE}.size3_pcnt ;;
   }
 
-  measure: size4_pcnt_m{
-  #  label: "אחוז משקי בית עם 4 נפשות"
+  measure: size4_pcnt_m {
+    # label: "Percentage of Households with Four Persons"
     value_format: "0.0\%"
     type: sum
     sql: ${TABLE}.size4_pcnt ;;
   }
 
   measure: size5_pcnt_m {
-  #  label: "אחוז משקי בית עם 5 נפשות"
+    # label: "Percentage of Households with Five Persons"
     value_format: "0.0\%"
     type: sum
     sql: ${TABLE}.size5_pcnt ;;
   }
 
   measure: size6_pcnt_m {
- #   label: "אחוז משקי בית עם 6 נפשות"
+    # label: "Percentage of Households with Six Persons"
     value_format: "0.0\%"
     type: sum
     sql: ${TABLE}.size6_pcnt ;;
   }
 
   measure: size7up_pcnt_m {
-   # label: "אחוז משקי בית עם 7 נפשות ומעלה"
+    # label: "Percentage of Households with Seven or More Persons"
     value_format: "0.0\%"
     type: sum
     sql: ${TABLE}.size7up_pcnt ;;
   }
 
   measure: hh_Hiloni_pcnt_m {
-  #  label: "אחוז אורח חילוני"
+    # label: "Percentage of Secular Lifestyle"
     value_format: "0.0\%"
     type: sum
     sql: ${TABLE}.hh_Hiloni_pcnt ;;
   }
 
   measure: hh_masorati_pcnt_m {
-  #  label: "אחוז אורח חיים מסורתי"
+    # label: "Percentage of Traditional Lifestyle"
     value_format: "0.0\%"
     type: sum
     sql: ${TABLE}.hh_Masorati_pcnt ;;
   }
 
   measure: hh_dati_pcnt_m {
-   # label: "אחוז אורח חיים דתי"
+    # label: "Percentage of Religious Lifestyle"
     value_format: "0.0\%"
     type: sum
     sql: ${TABLE}.hh_Dati_pcnt ;;
   }
 
   measure: hh_haredi_pcnt_m {
-  #  label: "אחוז אורח חיים חרדי"
+    # label: "Percentage of Haredi Lifestyle"
     value_format: "0.0\%"
     type: sum
     sql: ${TABLE}.hh_Haredi_pcnt ;;
   }
 
   measure: hh_meorav_pcnt_m {
-   # label: "אחוז אורח חיים מעורב"
+    # label: "Percentage of Mixed Lifestyle"
     value_format: "0.0\%"
     type: sum
     sql: ${TABLE}.hh_Meorav_pcnt ;;
   }
 
   measure: hh_acher_pcnt_m {
-  #  label: "אחוז אורח חיים אחר"
+    # label: "Percentage of Other Lifestyle"
     value_format: "0.0\%"
     type: sum
     sql: ${TABLE}.hh_Acher_pcnt ;;
   }
 
   measure: hh_total_thou_08_kpi {
-   # label: "משקי בית סה״כ(אלפים) 08"
+    # label: "Total Households (Thousands) 2008"
     type: sum
     sql: ${TABLE}.hh_total_thou_08 ;;
   }
 
   measure: hh_total_thou_22_kpi {
-   # label: "משקי בית סה״כ(אלפים) 22"
+    # label: "Total Households (Thousands) 2022"
     type: sum
     sql: ${TABLE}.hh_total_thou_22 ;;
   }
 
   measure: hh_total_thou_72_kpi {
-  #  label: "משקי בית סה״כ(אלפים) 72"
+    # label: "Total Households (Thousands) 1972"
     type: sum
     sql: ${TABLE}.hh_total_thou_72 ;;
   }
 
   measure: hh_total_thou_83_kpi {
-   # label: "משקי בית סה״כ(אלפים) 83"
+    # label: "Total Households (Thousands) 1983"
     type: sum
     sql: ${TABLE}.hh_total_thou_83 ;;
   }
 
   measure: hh_total_thou_95_kpi {
-    #label: "משקי בית סה״כ(אלפים) 95"
+    # label: "Total Households (Thousands) 1995"
     type: sum
     sql: ${TABLE}.hh_total_thou_95 ;;
   }
 
   measure: age0_19sef_pcnt_08_kpi {
-  #  label: "אחוז בני 0-19 08"
+    # label: "Percentage Aged 0-19 (2008)"
     type: sum
     sql: ${TABLE}.age0_19sef_pcnt_08 ;;
   }
 
   measure: age0_19sef_pcnt_22_kpi {
-   # label: "אחוז בני 0-19 22"
+    # label: "Percentage Aged 0-19 (2022)"
     type: sum
     sql: ${TABLE}.age0_19sef_pcnt_22 ;;
   }
 
   measure: age0_19sef_pcnt_72_kpi {
-  #  label: "אחוז בני 0-19 72"
+    # label: "Percentage Aged 0-19 (1972)"
     type: sum
     sql: ${TABLE}.age0_19sef_pcnt_72 ;;
   }
 
   measure: age0_19sef_pcnt_83_kpi {
- #   label: "אחוז בני 0-19 83"
+    # label: "Percentage Aged 0-19 (1983)"
     type: sum
     sql: ${TABLE}.age0_19sef_pcnt_83 ;;
   }
 
   measure: age0_19sef_pcnt_95_kpi {
-  #  label: "אחוז בני 0-19 95"
+    # label: "Percentage Aged 0-19 (1995)"
     type: sum
     sql: ${TABLE}.age0_19sef_pcnt_95 ;;
   }
 
   measure: age65sef_pcnt_08_kpi {
-  #  label: "אחוז בני 65 ומעלה 08"
+    # label: "Percentage Aged 65 and Over (2008)"
     type: sum
     sql: ${TABLE}.age65sef_pcnt_08 ;;
   }
 
   measure: age65sef_pcnt_22_kpi {
-  #  label: "אחוז בני 65 ומעלה 22"
+    # label: "Percentage Aged 65 and Over (2022)"
     type: sum
     sql: ${TABLE}.age65sef_pcnt_22 ;;
   }
 
   measure: age65sef_pcnt_72_kpi {
-   # label: "אחוז בני 65 ומעלה 72"
+    # label: "Percentage Aged 65 and Over (1972)"
     type: sum
     sql: ${TABLE}.age65sef_pcnt_72 ;;
   }
 
   measure: age65sef_pcnt_83_kpi {
- #   label: "אחוז בני 65 ומעלה 83"
+    # label: "Percentage Aged 65 and Over (1983)"
     type: sum
     sql: ${TABLE}.age65sef_pcnt_83 ;;
   }
 
   measure: age65sef_pcnt_95_kpi {
-  #  label: "אחוז בני 65 ומעלה 95"
+    # label: "Percentage Aged 65 and Over (1995)"
     type: sum
     sql: ${TABLE}.age65sef_pcnt_95 ;;
   }
 
   measure: age85sef_pcnt_08_kpi {
-   # label: "אחוז בני 85 ומעלה 08"
+    # label: "Percentage Aged 85 and Over (2008)"
     type: sum
     sql: ${TABLE}.age85sef_pcnt_08 ;;
   }
 
   measure: age85sef_pcnt_22_kpi {
-   # label: "אחוז בני 85 ומעלה 22"
+    # label: "Percentage Aged 85 and Over (2022)"
     type: sum
     sql: ${TABLE}.age85sef_pcnt_22 ;;
   }
 
   measure: age85sef_pcnt_72_kpi {
-    label: "אחוז בני 85 ומעלה 72"
+    # label: "Percentage Aged 85 and Over (1972)"
     type: sum
     sql: ${TABLE}.age85sef_pcnt_72 ;;
   }
 
   measure: age85sef_pcnt_83_kpi {
-    label: "אחוז בני 85 ומעלה 83"
+    # label: "Percentage Aged 85 and Over (1983)"
     type: sum
     sql: ${TABLE}.age85sef_pcnt_83 ;;
   }
 
   measure: age85sef_pcnt_95_kpi {
-    label: "אחוז בני 85 ומעלה 95"
+    # label: "Percentage Aged 85 and Over (1995)"
     type: sum
     sql: ${TABLE}.age85sef_pcnt_95 ;;
   }
 
   measure: size_avg_08_kpi {
-    label: "גודל משק בית ממוצע 08"
+    # label: "Average Household Size (2008)"
     type: sum
     sql: ${TABLE}.size_avg_08 ;;
   }
 
   measure: size_avg_22_kpi {
-    label: "גודל משק בית ממוצע 22"
+    # label: "Average Household Size (2022)"
     type: sum
     sql: ${TABLE}.size_avg_22 ;;
   }
 
   measure: size_avg_72_kpi {
-   # label: "גודל משק בית ממוצע 72"
+    # label: "Average Household Size (1972)"
     type: sum
     sql: ${TABLE}.size_avg_72 ;;
   }
 
   measure: size_avg_83_kpi {
-  #  label: "גודל משק בית ממוצע 83"
+    # label: "Average Household Size (1983)"
     type: sum
     sql: ${TABLE}.size_avg_83 ;;
   }
 
   measure: size_avg_95_kpi {
-    #label: "גודל משק בית ממוצע 95"
+    # label: "Average Household Size (1995)"
     type: sum
     sql: ${TABLE}.size_avg_95 ;;
   }
 
   measure: size_avg_kpi {
-    #label: "ממוצע נפשות למשק בית"
+    # label: "Average Number of Persons per Household"
     type: sum
     sql: ${TABLE}.size_avg ;;
   }
 
   measure: cellphone_ratio_m {
+    # label: "Ratio of Cellphones to Households for Population Aged 6 and Over"
     type: sum
-   # label: "יחס טלפונים למשקי בית באוכלוסייה מגיל 6 ומעלה"
     sql: ${TABLE}.cellphone_ratio ;;
   }
 
   measure: computer_avg_m {
+    # label: "Average Number of Personal Computers per Household"
     type: sum
-    #label: "ממוצע מחשבים אישיים במשק הבית"
     sql: ${TABLE}.Computer_avg ;;
   }
 
   measure: own_pcnt_m {
+    # label: "Percentage of Households Living in Owned Dwellings"
     type: sum
     value_format: "0.0\%"
-   # label: "אחוז משקי בית שגרים בדירות בבעלות"
     sql: ${TABLE}.own_pcnt ;;
   }
 
   measure: rent_pcnt_m {
+    # label: "Percentage of Households Living in Rented Dwellings"
     type: sum
     value_format: "0.0\%"
-   # label: "אחוז משקי בית שגרים בדירות בשכירות"
     sql: ${TABLE}.rent_pcnt ;;
   }
 
   measure: other_arng_pcnt_m {
+    # label: "Percentage of Households Living in Other Arrangements"
     type: sum
     value_format: "0.0\%"
-  #  label: "אחוז משקי בית שגרים בדירות בהסדר אחר"
     sql: ${TABLE}.OtherArng_pcnt ;;
   }
 
   measure: vehicle1up_pcnt_m {
+    # label: "Percentage of Households with At Least One Car"
     type: sum
     value_format: "0.0\%"
-   # label: "אחוז משקי בית שלשימושם מכונית אחת לפחות"
     sql: ${TABLE}.Vehicle1up_pcnt ;;
   }
 
   measure: vehicle2up_pcnt_m {
+    # label: "Percentage of Households with Two or More Cars"
     type: sum
     value_format: "0.0\%"
-   # label: "אחוז משקי בית שלשימושם שתי מכוניות ויותר"
     sql: ${TABLE}.Vehicle2up_pcnt ;;
   }
 
   measure: parking_pcnt_m {
+    # label: "Percentage of Households with Parking"
     type: sum
     value_format: "0.0\%"
-    #label: "אחוז משקי בית שלשימושם חניה"
     sql: ${TABLE}.Parking_pcnt ;;
   }
 
   measure: housing_dens_avg_m {
+    # label: "Average Housing Density"
     type: sum
-   # label: "צפיפות דיור ממוצעת"
     sql: ${TABLE}.HousingDens_avg ;;
   }
 
   measure: hh_total_approx_m {
+    # label: "Total Approximate Households"
     type: sum
-    #label: "סך משקי בית כללי"
     sql: ${TABLE}.hh_total_approx ;;
   }
+
 }
