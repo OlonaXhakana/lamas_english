@@ -43,6 +43,10 @@ explore: vm_work_n_wage {}
 
 explore: vm_work_n_wage_unpivoted {}
 
+explore: vm_geography {}
+
+explore: vm_mifkad_over_time_pivoted {}
+
 ########################################################################
 
 
@@ -56,12 +60,12 @@ explore: vm_compare {}
 explore: vm_child_born_unpivoted_eng {}
 explore: vm_educ {}
 explore: vm_educ_pivoted_v2{}
-explore: vm_geography{}
+
 
 explore: vm_household_unpivoted_eng {}
 explore: vm_household_unpivoted_v2_eng {}
 
-explore: vm_mifkad_over_time_pivoted {}
+
 explore: vm_migration_eng {}
 
 explore: vm_origin_pivoted_eng {}
