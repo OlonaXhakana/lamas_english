@@ -16,6 +16,8 @@ view: vm_compare {
   }
 
   dimension: shape_name {
+    map_layer_name: union_13layers_v2
+
    # label: " "
     type: string
     sql: ${TABLE}.shape_name ;;
