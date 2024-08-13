@@ -129,6 +129,7 @@ view: vm_pop {
   }
 
   dimension: shape_name_eng {
+    map_layer_name: union_13layers_v2
     type: string
     sql: ${TABLE}.shape_name_eng ;;
   }
