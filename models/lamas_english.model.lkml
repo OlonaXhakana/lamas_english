@@ -52,6 +52,8 @@ explore: vm_geography {}
 
 explore: vm_mifkad_over_time_pivoted {}
 
+explore: vm_compare {}
+
 ########################################################################
 
 
@@ -61,7 +63,6 @@ explore: vm_age_pivoted_eng {}
 
 
 
-explore: vm_compare {}
 explore: vm_child_born_unpivoted_eng {}
 explore: vm_educ {}
 explore: vm_educ_pivoted_v2{}
