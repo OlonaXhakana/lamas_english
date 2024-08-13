@@ -22,7 +22,7 @@ view: vm_compare {
   }
 
   dimension: shape_name_eng {
-    #label: " "
+    map_layer_name: union_13layers_v2
     type: string
     sql: ${TABLE}.shape_name_eng ;;
   }
