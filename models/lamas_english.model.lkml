@@ -7,6 +7,11 @@ datagroup: lamas_english_default_datagroup {
   # sql_trigger: SELECT MAX(id) FROM etl_log;;
   max_cache_age: "24 hour"
 }
+
+map_layer: union_13layers_v2 {
+file: "/map/union_13layers_v2.topojson"
+}
+
 persist_with: lamas_english_default_datagroup
 
 explore: vm_origin_pivoted_v3 {}
