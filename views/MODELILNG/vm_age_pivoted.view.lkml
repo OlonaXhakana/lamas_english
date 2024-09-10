@@ -5,6 +5,11 @@ view: vm_age_pivoted {
   ## dimensions:
   #
 
+  dimension: id {
+    type: number
+    sql: ${TABLE}.id ;;
+  }
+
   dimension: age_name {
     type: string
     sql: ${TABLE}.age_name ;;

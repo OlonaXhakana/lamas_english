@@ -5,6 +5,11 @@ view: vm_child_born {
   ## dimensions:
   #
 
+  dimension: id {
+    type: number
+    sql: ${TABLE}.id ;;
+  }
+
   dimension: chld_born_avg {
     type: string
     value_format: "#,##0.0"

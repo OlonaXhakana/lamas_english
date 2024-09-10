@@ -5,6 +5,11 @@ view: vm_age_median {
   ## dimensions:
   #
 
+  dimension: id {
+    type: number
+    sql: ${TABLE}.id ;;
+  }
+
   dimension: age_median {
     type: number
     sql: ${TABLE}.age_median ;;

@@ -5,6 +5,11 @@ view: vm_status_unpivoted_v2 {
   ## dimensions:
   #
 
+  dimension: id {
+    type: number
+    sql: ${TABLE}.id ;;
+  }
+
   dimension: ages_eng {
     type: string
     sql: ${TABLE}.ages_eng ;;
