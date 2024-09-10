@@ -5,6 +5,11 @@ view: vm_household {
   ## dimensions
   #
 
+  dimension: id {
+    type: number
+    sql: ${TABLE}.id ;;
+  }
+
   dimension: age0_19sef_pcnt_08 {
     type: number
     sql: ${TABLE}.age0_19sef_pcnt_08 ;;

@@ -30,6 +30,8 @@ explore: vm_age_pivoted {}
 
 explore: vm_religion_v2 {}
 
+explore: vm_educ {}
+
 explore: vm_child_born_unpivoted {}
 
 explore: vm_child_born {}
@@ -68,7 +70,7 @@ explore: vm_age_pivoted_eng {}
 
 
 explore: vm_child_born_unpivoted_eng {}
-explore: vm_educ {}
+
 explore: vm_educ_pivoted_v2{}
 
 

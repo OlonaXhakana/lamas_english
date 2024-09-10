@@ -5,6 +5,11 @@ view: vm_religion_v2 {
   ## dimensions:
   #
 
+  dimension: id {
+    type: number
+    sql: ${TABLE}.id ;;
+  }
+
   dimension: hh_midat_datiyut_name {
     type: string
     sql: ${TABLE}.hh_MidatDatiyut_Name ;;

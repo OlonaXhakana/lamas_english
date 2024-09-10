@@ -5,6 +5,11 @@ view: vm_work_n_wage {
   ## dimensions:
   #
 
+  dimension: id {
+    type: number
+    sql: ${TABLE}.id ;;
+  }
+
   dimension: shape_name {
     type: string
     sql: ${TABLE}.shape_name ;;

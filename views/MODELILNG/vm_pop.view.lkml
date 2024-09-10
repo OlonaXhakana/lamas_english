@@ -5,6 +5,11 @@ view: vm_pop {
   ## dimensions
   #
 
+  dimension: id {
+    type: number
+    sql: ${TABLE}.id ;;
+  }
+
   dimension: change_pcnt {
     type: string
     label: "Percentage Change in Population Size Compared to the 2008 Census"

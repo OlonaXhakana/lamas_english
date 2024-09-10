@@ -5,6 +5,11 @@ view: vm_marriage_age_median {
   ## dimensions
   #
 
+  dimension: id {
+    type: number
+    sql: ${TABLE}.id ;;
+  }
+
   dimension: district_heb {
     type: string
     sql: ${TABLE}.DistrictHeb ;;

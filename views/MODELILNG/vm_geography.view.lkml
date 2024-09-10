@@ -5,6 +5,11 @@ view: vm_geography {
   ## dimensions
   #
 
+  dimension: id {
+    type: number
+    sql: ${TABLE}.id ;;
+  }
+
   dimension: area {
     type: string
     value_format: "#,##0.0"

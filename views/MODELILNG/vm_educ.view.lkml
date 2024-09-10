@@ -5,6 +5,11 @@ view: vm_educ {
   ## dimensions:
   #
 
+  dimension: id {
+    type: number
+    sql: ${TABLE}.id ;;
+  }
+
   dimension: acadm1_cert_pcnt {
     type: number
     sql: ${TABLE}.Acadm1Cert_pcnt ;;
