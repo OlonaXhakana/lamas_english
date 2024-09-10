@@ -16,14 +16,14 @@ view: vm_compare {
   }
 
   dimension: shape_name {
-    map_layer_name: union_13layers_v2
-
-   # label: " "
+    map_layer_name: union_12layers
+    label: " "
     type: string
     sql: ${TABLE}.shape_name ;;
   }
 
   dimension: shape_name_eng {
+    label: " "
     map_layer_name: union_12layers
     type: string
     sql: ${TABLE}.shape_name_eng ;;
@@ -40,7 +40,7 @@ view: vm_compare {
   }
 
   dimension: value {
-    # label: " "
+    label: " "
     type: number
     sql: ${TABLE}.value ;;
   }
