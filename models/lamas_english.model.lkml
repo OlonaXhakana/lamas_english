@@ -8,6 +8,10 @@ datagroup: lamas_english_default_datagroup {
   max_cache_age: "24 hour"
 }
 
+map_layer: union_12layers {
+  file: "/map/union_12layers_v3.topojson"
+}
+
 map_layer: union_13layers_v2 {
 file: "/map/union_13layers_v2.topojson"
 }
