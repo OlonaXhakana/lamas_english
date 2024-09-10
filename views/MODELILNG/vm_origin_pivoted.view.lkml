@@ -5,6 +5,11 @@ view: vm_origin_pivoted {
   ## dimensions:
   #
 
+  dimension: id {
+    type: number
+    sql: ${TABLE}.id ;;
+  }
+
   dimension: country_name {
     # label: " "
     type: string

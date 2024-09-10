@@ -5,6 +5,11 @@ view: vm_origin_pivoted_v3 {
   ## dimensions:
   #
 
+  dimension: id {
+    type: number
+    sql: ${TABLE}.id ;;
+  }
+
   dimension: metric_name_eng {
     type: string
     sql: ${TABLE}.metric_name_eng ;;
