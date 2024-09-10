@@ -5,6 +5,11 @@ view: vm_disabilites_unpivoted_v2 {
   ## dimensions
   #
 
+  dimension: id {
+    type: number
+    sql: ${TABLE}.id ;;
+  }
+
   dimension: age {
     type: string
     sql: ${TABLE}.age ;;
