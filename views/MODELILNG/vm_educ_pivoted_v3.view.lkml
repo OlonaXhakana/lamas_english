@@ -5,6 +5,11 @@ view: vm_educ_pivoted_v3 {
   ## dimensions:
   #
 
+  dimension: id {
+    type: number
+    sql: ${TABLE}.id ;;
+  }
+
   dimension: gender {
     type: string
     sql: ${TABLE}.gender ;;
