@@ -5,6 +5,11 @@ view: vm_work_n_wage_unpivoted {
   ## dimensions:
   #
 
+  dimension: id {
+    type: number
+    sql: ${TABLE}.id ;;
+  }
+
   dimension: formatted_metric_name_eng {
     type: string
     sql: ${TABLE}.formatted_metric_name_eng ;;
