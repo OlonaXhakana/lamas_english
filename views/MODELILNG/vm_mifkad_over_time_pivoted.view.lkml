@@ -5,6 +5,11 @@ view: vm_mifkad_over_time_pivoted {
   ## dimensions:
   #
 
+  dimension: id {
+    type: number
+    sql: ${TABLE}.id ;;
+  }
+
   dimension: gender {
     type: string
     sql: ${TABLE}.gender ;;
