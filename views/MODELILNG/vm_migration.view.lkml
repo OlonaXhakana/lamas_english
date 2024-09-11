@@ -5,6 +5,11 @@ view: vm_migration {
   ## dimensions:
   #
 
+  dimension: id {
+    type: number
+    sql: ${TABLE}.id ;;
+  }
+
   dimension: metric {
     type: string
     sql: ${TABLE}.metric ;;
