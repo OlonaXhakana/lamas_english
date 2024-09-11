@@ -5,6 +5,12 @@ view: vm_compare {
   ## dimensions:
   #
 
+  dimension: id {
+    type: number
+    sql: ${TABLE}.id ;;
+  }
+
+
   dimension: metric {
     type: string
     sql: ${TABLE}.metric ;;
