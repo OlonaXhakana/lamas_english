@@ -108,7 +108,7 @@ view: vm_pop {
 
   dimension: shape_name {
     label: "shape name heb"
-    map_layer_name: union_13layers_v2
+    map_layer_name: union_13layers
     type: string
     sql: ${TABLE}.shape_name ;;
   }
@@ -134,7 +134,8 @@ view: vm_pop {
   }
 
   dimension: shape_name_eng {
-    map_layer_name: union_13layers_v2
+    label: " "
+    map_layer_name: union_13layers
     type: string
     sql: ${TABLE}.shape_name_eng ;;
   }
