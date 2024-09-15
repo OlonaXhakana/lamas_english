@@ -7,9 +7,9 @@ view: vm_compare {
 
   dimension: id {
     type: number
+    map_layer_name: union_12layers
     sql: ${TABLE}.id ;;
   }
-
 
   dimension: metric {
     type: string
@@ -30,7 +30,7 @@ view: vm_compare {
 
   dimension: shape_name_eng {
     label: " "
-    map_layer_name: union_12layers
+    # map_layer_name: union_12layers
     type: string
     sql: ${TABLE}.shape_name_eng ;;
   }

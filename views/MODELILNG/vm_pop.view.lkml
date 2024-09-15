@@ -7,6 +7,7 @@ view: vm_pop {
 
   dimension: id {
     type: number
+    map_layer_name: union_13layers
     sql: ${TABLE}.id ;;
   }
 
@@ -135,7 +136,7 @@ view: vm_pop {
 
   dimension: shape_name_eng {
     label: " "
-    map_layer_name: union_13layers
+    # map_layer_name: union_13layers
     type: string
     sql: ${TABLE}.shape_name_eng ;;
   }
