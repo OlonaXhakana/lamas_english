@@ -6,7 +6,7 @@ view: vm_age_median {
   #
 
   dimension: id {
-    type: number
+    type: string
     sql: ${TABLE}.id ;;
   }
 

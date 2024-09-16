@@ -6,7 +6,7 @@ view: vm_mifkad_over_time_pivoted {
   #
 
   dimension: id {
-    type: number
+    type: string
     sql: ${TABLE}.id ;;
   }
 

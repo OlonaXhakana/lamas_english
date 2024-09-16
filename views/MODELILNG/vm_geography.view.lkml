@@ -6,7 +6,7 @@ view: vm_geography {
   #
 
   dimension: id {
-    type: number
+    type: string
     sql: ${TABLE}.id ;;
   }
 

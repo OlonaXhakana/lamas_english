@@ -6,8 +6,8 @@ view: vm_compare {
   #
 
   dimension: id {
-    type: number
-    # map_layer_name: union_12layers
+    type: string
+    map_layer_name: union_12layers
     sql: ${TABLE}.id ;;
   }
 

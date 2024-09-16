@@ -6,7 +6,7 @@ view: vm_age_pivoted {
   #
 
   dimension: id {
-    type: number
+    type: string
     sql: ${TABLE}.id ;;
   }
 

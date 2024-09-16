@@ -6,7 +6,7 @@ view: vm_origin_pivoted_v3 {
   #
 
   dimension: id {
-    type: number
+    type: string
     sql: ${TABLE}.id ;;
   }
 

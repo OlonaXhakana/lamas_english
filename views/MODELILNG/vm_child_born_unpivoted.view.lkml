@@ -6,7 +6,7 @@ view: vm_child_born_unpivoted {
   #
 
   dimension: id {
-    type: number
+    type: string
     sql: ${TABLE}.id ;;
   }
 

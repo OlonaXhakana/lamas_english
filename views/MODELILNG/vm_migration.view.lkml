@@ -6,7 +6,7 @@ view: vm_migration {
   #
 
   dimension: id {
-    type: number
+    type: string
     sql: ${TABLE}.id ;;
   }
 

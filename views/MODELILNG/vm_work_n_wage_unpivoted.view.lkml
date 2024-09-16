@@ -6,7 +6,7 @@ view: vm_work_n_wage_unpivoted {
   #
 
   dimension: id {
-    type: number
+    type: string
     sql: ${TABLE}.id ;;
   }
 

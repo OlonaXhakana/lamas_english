@@ -6,7 +6,7 @@ view: vm_religion_v2 {
   #
 
   dimension: id {
-    type: number
+    type: string
     sql: ${TABLE}.id ;;
   }
 
