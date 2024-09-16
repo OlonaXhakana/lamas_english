@@ -7,7 +7,7 @@ view: vm_pop {
 
   dimension: id {
     type: number
-    # map_layer_name: union_13layers
+    map_layer_name: union_13layers
     sql: ${TABLE}.id ;;
   }
 
