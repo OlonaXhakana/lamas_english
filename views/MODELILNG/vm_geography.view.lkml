@@ -63,7 +63,7 @@ view: vm_geography {
   dimension: estb_yr {
     type: string
     # value_format: ""
-    sql: coalesce(${TABLE}.EstbYr, 'Data Missing') ;;
+    sql: coalesce(${TABLE}.EstbYrEng, 'Data Missing') ;;
     html:
       <div style="line-height:1.2;">
       {% if value == 'Data Missing' %}
