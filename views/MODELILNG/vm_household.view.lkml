@@ -92,10 +92,10 @@ view: vm_household {
     html:
       <div style="line-height:1.2;">
       {% if value == 'Data Missing' %}
-        <span style="color:#22282D;font-size:16px;font-weight:700;letter-spacing:0;">Mobile Phones Ratio for Ages 6 and Up</span><br>
+        <span style="color:#22282D;font-size:16px;font-weight:700;letter-spacing:0;">Ratio of cell Phones to persons aged 6 and over</span><br>
         <span style="color:#22282D;font-size:16px;letter-spacing:0;">Data Missing</span>
       {% else %}
-        <span style="color:#22282D;font-size:16px;font-weight:700;letter-spacing:0;">Mobile Phones Ratio for Ages 6 and Up</span><br>
+        <span style="color:#22282D;font-size:16px;font-weight:700;letter-spacing:0;">Ratio of cell Phones to persons aged 6 and over</span><br>
         <span style="color:#22282D;font-size:44px;font-weight:600;letter-spacing:-1;">{{ rendered_value }}</span>
       {% endif %}
       </div> ;;
@@ -126,7 +126,7 @@ view: vm_household {
 
   dimension: fam_approx {
     value_format: "#,##0"
-    label: "Number of Family Households"
+    label: "Average number of persons per household"
     type: string
     sql: coalesce(cast(${TABLE}.Fam_approx as string), 'Data Missing') ;;
     html:
@@ -493,11 +493,11 @@ view: vm_household {
       <div style="line-height:1.2;">
       {% if value == 'Data Missing' %}
         <img src="https://dashboard.cbs.gov.il/cbs-data/Infographics/hh_rent_pcnt.svg" width="45px" height="45px"/><br>
-        <span style="color:#22282D;font-size:16px;font-weight:700;letter-spacing:0;">Households living in rental housing</span><br>
+        <span style="color:#22282D;font-size:16px;font-weight:700;letter-spacing:0;">Households living in rented dwellings</span><br>
         <span style="color:#22282D;font-size:16px;letter-spacing:0;">Data Missing</span>
       {% else %}
         <img src="https://dashboard.cbs.gov.il/cbs-data/Infographics/hh_rent_pcnt.svg" width="45px" height="45px"/><br>
-        <span style="color:#22282D;font-size:16px;font-weight:700;letter-spacing:0;">Households living in rental housing</span><br>
+        <span style="color:#22282D;font-size:16px;font-weight:700;letter-spacing:0;">Households living in rented dwellings</span><br>
         <span style="color:#22282D;font-size:44px;font-weight:600;letter-spacing:-1;">{{ rendered_value }}</span>
       {% endif %}
       </div>;;
@@ -585,10 +585,10 @@ view: vm_household {
     html:
         <div style="line-height:1.2;">
         {% if value == 'Data missing' %}
-          <span style="color:#22282D;font-size:16px;font-weight:700;letter-spacing:0;">Average household size</span><br>
+          <span style="color:#22282D;font-size:16px;font-weight:700;letter-spacing:0;">Average number of persons per household</span><br>
           <span style="color:#22282D;font-size:16px;letter-spacing:0;">Data missing</span>
         {% else %}
-          <span style="color:#22282D;font-size:16px;font-weight:700;letter-spacing:0%;">Average household size</span><br>
+          <span style="color:#22282D;font-size:16px;font-weight:700;letter-spacing:0%;">Average number of persons per household</span><br>
           <span style="color:#22282D;font-size:44px;font-weight:600;letter-spacing:-1%;">{{ rendered_value }}</span><br>
         {% endif %}
         </div> ;;
@@ -605,13 +605,13 @@ view: vm_household {
           {% if value == 'Data missing' %}
              <div style="line-height:1.2;">
              <img src="https://dashboard.cbs.gov.il/cbs-data/Infographics/hh_size_avg.svg" width="45px" height="45px"/><br>
-             <span style="color:#22282D;font-size:16px;font-weight:700;letter-spacing:0;">Average household size</span><br>
+             <span style="color:#22282D;font-size:16px;font-weight:700;letter-spacing:0;">Average number of persons per household</span><br>
              <span style="color:#22282D;font-size:16px;letter-spacing:0;">Data Missing</span>
              </div>
           {% else %}
             <div style="line-height:1.2;">
             <img src="https://dashboard.cbs.gov.il/cbs-data/Infographics/hh_size_avg.svg" width="45px" height="45px"/><br>
-            <span style="color:#22282D;font-size:16px;font-weight:700;letter-spacing:0;">Average household size</span><br>
+            <span style="color:#22282D;font-size:16px;font-weight:700;letter-spacing:0;">Average number of persons per household</span><br>
             <span style="color:#22282D;font-size:44px;font-weight:600;letter-spacing:-1;">{{ rendered_value }}</span><br>
             </div>
           {% endif %}
@@ -717,9 +717,9 @@ view: vm_household {
     sql: ${vehicle1up_pcnt} ;;
     html:
       <div style="line-height:1.2;">
-        <span style="color:#22282D;font-size:16px;font-weight:700;letter-spacing:0;">Households with at least one vehicle at their disposal</span><br>
+        <span style="color:#22282D;font-size:16px;font-weight:700;letter-spacing:0;">Households that have at least one vehicle at their disposal</span><br>
         <span style="color:#22282D;font-size:44px;font-weight:600;letter-spacing:-1%;">{{ vehicle1up_pcnt_m }}%</span><br>
-        <span style="color:#22282D;font-size:15.6px;font-weight:700;letter-spacing:0;">Households with at least two vehicles at their disposal</span><br>
+        <span style="color:#22282D;font-size:15.6px;font-weight:700;letter-spacing:0;">Households that have at least one vehicle at their disposal</span><br>
         <span style="color:#22282D;font-size:44px;font-weight:600;letter-spacing:-1%;">{{ vehicle2up_pcnt_m }}%</span>
       </div> ;;
   }
@@ -741,7 +741,7 @@ view: vm_household {
         <div style="line-height:1;">
           <span style="color:#22282D;font-size:16px;font-weight:700;letter-spacing:0;">Family households</span><br>
           <span style="color:#22282D;font-size:16px;letter-spacing:0;">Data missing</span><br>
-          <span style="color:#22282D;font-size:16px;font-weight:100;letter-spacing:0;">Of which, single-parent households:</span>
+          <span style="color:#22282D;font-size:16px;font-weight:100;letter-spacing:0;">Of these, a household with a lone parent:</span>
           <span style="color:#22282D;font-size:16px;letter-spacing:0;">Data missing</span>
         {% else %}
         <div style="line-height:1.2;">
@@ -749,7 +749,7 @@ view: vm_household {
           <span style="color:#22282D;font-size:44px;font-weight:600;letter-spacing:-1%;">{{ fam_approx }}</span>
         </div>
         <div style="line-height:22px;">
-          <span style="color:#22282D;font-size:16px;font-weight:100;letter-spacing:0;">Of which, single-parent households:</span>
+          <span style="color:#22282D;font-size:16px;font-weight:100;letter-spacing:0;">Of these, a household with a lone parent:</span>
           <span style="color:#22282D;font-size:18px;font-weight:100;letter-spacing:0;">{{ sngl_prnt_approx }}</span>
         {% endif %}
         </div> ;;
