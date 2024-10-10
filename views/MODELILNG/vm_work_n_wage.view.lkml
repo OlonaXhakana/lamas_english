@@ -66,11 +66,11 @@ view: vm_work_n_wage {
         <div style="line-height:1.2;">
         {% if value == 'Data Missing' %}
           <img src="https://dashboard.cbs.gov.il/cbs-data/Infographics/WrkOutLoc_pcnt.svg" width="45px" height="45px"/><br>
-          <span style="color:#22282D;font-size:16px;font-weight:700;letter-spacing:0;">Workers outside of residence</span><br>
+          <span style="color:#22282D;font-size:16px;font-weight:700;letter-spacing:0;">Work outside locality of residence</span><br>
           <span style="color:#22282D;font-size:16px;letter-spacing:0;">Data Missing</span>
         {% else %}
           <img src="https://dashboard.cbs.gov.il/cbs-data/Infographics/WrkOutLoc_pcnt.svg" width="45px" height="45px"/><br>
-          <span style="color:#22282D;font-size:16px;font-weight:700;letter-spacing:0;">Workers outside of residence</span><br>
+          <span style="color:#22282D;font-size:16px;font-weight:700;letter-spacing:0;">Work outside locality of residence</span><br>
           <span style="color:#22282D;font-size:44px;font-weight:600;letter-spacing:-1;">{{ rendered_value }}</span>
         {% endif %}
         </div>;;
@@ -90,11 +90,13 @@ view: vm_work_n_wage {
         <div style="line-height:1.2;">
         {% if value == 'Data Missing' %}
           <img src="https://dashboard.cbs.gov.il/cbs-data/Infographics/WrkY_pcnt.svg" width="45px" height="45px"/><br>
-          <span style="color:#22282D;font-size:16px;font-weight:700;letter-spacing:0;">Workers 15 and Older</span><br>
+          <span style="color:#22282D;font-size:16px;font-weight:700;letter-spacing:0;">Persons aged 15 and over by deciles of income from work and employment status at
+ main job</span><br>
           <span style="color:#22282D;font-size:16px;letter-spacing:0;">Data Missing</span>
         {% else %}
           <img src="https://dashboard.cbs.gov.il/cbs-data/Infographics/WrkY_pcnt.svg" width="45px" height="45px"/><br>
-          <span style="color:#22282D;font-size:16px;font-weight:700;letter-spacing:0;">Workers 15 and Older</span><br>
+          <span style="color:#22282D;font-size:16px;font-weight:700;letter-spacing:0;">Persons aged 15 and over by deciles of income from work and employment status at
+ main job</span><br>
           <span style="color:#22282D;font-size:44px;font-weight:600;letter-spacing:-1;">{{ rendered_value }}</span><br>
         {% endif %}
         </div>;;
