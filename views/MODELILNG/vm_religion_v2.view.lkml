@@ -76,7 +76,7 @@ view: vm_religion_v2 {
     html:
         <div style="line-height:1.2;">
             <img src="https://dashboard.cbs.gov.il/cbs-data/Infographics/religion_icon.svg" width="45px" height="45px"/><br>
-            <span style="color:#22282D;font-size:16px;font-weight:700;letter-spacing:0;">Main Religion</span><br>
+            <span style="color:#22282D;font-size:16px;font-weight:700;letter-spacing:0;">Other Religion</span><br>
             <span style="color:#22282D;font-size:44px;font-weight:600;letter-spacing:-1;">{{ value_m }}% - {{ religion_eng }}</span>
         </div>;;
   }
@@ -86,7 +86,7 @@ view: vm_religion_v2 {
     sql: ${value} ;;
     html:
         <div style=line-height:1.2;>
-          <span style="color:#22282D;font-size:16px;font-weight:700;letter-spacing:0;">The primary lifestyle</span><br>
+          <span style="color:#22282D;font-size:16px;font-weight:700;letter-spacing:0;">Other main lifestyle </span><br>
           <span style="color:#22282D;font-size:44px;font-weight:600;letter-spacing:0;">{{ hh_midat_datiyut_name_eng }}</span><br>
           <span style="color:#22282D;font-size:44px;font-weight:600;letter-spacing:-1;">{{ value_m }}%</span>
         </div>;;
@@ -97,7 +97,7 @@ view: vm_religion_v2 {
     sql: ${value} ;;
     html:
         <div style="line-height:1.2;">
-          <span style="color:#22282D;font-size:16px;font-weight:700;letter-spacing:0;">Main Religion</span><br>
+          <span style="color:#22282D;font-size:16px;font-weight:700;letter-spacing:0;">Other Religion</span><br>
           <span style="color:#22282D;font-size:44px;font-weight:600;letter-spacing:0;">{{ religion_eng }}</span><br>
           <span style="color:#22282D;font-size:44px;font-weight:600;letter-spacing:-1;">{{ value_m }}%</span>
         </div> ;;
