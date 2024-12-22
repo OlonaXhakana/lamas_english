@@ -1,4 +1,5 @@
-connection: "english_lamas"
+# connection: "english_lamas"
+connection: "explore-assistant-lamas"
 
 # include all the views
 include: "/views/**/*.view.lkml"
