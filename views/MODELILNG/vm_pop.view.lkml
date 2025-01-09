@@ -262,4 +262,9 @@ view: vm_pop {
         <img src="https://dashboard.cbs.gov.il/cbs-data/looker-images/families_selected.png" width="103.2" height="105.6"/>
       </a> ;;
   }
+
+  measure: avg_pop_approx {
+    type: average
+    sql: ${pop_approx} ;;
+  }
 }
