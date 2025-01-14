@@ -81,4 +81,18 @@ view: vw_multi_kpi {
     type: sum
     sql: ${TABLE}.value ;;
   }
+
+  measure: avg_of_value {
+    label: "ממוצע"
+    description: "הנתון או הממוצע המספרי של המדד"
+    type: average
+    sql: ${TABLE}.value ;;
+  }
+
+  measure: avg_of_value_eng {
+    label: "Average of value"
+    description: "Measure the sum of value"
+    type: average
+    sql: ${TABLE}.value ;;
+  }
 }
