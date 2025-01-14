@@ -1,0 +1,84 @@
+view: vw_multi_kpi {
+  sql_table_name: `jutomate-lamas-english.MODELLING.vw_multi_kpi` ;;
+  drill_fields: [id]
+
+  #
+  ## dimensions:
+  #
+
+  dimension: id {
+    primary_key: yes
+    type: string
+    sql: ${TABLE}.id ;;
+  }
+
+  dimension: metric {
+    label: "שם המדד"
+    description: "שם המדד"
+    type: string
+    sql: ${TABLE}.metric ;;
+  }
+
+  dimension: metric_eng {
+    label: "kpi in English"
+    description: "kpi in English"
+    type: string
+    sql: ${TABLE}.metric_eng ;;
+  }
+
+  dimension: shape_name {
+    label: "שם יחידה גיאוגרפית"
+    description: "שם אזור"
+    type: string
+    sql: ${TABLE}.shape_name ;;
+  }
+
+  dimension: shape_name_eng {
+    label: "Location name in English"
+    description: "Location name in English"
+    type: string
+    sql: ${TABLE}.shape_name_eng ;;
+  }
+
+  dimension: type {
+    label: "סוג היחידה הגיאוגרפית"
+    description: "סוג האזור"
+    type: string
+    sql: ${TABLE}.type ;;
+  }
+
+  dimension: type_eng {
+    label: "Geographic unit type in English"
+    description: "Various geographic units types"
+    type: string
+    sql: ${TABLE}.type_eng ;;
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+  }
+
+  #
+  ## measures:
+  #
+
+  measure: count {
+    type: count
+    drill_fields: [id, shape_name]
+  }
+
+  measure: sum_of_value {
+    label: "ערך"
+    description: "הנתון או הערך המספרי של המדד"
+    type: sum
+    sql: ${TABLE}.value ;;
+  }
+
+  measure: sum_of_value_eng {
+    label: "Sum of value"
+    description: "Measure the sum of value"
+    type: sum
+    sql: ${TABLE}.value ;;
+  }
+}

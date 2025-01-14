@@ -21,6 +21,8 @@ map_layer: union_13layers {
 
 persist_with: lamas_english_default_datagroup
 
+explore: vw_multi_kpi {}
+
 explore: vm_origin_pivoted_v3 {}
 
 explore: vm_origin_pivoted {}
