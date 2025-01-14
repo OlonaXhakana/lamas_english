@@ -81,11 +81,13 @@ view: vm_pop {
     type: number
     sql: ${TABLE}.pop_approx ;;
     value_format: "#,##0"
-    html:
-        <div style="line-height:1.2;">
-          <span style="color:#22282D;font-size:16px;font-weight:700;letter-spacing:0;">Total Population</span><br>
-          <span style="color:#22282D;font-size:44px;font-weight:600;letter-spacing:-1;">{{ rendered_value }}</span><br>
-        </div>;;
+    description: "total population"
+    label: "total population"
+    # html:
+    #     <div style="line-height:1.2;">
+    #       <span style="color:#22282D;font-size:16px;font-weight:700;letter-spacing:0;">Total Population</span><br>
+    #       <span style="color:#22282D;font-size:44px;font-weight:600;letter-spacing:-1;">{{ rendered_value }}</span><br>
+    #     </div>;;
   }
 
 
@@ -130,12 +132,15 @@ view: vm_pop {
   }
 
   dimension: type {
+    description: "location kind"
+    label: "location type"
     type: string
     sql: ${TABLE}.type ;;
   }
 
   dimension: shape_name_eng {
-    label: " "
+    label: "location name"
+    description: "location name in english"
     map_layer_name: union_13layers
     type: string
     sql: ${TABLE}.shape_name_eng ;;
@@ -267,4 +272,11 @@ view: vm_pop {
     type: average
     sql: ${pop_approx} ;;
   }
+  measure: total_pop_approx {
+    description: "sum of population"
+    label: "sum of population"
+    type: sum
+    sql: ${pop_approx} ;;
+  }
+
 }
