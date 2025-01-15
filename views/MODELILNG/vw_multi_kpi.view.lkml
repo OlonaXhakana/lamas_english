@@ -59,6 +59,20 @@ view: vw_multi_kpi {
     sql: ${TABLE}.value ;;
   }
 
+  dimension: ReligionEng {
+    label: "Main Religion"
+    description: "Main Religion in English"
+    type: string
+    sql: ${TABLE}.ReligionEng ;;
+  }
+
+  dimension: ReligionHeb {
+    label: "דת עיקרית"
+    description: "שם הדת העיקרית"
+    type: string
+    sql: ${TABLE}.ReligionHeb ;;
+  }
+
   #
   ## measures:
   #
