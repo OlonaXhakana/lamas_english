@@ -29,6 +29,7 @@ view: vw_multi_kpi_heb {
   dimension: shape_name {
     label: "שם יחידה גיאוגרפית"
     description: "שם יישוב או אזור"
+    map_layer_name: union_12layers
     type: string
     sql: ${TABLE}.shape_name ;;
   }
