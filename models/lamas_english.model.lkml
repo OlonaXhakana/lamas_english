@@ -23,6 +23,8 @@ persist_with: lamas_english_default_datagroup
 
 explore: vw_multi_kpi {}
 
+explore: vw_multi_kpi_heb {}
+
 explore: vm_origin_pivoted_v3 {}
 
 explore: vm_origin_pivoted {}
