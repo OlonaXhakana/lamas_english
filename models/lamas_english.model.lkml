@@ -10,8 +10,9 @@ datagroup: lamas_english_default_datagroup {
 }
 
 map_layer: union_12layers {
-  file: "/map/12layers.topojson"
+  # file: "/map/12layers.topojson"
   # file: "/map/union_12layers_v3.topojson"
+  file: "/map/12layers_new.topojson"
 }
 
 map_layer: union_13layers {
