@@ -81,6 +81,13 @@ view: vw_multi_kpi_heb {
     sql: ${TABLE}.age_name ;;
   }
 
+  dimension: gender {
+    label: "מגדר"
+    description: "נשים, גברים או סך הכל"
+    type: string
+    sql: ${TABLE}.gender ;;
+  }
+
   #
   ## measures:
   #
