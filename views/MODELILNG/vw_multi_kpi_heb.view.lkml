@@ -106,7 +106,7 @@ view: vw_multi_kpi_heb {
 
   measure: gender_adjusted_negative_value {
     type: number
-    value_format: "0.0\% 0.0\%"
+    value_format: "0.0\%; 0.0\%;"
     sql: CASE
           WHEN ${vw_multi_kpi_heb.gender} = "נשים" THEN ${vw_multi_kpi_heb.sum_of_value}
           ELSE ${vw_multi_kpi_heb.sum_of_value} * -1
