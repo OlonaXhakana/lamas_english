@@ -104,6 +104,14 @@ view: vw_multi_kpi_heb {
     sql: ${TABLE}.value ;;
   }
 
+  measure: gender_adjusted_negative_value {
+    type: number
+    sql: CASE
+          WHEN ${vw_multi_kpi_heb.gender} = "נשים" THEN ${vw_multi_kpi_heb.sum_of_value}
+          ELSE ${vw_multi_kpi_heb.sum_of_value} * -1
+       END ;;
+  }
+
   # measure: sum_of_value_eng {
   #   label: "Sum of value"
   #   description: "Measure the sum of value"
