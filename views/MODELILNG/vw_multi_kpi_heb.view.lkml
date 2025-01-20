@@ -74,6 +74,13 @@ view: vw_multi_kpi_heb {
     sql: ${TABLE}.ReligionHeb ;;
   }
 
+  dimension: age_name {
+    label: "חתך גיל"
+    description: "חתך הגילאים באוכלוסייה"
+    type: string
+    sql: ${TABLE}.age_name ;;
+  }
+
   #
   ## measures:
   #
