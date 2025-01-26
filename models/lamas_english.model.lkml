@@ -26,6 +26,8 @@ explore: vw_multi_kpi {}
 
 explore: vw_multi_kpi_heb {}
 
+explore: vw_allyeshuyot {}
+
 explore: vm_origin_pivoted_v3 {}
 
 explore: vm_origin_pivoted {}
