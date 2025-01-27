@@ -340,8 +340,8 @@ view: vw_allyeshuyot {
     type: number
     value_format: "0.0\%; 0.0\%;"
     sql: CASE
-          WHEN ${TABLE}.gender = "נשים" THEN ${TABLE}.sum_value
-          ELSE ${TABLE}.sum_value * -1
+          WHEN ${vw_allyeshuyot.gender} = "נשים" THEN ${vw_allyeshuyot.sum_value}
+          ELSE ${vw_allyeshuyot.sum_value} * -1
        END ;;
   }
 
