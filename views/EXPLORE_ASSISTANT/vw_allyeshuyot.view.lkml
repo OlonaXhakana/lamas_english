@@ -329,6 +329,15 @@ view: vw_allyeshuyot {
     sql: ${TABLE}.num_value ;;
   }
 
+  measure: gender_adjusted_negative_value {
+    type: number
+    value_format: "0.0\%; 0.0\%;"
+    sql: CASE
+          WHEN ${TABLE}.gender = "נשים" THEN ${TABLE}.sum_value
+          ELSE ${TABLE}.sum_value * -1
+       END ;;
+  }
+
   measure: count {
     type: count
     drill_fields: [shape_name]
