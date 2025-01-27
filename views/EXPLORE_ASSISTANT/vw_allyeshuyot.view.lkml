@@ -91,6 +91,13 @@ view: vw_allyeshuyot {
     sql: ${TABLE}.ReligionHeb ;;
   }
 
+  dimension: age_group {
+    label: "חתך גיל"
+    description: "קבוצת גיל"
+    type: string
+    sql: ${TABLE}.age_group ;;
+  }
+
   dimension: hh_midat_datiyut_name {
     label: "אורח חיים עיקרי של משקי הבית"
     description: "שם אורח החיים העיקרי של משקי הבית"
