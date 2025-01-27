@@ -84,11 +84,32 @@ view: vw_allyeshuyot {
   #   sql: ${TABLE}.MetrHeb ;;
   # }
 
+  dimension: religion_heb {
+    label: "דת עיקרית"
+    description: "שם דת עיקרית"
+    type: string
+    sql: ${TABLE}.ReligionHeb ;;
+  }
+
+  dimension: hh_midat_datiyut_name {
+    label: "אורח חיים עיקרי של משקי הבית"
+    description: "שם אורח החיים העיקרי של משקי הבית"
+    type: string
+    sql: ${TABLE}.hh_MidatDatiyut_Name ;;
+  }
+
   dimension: metr_ring_code {
     label: "סמל טבעת"
     description: "סמל טבעת"
     type: number
     sql: ${TABLE}.MetrRingCode ;;
+  }
+
+  dimension: gender {
+    label: "מגדר"
+    description: "חלוקה לפי נשים, גברים או סך הכל"
+    type: string
+    sql: ${TABLE}.gender ;;
   }
 
   dimension: metr_ring_eng {
